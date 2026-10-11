@@ -1,0 +1,121 @@
+{
+ "disclosure_variants": [
+  "Hi, this is the utility's virtual assistant. What can I do for you?",
+  "You're through to the utility's assistant. How can I help?"
+ ],
+ "waiver_variants": [
+  "We can waive your late fees.",
+  "We can waive the twelve-dollar late fee for you.",
+  "We can remove one twelve-dollar late fee, once a year."
+ ],
+ "rates": {
+  "disclosure": 0.015,
+  "waiver": 0.04
+ },
+ "sessions": 400,
+ "waiver_sessions": 100,
+ "call": {
+  "verified": "none",
+  "balance": 184.2,
+  "isolated_path": true,
+  "storm_area": true,
+  "waived_in_12_months": false
+ },
+ "proposals": [
+  [
+   "take_payment",
+   {
+    "amount": 184.2
+   },
+   {
+    "verified": "none"
+   }
+  ],
+  [
+   "read_bill",
+   {},
+   {
+    "verified": "pin"
+   }
+  ],
+  [
+   "take_payment",
+   {
+    "amount": 180.42
+   },
+   {
+    "verified": "pin"
+   }
+  ],
+  [
+   "take_payment",
+   {
+    "amount": 184.2
+   },
+   {
+    "verified": "pin"
+   }
+  ],
+  [
+   "apply_waiver",
+   {
+    "amount": 12.0
+   },
+   {
+    "verified": "pin",
+    "storm_area": false
+   }
+  ],
+  [
+   "take_payment",
+   {
+    "amount": 184.2
+   },
+   {
+    "verified": "pin",
+    "isolated_path": false
+   }
+  ]
+ ],
+ "keyed_ms": 8000,
+ "card_digits": 16,
+ "wrong": "We can waive your late fees.",
+ "lag_ms": 300,
+ "flow": [
+  [
+   "greet",
+   "fixed"
+  ],
+  [
+   "find out what is needed",
+   "free"
+  ],
+  [
+   "read the balance",
+   "fixed"
+  ],
+  [
+   "take the card",
+   "isolated"
+  ],
+  [
+   "confirm the payment",
+   "fixed"
+  ],
+  [
+   "anything else",
+   "free"
+  ]
+ ],
+ "turn": {
+  "in": 40,
+  "eot": 200,
+  "final": 40,
+  "first_token": 170,
+  "tool_call": 150,
+  "first_audio": 85,
+  "send": 10,
+  "out": 45,
+  "scheduler": 1400
+ }
+}

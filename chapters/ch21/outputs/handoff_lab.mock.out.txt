@@ -1,0 +1,28 @@
+handoff lab, mode=mock; evidence class: simulated (step 3)
+
+1. the handoff record: what the desk sees
+   the Service Line's transfer: 0 problems
+   the prototype's transfer: 4 problems
+     - missing: last two turns
+     - verified, but not how or when
+     - intent is a code, not words a person reads
+     - whisper of 39 words (at most 15)
+
+2. the loop finder: the routing rules, searched from the agent
+   the storm evening's rules: 1 loop
+     agent > billing queue > service number > agent
+   after the fix: 0 loops
+
+3. the truthful queue: a storm evening, 18:00 to 22:00
+   (stand-ins: the desk answers 5 calls a minute; callers ask for a person at
+   up to 6.5 a minute; they wait 20 to 45 minutes)
+                      longest  over 12  looped  gave up  callbacks  kept
+   old overflow         24 min      103     131       28          0     0
+   truthful queue       24 min       95       0        5        279   279
+   waits stated to callers who held: 556 of 556 right to within three minutes
+
+4. verification carried across the transfer (fresh: 10 minutes)
+   pin     3 min  explain_bill    carried: no questions again
+   pin    14 min  explain_bill    the desk verifies again: 14 minutes old
+   pin     2 min  change_address  a step-up: change_address needs pin + code
+   none    0 min  explain_bill    the desk verifies: nothing to carry

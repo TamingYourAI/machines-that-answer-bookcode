@@ -1,0 +1,62 @@
+stack lab, mode=fixture; evidence class: simulated (stand-in timings)
+
+1. the contracts: every layer, the same four rules
+   layer             in                 out
+   transport         caller audio       20 ms frames; audio out; call control
+   hearing           20 ms frames       partials, then a final with timestamps
+   turn-taking       frames, partials   end of turn; barge-in
+   thinking          final text, state  tokens and tool calls, streamed
+   speaking          text for the ear   audio chunks, each tagged with a line
+   systems of record an operation       a result, or a failure class
+   orchestration     every event above  cancels; the event timeline
+   observability     every span         one trace per call, on one clock
+   rules: streams its output; stops within 50 ms of a cancel;
+          stamps the call clock; classifies its errors
+   hearing, stand-in A   passes
+   speaking, stand-in B  fails: cannot be stopped in time
+   thinking, stand-in C  fails: vendor timestamps only; errors are free text
+   speaking, stand-in D  fails: waits for the whole reply
+
+2. where time goes: one turn, call clock (ms)
+   layer        span                                           ms
+   transport    carrier and jitter buffer, in                  40
+   turn-taking  caller stops speaking -> end of turn decided  220
+   hearing      end of turn decided -> final transcript        40
+   thinking     final transcript -> first token               170
+   speaking     first token -> first audio byte                85
+   transport    first audio byte -> audio leaves the server    10
+   transport    carrier and jitter buffer, out                 45
+   voice to voice at the caller: 610 ms
+   the same boundaries in each vendor's own timestamps:
+   hearing      end of turn decided -> final transcript       125
+   thinking     final transcript -> first token                85
+   speaking     first token -> first audio byte               -35  impossible
+
+3. the event timeline: a barge-in 3300 ms into the fee line
+   "The first opening is Tuesday at nine.
+     There's a forty-dollar call-out fee. Shall I book it?"
+   pipeline: played 46 of 91 characters; heard: slot
+   the caller's yes covers slot only; the agent reads the fee again
+   speech-to-speech: 3300 ms of audio played; the words behind
+   them come from a side transcript; the terms heard are an estimate
+
+4. two architectures, the same dialogue (400 turns each, ms)
+                        p50   p95  over the wall
+   pipeline             539   687           0.2%
+   speech-to-speech     504   679           0.5%
+   what you can see          pipeline               speech-to-speech
+   time per layer            five spans             one span
+   what the caller said      the recognizer's text  a side transcript
+   the words spoken          the text we sent       a side transcript
+   terms heard, after a cut  from word offsets      estimated, from ms
+   swap one layer            yes                    three move together
+
+5. the ecosystem map: the Service Line's pilot
+   boundary              owns        bills          answers     class
+   caller to platform    utility     platform       platform    with work
+   platform to hearing   provider A  speech vendor  provider A  swappable
+   hearing to thinking   provider A  provider A     provider A  coupled
+   thinking to rules     utility     model vendor   utility     swappable
+   rules to systems      utility     nobody         utility     ours
+   thinking to speaking  provider A  speech vendor  provider A  swappable
+   every span to traces  utility     nobody         utility     ours

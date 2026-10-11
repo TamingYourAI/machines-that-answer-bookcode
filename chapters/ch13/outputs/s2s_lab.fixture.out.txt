@@ -1,0 +1,60 @@
+s2s lab, mode=fixture; evidence class: simulated
+
+1. exact words: 400 stand-in sessions (paraphrase rates are stand-ins)
+   line                            instructed      fixed path
+   the disclosure              395 of 400 exact     400 of 400
+   the waiver's terms           97 of 100 exact     100 of 100
+     terms lost: "We can waive the twelve-dollar late fee for you." (1)
+     terms lost: "We can waive your late fees." (2)
+     disclosures without "automated": 5
+
+2. the policy layer, outside the speech model (a payment turn)
+   the model proposes            the policy layer decides
+   take_payment(184.20)          refused: verify first
+   read_bill()                   allowed: a read, at PIN level
+   take_payment(180.42)          refused: 180.42 is not the balance
+   take_payment(184.20)          allowed: the fixed path reads the amount
+   apply_waiver(12.00)           refused: outside the storm area (memo 114)
+   take_payment(184.20)          refused: no isolated path; a person takes it
+
+3. who hears the card: 8 s of keypad entry, 16 digits
+   pure speech-to-speech
+     the speech provider     400 frames, tones included
+     the call recording      the tones, recoverable
+     the payment processor   nothing: no path to it
+   the hybrid
+     the speech provider     0 frames: its input is paused
+     the call recording      masked tones
+     the payment processor   16 digits, as key events
+
+4. checking sound after the fact: "We can waive your late fees."
+   (150 words a minute; the transcript trails the audio by 300 ms)
+   the sentence ends at 2400 ms; a check on the transcript acts at 2700 ms
+   words heard before it can act: 6 of 6
+   on a fixed path the terms are checked before a word is played
+
+5. one dialogue object, two roads (the payment flow)
+   step                     cascade               speech-to-speech
+   greet                    fixed line, exact     fixed line, exact
+   find out what is needed  line from the object  the model's own words
+   read the balance         fixed line, exact     fixed line, exact
+   take the card            keypad, isolated      keypad; model's input paused
+   confirm the payment      fixed line, exact     fixed line, exact
+   anything else            line from the object  the model's own words
+
+6. one call, end to end: the recurring caller's booking turn, stack only
+       ms    layer       event (* built in Part III)
+        0  * transport   "Yes, go ahead." leaves the caller
+       40  * transport   her audio reaches the agent
+      240  * turn-taking end of turn after 200 ms: the words answer the
+                         question
+      280  * hearing     final transcript: "yes, go ahead"
+      450    thinking    the model's first token: "Booking that now."
+      535  * speaking    first audio, streamed
+      590  * transport   the caller hears it
+      600    systems     the model's book_visit call reaches the scheduler
+    2,000    systems     the scheduler commits the booking
+    2,170    thinking    the model's first token of the outcome
+    2,255  * speaking    first audio: "You're booked for Tuesday at nine."
+    2,310  * transport   the caller hears it
+   voice to voice 590 ms, inside the 800 ms wall; the outcome at 2,310 ms

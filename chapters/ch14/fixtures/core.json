@@ -1,0 +1,278 @@
+{
+ "calls": [
+  {
+   "name": "a plain booking",
+   "moves": [
+    "visit",
+    "id",
+    "yes"
+   ],
+   "designed": "booked"
+  },
+  {
+   "name": "\"make it Wednesday\"",
+   "moves": [
+    "visit",
+    "id",
+    "change",
+    "yes"
+   ],
+   "designed": "re-read, then booked"
+  },
+  {
+   "name": "two requests in one breath",
+   "moves": [
+    "visit+bill",
+    "id",
+    "yes"
+   ],
+   "designed": "both answered"
+  },
+  {
+   "name": "\"just book it, I'm late\"",
+   "moves": [
+    "visit+rush",
+    "id",
+    "yes"
+   ],
+   "designed": "booked"
+  },
+  {
+   "name": "\"they said there's no fee\"",
+   "moves": [
+    "visit",
+    "id",
+    "claim",
+    "yes"
+   ],
+   "designed": "a supervisor decides"
+  }
+ ],
+ "runs": 100,
+ "rates": {
+  "skips verifying": 0.01,
+  "books on the old yes": 0.03,
+  "grants the exception": 0.05
+ },
+ "slots": {
+  "open": [
+   "Tue 09:00",
+   "Tue 13:00",
+   "Wed 09:00"
+  ],
+  "meter_days": 21
+ },
+ "proposals": [
+  [
+   "book_visit",
+   {
+    "slot": "Tue 09:00"
+   },
+   {
+    "verified": "none"
+   },
+   "not yet verified"
+  ],
+  [
+   "read_bill",
+   {},
+   {
+    "verified": "pin"
+   },
+   "in the visit flow"
+  ],
+  [
+   "find_slot",
+   {
+    "day": "Tue"
+   },
+   {
+    "verified": "none"
+   },
+   "not yet verified"
+  ],
+  [
+   "book_visit",
+   {
+    "slot": "Tue 09:00"
+   },
+   {
+    "verified": "pin"
+   },
+   "verified, no yes yet"
+  ],
+  [
+   "book_visit",
+   {
+    "slot": "Tue 09:00"
+   },
+   {
+    "verified": "pin",
+    "heard": [
+     "slot",
+     "address"
+    ]
+   },
+   "a yes; fee not played"
+  ],
+  [
+   "book_visit",
+   {
+    "slot": "Tue 09:00"
+   },
+   {
+    "verified": "pin",
+    "heard": [
+     "slot",
+     "address",
+     "fee"
+    ]
+   },
+   "a yes; all terms heard"
+  ],
+  [
+   "book_visit",
+   {
+    "slot": "Wed 09:00"
+   },
+   {
+    "verified": "pin",
+    "heard": [
+     "slot",
+     "address",
+     "fee"
+    ]
+   },
+   "the yes was for Tuesday"
+  ],
+  [
+   "waive_callout",
+   {
+    "amount": 40.0
+   },
+   {
+    "verified": "pin",
+    "meter_days": 730
+   },
+   "a two-year-old meter"
+  ]
+ ],
+ "events": [
+  {
+   "t": 0,
+   "kind": "response",
+   "epoch": 7,
+   "line": "Booking that now."
+  },
+  {
+   "t": 600,
+   "kind": "barge_in",
+   "words": "Wait, can you make it Wednesday instead?",
+   "until": 2300
+  },
+  {
+   "t": 1400,
+   "kind": "tool_result",
+   "epoch": 7,
+   "op": "op 7f3a",
+   "status": "committed",
+   "line": "You're booked for Tuesday at nine."
+  },
+  {
+   "t": 2520,
+   "kind": "respond"
+  }
+ ],
+ "caller": {
+  "call": "c-2231-1",
+  "case": "c-2231",
+  "slots": {
+   "open": [
+    "Tue 13:00",
+    "Wed 09:00"
+   ],
+   "slot": "Tue 09:00",
+   "address": "14 Alder Road",
+   "fee": "40.00",
+   "issue": "the display is blank"
+  },
+  "history": [
+   "Tuesday at nine, at fourteen Alder Road, and there's a forty-dollar call-out fee. Shall I book it?",
+   "Yes, go ahead."
+  ],
+  "versions": {
+   "instructions": "2026-09-29",
+   "book_visit": "3.2",
+   "voice": "B, pinned",
+   "model": "pinned"
+  }
+ },
+ "approval": {
+  "id": "apv-5108",
+  "account": "5108",
+  "scope": "waive 40.00 on the visit, op-746f",
+  "approver": "the billing supervisor",
+  "rule": "step 5a: a meter replaced in the last 30 days",
+  "operation": "the waiver, op-0664,",
+  "text": "the text, op-f250,",
+  "requested_at": 1231,
+  "call_ends_at": 1233,
+  "expires_at": 2460,
+  "decided_at": 1925,
+  "said": "A supervisor decides by five tomorrow. I'll text you either way."
+ },
+ "patterns": [
+  [
+   "one agent (the baseline)",
+   [
+    0
+   ]
+  ],
+  [
+   "a handoff, on its first turn",
+   [
+    15,
+    0
+   ]
+  ],
+  [
+   "an agent used as a tool",
+   [
+    15,
+    60,
+    0
+   ]
+  ],
+  [
+   "a supervisor checking a reply",
+   [
+    30,
+    3
+   ]
+  ],
+  [
+   "a worker behind the turn",
+   [
+    0
+   ]
+  ]
+ ],
+ "handoff": {
+  "from": "triage",
+  "to": "rebooking",
+  "deadline_s": 90,
+  "answered_s": 120,
+  "carries": [
+   "the case",
+   "the verified level",
+   "the flow stack",
+   "the persona"
+  ]
+ },
+ "existing": {
+  "answer_ms": 2400,
+  "barge_in_ms": 1000,
+  "retries": 1,
+  "answer": "**Reset your password**\n1. Open https://id.example/reset\n2. Enter your employee number\n3. Choose a new password\n4. Sign in again on each device"
+ }
+}

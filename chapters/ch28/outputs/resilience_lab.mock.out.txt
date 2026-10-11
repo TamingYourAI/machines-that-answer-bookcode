@@ -1,0 +1,82 @@
+resilience lab, mode=mock; evidence class: simulated
+
+1. one capacity model: a storm peak, 30 calls a minute at the agent
+   layer       limit                               needed    used
+   carrier     concurrent calls on the trunk: 400     135    34%
+   platform    concurrent agent sessions: 300         135    45%
+   recognizer  concurrent streams: 250                135    54%
+   model       requests a minute: 1200                540    45%
+   tools       billing requests a minute: 240          90    38%
+   desk        calls answered a minute: 5             6.5   130%  <- binds
+   the desk binds: 6.5 callers a minute ask for a person and 5 are answered,
+   so past a 10-minute wait the agent offers a callback that keeps the
+   caller's place
+
+2. a part fails during turn 4: failover for the next call, or mid-call
+   the turn: "tuesday doesn't work for me" (1.8 s of speech)
+   recognizer, next call only
+      hears:   "Sorry, I didn't catch that" twice, then a person
+      outcome: handed over; the booking left to a person
+   recognizer, mid-call
+      hears:   one slower answer, 1.1 s longer
+      outcome: booked by the agent; nothing to repeat
+   model, next call only
+      hears:   "One moment.", then a person
+      outcome: handed over; the booking left to a person
+   model, mid-call
+      hears:   "One moment." once; later answers a little slower
+      outcome: booked by the agent
+
+3. four failure classes: what the caller loses
+   a provider swapped for the next call: no dead air
+      nothing for new calls; calls in progress keep the old one
+   a worker restarted mid-call: 1.8 s of dead air
+      nothing, if the state was saved before the turn
+   a speech session rebuilt mid-call: 2.5 s of dead air
+      the audio context: the caller repeats the last answer
+   a carrier or a region lost: the call drops
+      the call itself; a verified callback follows, with the operations in
+      flight reconciled first
+
+4. one failure: a rebooking commits, its answer is lost, the region is lost
+   the Desk's drill: the east's border controllers cut at the peak, its
+   workers still running; the west's copies of the case store 4 s behind
+   9 rebookings left the east in those 4 s: 7 committed, and 2 never arrived
+   when the west called back, 1 of those 2 passengers chose another flight
+                                   copies       journal      journal in
+                                   behind       in both      both, fenced
+   rebookings the west knew        0 of 9       9 of 9       9 of 9
+   passengers booked twice         9            1            0
+
+5. the drill: the primary recognizer cut at 10:00, 54 calls in progress
+   minute    errors  timeouts  empty finals
+   1           0.4%      0.1%           96%
+   2           0.4%      0.2%           97%
+   3           0.5%      0.1%           97%
+   4           0.4%      0.1%           96%
+   5           0.4%      0.1%           97%
+   error alarm (over 2%): never fired
+   empty-transcript alarm (over 20%): minute 1; the second recognizer takes
+   new calls
+   new callers who met an agent that could not hear: 12 with the empty alarm,
+   312 if the line waits for someone to notice (26 minutes); the 54 calls in
+   progress fail over mid-call
+
+6. the degradation ladder, agreed in advance
+   0  the full agent (when: normal)
+   1  the fallback model; money on fixed lines (when: model p95 over 1 s for 5
+      minutes)
+   2  spike mode: outage status first, callbacks in place of a queue (when:
+      desk wait over 10 minutes)
+   3  status lines only; everything else a callback (when: model rate-limited
+      in both regions)
+   4  the kill switch: the old menu and the queues (when: empty transcripts
+      over 20 percent, or a release-blocking failure)
+   a storm evening:
+   time     model p95  desk wait  both limited  empty  rung
+   18:00       720 ms      4 min            no     3%     0
+   18:30      1150 ms      7 min            no     3%     1
+   19:00      1180 ms     12 min            no     4%     2
+   19:30      1300 ms     16 min           yes     4%     3
+   20:00       900 ms     13 min            no     3%     2
+   20:30       760 ms      8 min            no     3%     0

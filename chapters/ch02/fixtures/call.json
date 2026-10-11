@@ -1,0 +1,68 @@
+[
+ [
+  "20:10:00",
+  "carrier",
+  "she dials the published service number",
+  "one number"
+ ],
+ [
+  "20:10:00",
+  "platform",
+  "the ACD gives the agent the call, before any queue",
+  "front of the ACD"
+ ],
+ [
+  "20:10:01",
+  "platform",
+  "the one recorder starts, and its notice plays",
+  "one recorder"
+ ],
+ [
+  "20:10:01",
+  "agent",
+  "her number finds account 2231: a lookup, not proof",
+  "any seat"
+ ],
+ [
+  "20:10:06",
+  "agent",
+  "\"This is the utility's automated assistant. How can I help?\"",
+  null
+ ],
+ [
+  "20:11:40",
+  "systems",
+  "her record is read, and a fault ticket opened",
+  "any seat"
+ ],
+ [
+  "20:12:10",
+  "systems",
+  "a photo link goes by text; the photo lands at 20:13",
+  null
+ ],
+ [
+  "20:14:42",
+  "systems",
+  "the visit is booked for Tuesday at nine",
+  null
+ ],
+ [
+  "20:15:00",
+  "systems",
+  "the confirmation text goes",
+  null
+ ],
+ [
+  "20:15:20",
+  "platform",
+  "the call ends; the agent's disposition, \"visit booked by the agent,\" counts as a completed call in the platform's reports",
+  "the platform's reports"
+ ],
+ [
+  "",
+  "desk",
+  "had she asked for a person: back into the queue, with five fields and a whisper",
+  "five fields"
+ ]
+]

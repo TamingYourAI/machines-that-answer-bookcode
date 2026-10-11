@@ -1,0 +1,613 @@
+{
+  "evidence_class": "simulated",
+  "chapters": [
+    {
+      "chapter": "ch01",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.094s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch02",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.002s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch03",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.002s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch04",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch05",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": ".............\n----------------------------------------------------------------------\nRan 13 tests in 0.002s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch06",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "..........\n----------------------------------------------------------------------\nRan 10 tests in 0.007s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch07",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "..............\n----------------------------------------------------------------------\nRan 14 tests in 1.495s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch08",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "................\n----------------------------------------------------------------------\nRan 16 tests in 5.263s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch09",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "................\n----------------------------------------------------------------------\nRan 16 tests in 0.001s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch10",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "...............\n----------------------------------------------------------------------\nRan 15 tests in 0.005s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch11",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "...................\n----------------------------------------------------------------------\nRan 19 tests in 0.002s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch12",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "................\n----------------------------------------------------------------------\nRan 16 tests in 0.002s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch13",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "................\n----------------------------------------------------------------------\nRan 16 tests in 0.001s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch14",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": ".........................\n----------------------------------------------------------------------\nRan 25 tests in 0.006s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch15",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "....../opt/anaconda3/lib/python3.12/unittest/case.py:589: ResourceWarning: unclosed <socket.socket fd=3, family=2, type=1, proto=0, laddr=('127.0.0.1', 63759)>\n  if method() is not None:\nResourceWarning: Enable tracemalloc to get the object allocation traceback\n..........\n----------------------------------------------------------------------\nRan 16 tests in 0.900s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch16",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "...............\n----------------------------------------------------------------------\nRan 15 tests in 0.002s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch17",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "...........\n----------------------------------------------------------------------\nRan 11 tests in 0.032s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch18",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "..................\n----------------------------------------------------------------------\nRan 18 tests in 0.030s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch19",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "................\n----------------------------------------------------------------------\nRan 16 tests in 0.020s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch20",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "................\n----------------------------------------------------------------------\nRan 16 tests in 0.002s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch21",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "...............\n----------------------------------------------------------------------\nRan 15 tests in 0.036s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch22",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "................\n----------------------------------------------------------------------\nRan 16 tests in 0.003s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch23",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": ".....................\n----------------------------------------------------------------------\nRan 21 tests in 0.011s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch24",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "........................\n----------------------------------------------------------------------\nRan 24 tests in 0.018s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch25",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "................\n----------------------------------------------------------------------\nRan 16 tests in 0.002s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch26",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "..............\n----------------------------------------------------------------------\nRan 14 tests in 0.001s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch27",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "...................\n----------------------------------------------------------------------\nRan 19 tests in 0.001s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch28",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "....................\n----------------------------------------------------------------------\nRan 20 tests in 0.001s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "ch29",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": ".................\n----------------------------------------------------------------------\nRan 17 tests in 0.002s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "interlude-a",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "............\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "interlude-b",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": ".............................\n----------------------------------------------------------------------\nRan 29 tests in 0.003s\n\nOK"
+        }
+      ]
+    },
+    {
+      "chapter": "appendix-m",
+      "ok": true,
+      "checks": [
+        {
+          "name": "mock",
+          "ok": true
+        },
+        {
+          "name": "fixture",
+          "ok": true
+        },
+        {
+          "name": "tests",
+          "ok": true,
+          "output": "..............\n----------------------------------------------------------------------\nRan 14 tests in 0.010s\n\nOK"
+        }
+      ]
+    }
+  ]
+}

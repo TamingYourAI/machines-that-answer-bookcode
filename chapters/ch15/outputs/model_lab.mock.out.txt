@@ -1,0 +1,57 @@
+model lab, mode=mock; evidence class: simulated
+
+1. time to first token on the Service Line's prompt (3400 tokens, 3000 of them
+   the static prefix), 400 requests at each load
+   model   cache             quiet        evening          storm
+                        p50    p95     p50    p95     p50    p95
+   small   no           236    323     270    412     316    558
+   small   yes          161    223     196    309     243    509
+   large   no           646    957     861   1520    1187   2898
+   large   yes          406    610     634   1341     964   2538
+   a published figure (one request, a short prompt, no load): small 150 ms,
+   large 380 ms
+
+2. which model sits on the caller's turn (evening load, prefix cached)
+   placement                              p50    p95   summary ready
+   the small model on the turn            643    742   none
+   the large model on the turn           1085   1608   none
+   small on the turn, large behind        643    742   4.2 s after hang-up
+   the wall: 800 ms at p95 (Chapter 1)
+
+3. tool calls: 20 Service Line scenarios, 8 runs each (stand-in rates)
+   model       pass^1   pass^8  expected   failed at least once
+   small         0.96     0.75      0.82   5 of 20
+   large         0.99     0.95      0.95   1 of 20
+   the small model's slips, by what catches them: the policy layer 2; reaches
+   the caller 2; the read-back 1
+
+4. the canary: the large model as a candidate for the turn
+   (5 percent of evening calls; the gates written before it started)
+   gate                                   pinned   candidate   verdict
+   time to first token, p95               309 ms     1341 ms   fails: over 400
+   voice to voice, p95                    742 ms     1608 ms   fails: over 800
+   tool calls, pass^8                       0.75        0.95   passes
+   billing answers, first language           91%         96%   passes
+   billing answers, second language          84%         93%   passes
+   legitimate requests refused              0.2%        0.1%   passes
+   decision: stop at 5 percent; the large model moves behind the turn
+
+5. the fallback ladder in a storm hour (6000 stand-in turns; the rate limit is
+   reached for 6 minutes of it)
+   what happened                            turns   the caller hears
+   the pinned model answered by 700 ms       5348   the answer
+   late or rate-limited: a holding line,      612   "One moment." then
+     then the fallback model answers                the answer
+   a legitimate request refused                15   a fixed line; a person
+   nothing by 2000 ms                          25   a person, with context
+
+6. cost per call: a 6-turn billing call (stand-in prices per million tokens:
+   small $0.40 in, $1.60 out; large $3.00 in, $12.00 out; a cached read at a
+   tenth of the input price)
+   model on the turn   cache    input tokens   output   model cost
+   small               no             22,200      360      $0.0095
+   small               yes            22,200      360      $0.0044
+   large               no             22,200      360      $0.0709
+   large               yes            22,200      360      $0.0327
+   the large model's summary behind the turn adds $0.0102 a call
+   the business case assumes $0.90 a call for everything (leaders' 4)

@@ -1,0 +1,141 @@
+{
+ "callers": [
+  {
+   "who": "a caller about a blank meter",
+   "says_automated": false
+  },
+  {
+   "who": "a caller who speaks through a text-to-speech device",
+   "says_automated": false,
+   "sounds_synthetic": true
+  },
+  {
+   "who": "a search assistant asking about an outage",
+   "says_automated": true
+  },
+  {
+   "who": "a customer's assistant moving a visit",
+   "says_automated": true,
+   "delegation": "d-7305-1"
+  },
+  {
+   "who": "a partner airline's agent",
+   "channel": "agent protocol"
+  },
+  {
+   "who": "an unannounced machine reading out prices",
+   "says_automated": false,
+   "sounds_synthetic": true
+  }
+ ],
+ "delegation": {
+  "id": "d-7305-1",
+  "principal": "7305",
+  "agent": "assistant.example",
+  "scope": [
+   "read_visit",
+   "move_visit"
+  ],
+  "proof": "approved by the customer in the app at 18:02",
+  "until": 1140
+ },
+ "asks": [
+  [
+   1120,
+   "assistant.example",
+   "read_visit",
+   "7305"
+  ],
+  [
+   1121,
+   "assistant.example",
+   "move_visit",
+   "7305"
+  ],
+  [
+   1122,
+   "assistant.example",
+   "pay",
+   "7305"
+  ],
+  [
+   1123,
+   "assistant.example",
+   "move_visit",
+   "7306"
+  ],
+  [
+   1124,
+   "other-assistant.example",
+   "move_visit",
+   "7305"
+  ],
+  [
+   1145,
+   "assistant.example",
+   "move_visit",
+   "7305"
+  ]
+ ],
+ "market": {
+  "slots": 4,
+  "minutes": 30,
+  "hold_min": 2,
+  "principals": 12,
+  "per_minute": 3,
+  "platform": "a home-services marketplace",
+  "caps": {
+   "per_principal": 1,
+   "per_platform": 2
+  }
+ },
+ "tasks": [
+  {
+   "passenger": "a passenger rebooked on the partner's 07:10",
+   "events": [
+    [
+     1212,
+     "submitted",
+     ""
+    ],
+    [
+     1213,
+     "working",
+     ""
+    ],
+    [
+     1219,
+     "input-required",
+     "the partner offers seat 14C"
+    ],
+    [
+     1220,
+     "working",
+     "the passenger said yes"
+    ],
+    [
+     1231,
+     "completed",
+     "seat 14C confirmed"
+    ]
+   ]
+  },
+  {
+   "passenger": "a passenger whose rebooking the partner never answers",
+   "events": [
+    [
+     1212,
+     "submitted",
+     ""
+    ],
+    [
+     1213,
+     "working",
+     ""
+    ]
+   ]
+  }
+ ],
+ "promise_by": 1260,
+ "fallback_at": 1245
+}

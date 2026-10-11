@@ -1,0 +1,45 @@
+surface lab, mode=fixture; evidence class: simulated
+
+1. tokens: identity from the sign-in, the agent locked
+   the signed-in app, at once  accepted: account 5108 (app sign-in)
+   the same token, 90 s later  refused: expired; the app gets a new token
+   claims edited in the app    refused: the signature does not match
+   the app adds a tool         refused: the token locks the tools
+   prototype bundle            provider keys found: 1 (config/speech.json)
+   release bundle              provider keys found: 0
+
+2. one state stream, two outputs
+   agent event       screen state        card
+   caller speaking   listening
+   end of turn       thinking
+   tool started      working             reading your bill
+   line played       speaking            Sep $184.20, Aug $91.60, estimated
+   connection lost   reconnecting
+   connection back   listening
+   offer             awaiting approval   Tuesday 9:00, fee $40
+   confirmed         working             booking
+   committed         done                booked: Tuesday 9:00
+   facts spoken and shown: 5; shown but never spoken: 0
+
+3. a tap and a yes reach one confirmation
+   tap on the card       booked op-746f, by tap
+   then a spoken yes     one booking: op-746f (a repeat)
+   tap on a stale card   refused: stale card; the screen refreshes
+
+4. old app versions, and the kill switch
+   app   contract  voice on                       kill switch pressed
+   3.4   v3        full: states, cards, tap       voice stops; typing offered
+   3.1   v2        voice; confirm by voice only   session closed by the server
+   2.9   v1        refused: update the app        refused: update the app
+
+5. voice to voice, measured on the device (stand-in values)
+   where                                      ms
+   the server, its own spans                 525
+   laptop, Wi-Fi, built-in speakers          655
+   phone, mobile network, earpiece           705
+   phone, mobile, Bluetooth (call)           745
+   phone, mobile, Bluetooth (media)          855  over the 800 ms wall
+
+6. another way through: spoken and typed, one agent
+   spoken  "why is my bill so high"  tool read_bill, allowed
+   typed   "why is my bill so high"  tool read_bill, allowed

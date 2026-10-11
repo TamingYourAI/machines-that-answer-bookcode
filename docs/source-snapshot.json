@@ -1,0 +1,1237 @@
+{
+  "date": "2026-09-29",
+  "source_commit": "ada68d7a14ac7339f2a9fed97dd0a45efded5ec2",
+  "includes_working_tree": true,
+  "files": [
+    {
+      "source": "repo/.env.example",
+      "destination": "full-app/.env.example",
+      "sha256": "6e3979e8075f9ccc67107c9fb58dcf16c89d15bdcadffe41412bee2fb9905ba4"
+    },
+    {
+      "source": "repo/.gitignore",
+      "destination": "full-app/.gitignore",
+      "sha256": "e70d051dcf980c730d6bee508529ff23b3dec45809d4f2bf17d4488ee187eb8b"
+    },
+    {
+      "source": "repo/Dockerfile",
+      "destination": "full-app/Dockerfile",
+      "sha256": "9ac3514976bad337d2746e339a8bd1742a4fd54adc7c622964699b6ce8f6136e"
+    },
+    {
+      "source": "repo/LICENSE",
+      "destination": "full-app/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "source": "repo/PLAN.md",
+      "destination": "full-app/PLAN.md",
+      "sha256": "40b61835bcb3575cadf3be269ef8ce8c3c5a5354bfe322b03879fe65fb9bca8f"
+    },
+    {
+      "source": "repo/README.md",
+      "destination": "full-app/README.md",
+      "sha256": "249f4a5a37ad38443b97bd659f69befc30f3c6173515943c50f1986dd501ce69"
+    },
+    {
+      "source": "repo/REQUIREMENTS.md",
+      "destination": "full-app/REQUIREMENTS.md",
+      "sha256": "2a26ff49b79887de6d0c134ec8c9c634fffa8c8137eac24dc4e468da34518243"
+    },
+    {
+      "source": "repo/compose.yaml",
+      "destination": "full-app/compose.yaml",
+      "sha256": "f9af54e216e3c6cff63c450fe1614c56529049366aa4b61bd431b0f6fd0af5c4"
+    },
+    {
+      "source": "repo/docs/architecture.md",
+      "destination": "full-app/docs/architecture.md",
+      "sha256": "9ea1ca2782e692eb653761538189ddf0b5d6a8c104fc92680ad94fafd7114208"
+    },
+    {
+      "source": "repo/docs/providers.md",
+      "destination": "full-app/docs/providers.md",
+      "sha256": "e125533faff7f36cc19312b90957918f3525c55b966e49793b149a32be373f6d"
+    },
+    {
+      "source": "repo/docs/telephony.md",
+      "destination": "full-app/docs/telephony.md",
+      "sha256": "bea751b76ceb323091b1b8b07c0838709f91e6172c1bd898d371e7cebebbec7d"
+    },
+    {
+      "source": "repo/lock-in-ledger.md",
+      "destination": "full-app/lock-in-ledger.md",
+      "sha256": "6ae1bdbedbc61c2573d94ccdae36cf184f301095b3acd24bfa5e958f4c474914"
+    },
+    {
+      "source": "repo/pyproject.toml",
+      "destination": "full-app/pyproject.toml",
+      "sha256": "655edb415b2f7fb8e719c957653bb1eda191b3795ee1c222d4e075aeccae362d"
+    },
+    {
+      "source": "repo/src/ova/__init__.py",
+      "destination": "full-app/src/ova/__init__.py",
+      "sha256": "699cccc73a451c13fb58a7f761c5b86def24d7f1cadc7b0e09d024850fd86bfb"
+    },
+    {
+      "source": "repo/src/ova/agent.py",
+      "destination": "full-app/src/ova/agent.py",
+      "sha256": "93a3bd58fb78e580c482f1da8bbec9af51bdb38464d9cf9cd2bc18e7617f15f4"
+    },
+    {
+      "source": "repo/src/ova/audio.py",
+      "destination": "full-app/src/ova/audio.py",
+      "sha256": "78b2b1c8977da5b5f6b3092927be030d952d52485e62b22e3bda67dcb1a925bb"
+    },
+    {
+      "source": "repo/src/ova/brain.py",
+      "destination": "full-app/src/ova/brain.py",
+      "sha256": "9bea5e42483cb987128ca42639f3886c152d48e81a6d4d1ffb8ece5e260799c9"
+    },
+    {
+      "source": "repo/src/ova/channels.py",
+      "destination": "full-app/src/ova/channels.py",
+      "sha256": "a7abd27f542f6c902a3b40a226b26052707ffd0158ad170b56898a3c80b4a2b5"
+    },
+    {
+      "source": "repo/src/ova/dialogue.py",
+      "destination": "full-app/src/ova/dialogue.py",
+      "sha256": "aa7c8d5461d4ef63bed076ce7e0dae69ed2ed6fabb97e7087105ef541985290e"
+    },
+    {
+      "source": "repo/src/ova/knowledge.py",
+      "destination": "full-app/src/ova/knowledge.py",
+      "sha256": "c76e439f00274cd7844e32ff5b1e4baee91054875a4858512bf8d0ee14beadea"
+    },
+    {
+      "source": "repo/src/ova/links.py",
+      "destination": "full-app/src/ova/links.py",
+      "sha256": "b5a86c950391dbaa3a8b9e28ac9492d89d5146a1243f0e58ed94d2ad025e7169"
+    },
+    {
+      "source": "repo/src/ova/nlu.py",
+      "destination": "full-app/src/ova/nlu.py",
+      "sha256": "0a9b549cc9dd2f59733989d6e24a53cba6b54be242f1e647834e7f51b9908ea1"
+    },
+    {
+      "source": "repo/src/ova/operations.py",
+      "destination": "full-app/src/ova/operations.py",
+      "sha256": "972a538b8dc5f2470ce1fe87df086e54d3aa068551f00874a488b916f05aab08"
+    },
+    {
+      "source": "repo/src/ova/policy.py",
+      "destination": "full-app/src/ova/policy.py",
+      "sha256": "d2c4316ce6a4ba31a56d463a6ccf2bb92fb7eb73d78f19a62a38ebe63785d7a2"
+    },
+    {
+      "source": "repo/src/ova/providers/__init__.py",
+      "destination": "full-app/src/ova/providers/__init__.py",
+      "sha256": "77c1bbb80ed428ba3c7154b7a1a62496952d507aaef16fc4ababf58db3553a27"
+    },
+    {
+      "source": "repo/src/ova/providers/llm.py",
+      "destination": "full-app/src/ova/providers/llm.py",
+      "sha256": "e17e21b84bb0b7cdded1e86d2719e00c293aed9fa407c55c14fa3b143a4815f7"
+    },
+    {
+      "source": "repo/src/ova/providers/stt.py",
+      "destination": "full-app/src/ova/providers/stt.py",
+      "sha256": "fd214d1d490b396d087255b0e8e0edfa6af230c112845e04631a8b0d50631e58"
+    },
+    {
+      "source": "repo/src/ova/providers/tts.py",
+      "destination": "full-app/src/ova/providers/tts.py",
+      "sha256": "51881c5bb0864f5b00cccb11c2729c997dc986468320f958d6118c10b67178a6"
+    },
+    {
+      "source": "repo/src/ova/runtime.py",
+      "destination": "full-app/src/ova/runtime.py",
+      "sha256": "040521b18a146442a014b3664a314ca84f1f7d32cd06ea1fe7b6da1d93a4dbf8"
+    },
+    {
+      "source": "repo/src/ova/speech.py",
+      "destination": "full-app/src/ova/speech.py",
+      "sha256": "57d3b7a39da4cc59588a8dc60303a5e886bf6034c72601cf9a8c7a38fb00042b"
+    },
+    {
+      "source": "repo/src/ova/store.py",
+      "destination": "full-app/src/ova/store.py",
+      "sha256": "215f39d54a46965a22aad2ebd1795ec7b2cadaae1f05a42aa285325cb5d5d523"
+    },
+    {
+      "source": "repo/src/ova/transports/__init__.py",
+      "destination": "full-app/src/ova/transports/__init__.py",
+      "sha256": "5c246d51ab3d3fbf179a7f69bc424c2673f69a4b9e520df99f2289bf52e09fc0"
+    },
+    {
+      "source": "repo/src/ova/transports/twilio.py",
+      "destination": "full-app/src/ova/transports/twilio.py",
+      "sha256": "80b5d244a0a060a8476807ee017adc2fc040492702033257e8794fe96668c561"
+    },
+    {
+      "source": "repo/src/ova/transports/webrtc.py",
+      "destination": "full-app/src/ova/transports/webrtc.py",
+      "sha256": "540b635684b2d9303d7aa23609f167a8cec21d7dc25986b7556644010515f14a"
+    },
+    {
+      "source": "repo/src/ova/turn.py",
+      "destination": "full-app/src/ova/turn.py",
+      "sha256": "5632bad00e3b4006fde75be48a095676efb92d2afa3165b1b30dc044b2424178"
+    },
+    {
+      "source": "repo/src/ova/voice.py",
+      "destination": "full-app/src/ova/voice.py",
+      "sha256": "15bc11dfaa706850c1e6cf28b5778c3b503e4887b8716ae82c6a22b6ba756ffe"
+    },
+    {
+      "source": "repo/src/ova_apps/__init__.py",
+      "destination": "full-app/src/ova_apps/__init__.py",
+      "sha256": "f85b25bc5e3a07f901ddf08d6dcfb2753a90558979294d03d9dffec30a22fd09"
+    },
+    {
+      "source": "repo/src/ova_apps/claims/__init__.py",
+      "destination": "full-app/src/ova_apps/claims/__init__.py",
+      "sha256": "581cacf0a16e116787a57884ae98475d0be4f9d6ed325ea9ef0779425309fe6c"
+    },
+    {
+      "source": "repo/src/ova_apps/claims/domain.py",
+      "destination": "full-app/src/ova_apps/claims/domain.py",
+      "sha256": "670dca7c73d30e8117714b691b20af5e462706a375cee2a4b910efa1b63f7a28"
+    },
+    {
+      "source": "repo/src/ova_apps/claims/knowledge/auto-policy.md",
+      "destination": "full-app/src/ova_apps/claims/knowledge/auto-policy.md",
+      "sha256": "fd79afada6ffb437e55adfdcdacd44011c386dce490e4ff9b043fda0b6d846b6"
+    },
+    {
+      "source": "repo/src/ova_apps/claims/knowledge/claims-faq.md",
+      "destination": "full-app/src/ova_apps/claims/knowledge/claims-faq.md",
+      "sha256": "7ddb477df73f7b337f52e0dad4df3c98fe336c5eeaa283aef13d796fcaf014ed"
+    },
+    {
+      "source": "repo/src/ova_apps/claims/knowledge/glossary.md",
+      "destination": "full-app/src/ova_apps/claims/knowledge/glossary.md",
+      "sha256": "0bc3c94c932b586b6730abfa577889649085078e797eb1c521ade81ce4ccb755"
+    },
+    {
+      "source": "repo/src/ova_apps/claims/knowledge/home-policy.md",
+      "destination": "full-app/src/ova_apps/claims/knowledge/home-policy.md",
+      "sha256": "e3e8bb258cfd2fa328ef7ad44e61e1e0a7543cdbb0939286a3bc6583a50427a9"
+    },
+    {
+      "source": "repo/src/ova_apps/claims/pack.py",
+      "destination": "full-app/src/ova_apps/claims/pack.py",
+      "sha256": "e41fc8e116f6e2ad556e43535965a61860d1002c6e57879e35d0175932994355"
+    },
+    {
+      "source": "repo/src/ova_apps/river_plumbing/__init__.py",
+      "destination": "full-app/src/ova_apps/river_plumbing/__init__.py",
+      "sha256": "4c4944e5fb9b8f821f7d1aba9f7fafd80f88687832bac052fd68ca3a3fe26f35"
+    },
+    {
+      "source": "repo/src/ova_apps/river_plumbing/knowledge/river-plumbing.md",
+      "destination": "full-app/src/ova_apps/river_plumbing/knowledge/river-plumbing.md",
+      "sha256": "d29b1893e2d1726d63bba84a68d36834d0206dae1d9313860524f596177ff8db"
+    },
+    {
+      "source": "repo/src/ova_apps/river_plumbing/pack.py",
+      "destination": "full-app/src/ova_apps/river_plumbing/pack.py",
+      "sha256": "a62d8d7fa68174fca4109b7489664d8d881bc642d1a795891f6ac9449a86e136"
+    },
+    {
+      "source": "repo/src/ova_server/__init__.py",
+      "destination": "full-app/src/ova_server/__init__.py",
+      "sha256": "1c8eb42fbed384f8270c525d6a899a56f83ecdbb365f56f2fcc787529f64655c"
+    },
+    {
+      "source": "repo/src/ova_server/app.py",
+      "destination": "full-app/src/ova_server/app.py",
+      "sha256": "9c19bfb2556417db5c2743fc87e2c8c8be8985619348881443500279a2d0895e"
+    },
+    {
+      "source": "repo/src/ova_server/cli.py",
+      "destination": "full-app/src/ova_server/cli.py",
+      "sha256": "e5c2f90782920e9f283a1f927e9bf78d57bac17701581f97a8d37b20aae4f223"
+    },
+    {
+      "source": "repo/src/ova_server/settings.py",
+      "destination": "full-app/src/ova_server/settings.py",
+      "sha256": "be4eb30523927872d7cc353b2b41114353e6c6cdcc99efa0d3b5a4ceb017bbce"
+    },
+    {
+      "source": "repo/tests/browser/check_app.py",
+      "destination": "full-app/tests/browser/check_app.py",
+      "sha256": "1614ba1db234c727622de816a2e2e0339ff30f914f5fd4107711ed323b5c3a5f"
+    },
+    {
+      "source": "repo/tests/browser/run.sh",
+      "destination": "full-app/tests/browser/run.sh",
+      "sha256": "7c1df0e91d04840f50bddaecbfbba8efd9c6d8fa27ddc7b4f718f695fce73c71"
+    },
+    {
+      "source": "repo/tests/conftest.py",
+      "destination": "full-app/tests/conftest.py",
+      "sha256": "36d36c7e56c5f98d7d153c090ad910b8a29bacb9ca125e183c4518c47ec573bf"
+    },
+    {
+      "source": "repo/tests/test_claims.py",
+      "destination": "full-app/tests/test_claims.py",
+      "sha256": "e819aa9488fa45a1385799a65317254749b1e12570aa6a30739fb2e811d716e2"
+    },
+    {
+      "source": "repo/tests/test_core.py",
+      "destination": "full-app/tests/test_core.py",
+      "sha256": "a31e225887e27b750662a2ea8e6189ca17ec202fc1a27c2faff3f1b0e3c0e908"
+    },
+    {
+      "source": "repo/tests/test_providers.py",
+      "destination": "full-app/tests/test_providers.py",
+      "sha256": "30cf9598cd9b1b2832851b02472271ee7ad9773760a1a82d088818658eab9f14"
+    },
+    {
+      "source": "repo/tests/test_river_plumbing.py",
+      "destination": "full-app/tests/test_river_plumbing.py",
+      "sha256": "d5578c775b75923d23ea26bc58e378bafd983053719ce3dee0916ce7ce2e5fa8"
+    },
+    {
+      "source": "repo/tests/test_server.py",
+      "destination": "full-app/tests/test_server.py",
+      "sha256": "508f0fbea60e273a0ee1539ade8c6cefa6a7eafe0c75a411fa73261293dd1084"
+    },
+    {
+      "source": "repo/tests/test_webrtc.py",
+      "destination": "full-app/tests/test_webrtc.py",
+      "sha256": "1b8549d87a8a16256d44a6faf7f834ae3eaa490e9d188083f1863e6ddf947597"
+    },
+    {
+      "source": "repo/web/admin.html",
+      "destination": "full-app/web/admin.html",
+      "sha256": "6bb4f67d67281d1d1ca20e16e399bc46bd9af3ab31a2d0d561a0399906c60a8b"
+    },
+    {
+      "source": "repo/web/document.html",
+      "destination": "full-app/web/document.html",
+      "sha256": "393b7998eebb3bb9105702784e1b61da267fc489e015770b130b0c5db2a94b0e"
+    },
+    {
+      "source": "repo/web/index.html",
+      "destination": "full-app/web/index.html",
+      "sha256": "53eb561cf163ca29f5b801812326893eea6116c373318c4fcebae903facf6764"
+    },
+    {
+      "source": "repo/web/manifest.webmanifest",
+      "destination": "full-app/web/manifest.webmanifest",
+      "sha256": "06656a10824c927ea54ee749eac84cdde84606a233ac559fa205dede28237dbe"
+    },
+    {
+      "source": "repo/web/static/app.css",
+      "destination": "full-app/web/static/app.css",
+      "sha256": "0e8e0fe1e6e854d4d610a36b86100a80a28fe7fa7d26d0fa5cab284fdf9a59e1"
+    },
+    {
+      "source": "repo/web/static/app.js",
+      "destination": "full-app/web/static/app.js",
+      "sha256": "1446c6c146366d47427f3a38aa71e0070d5a71a37d9d1274d98c52d16ec34b5a"
+    },
+    {
+      "source": "repo/web/static/icon-192.png",
+      "destination": "full-app/web/static/icon-192.png",
+      "sha256": "42039a397a1ef2f8753ae30cfe7d374ac116f2c7e7acd373b9f76bdf5755207a"
+    },
+    {
+      "source": "repo/web/static/icon-512.png",
+      "destination": "full-app/web/static/icon-512.png",
+      "sha256": "8137c08b3b2859ebceaa7b18390952a61b208774184b2e95b2c0d5f62ab624b5"
+    },
+    {
+      "source": "repo/web/static/icon.svg",
+      "destination": "full-app/web/static/icon.svg",
+      "sha256": "e3d893f0a7a72a77537364c54da6a1cd827a608928292e6cc7307de8c473f2c1"
+    },
+    {
+      "source": "repo/web/static/voice.js",
+      "destination": "full-app/web/static/voice.js",
+      "sha256": "99ebcc43229d126f7d96fde6457cb3680249857d432a45f32127b4968a003a8d"
+    },
+    {
+      "source": "repo/web/status.html",
+      "destination": "full-app/web/status.html",
+      "sha256": "2e389820f17a0bb9aae4dbf448388d5aaeede5041efb1cad1886e5245cd2ccd5"
+    },
+    {
+      "source": "repo/web/sw.js",
+      "destination": "full-app/web/sw.js",
+      "sha256": "42d418785b102f61b0d0140758a954cbab74bf9d4dc76e4bf5ab9af8b79e45c4"
+    },
+    {
+      "source": "repo/web/upload.html",
+      "destination": "full-app/web/upload.html",
+      "sha256": "794d647d9cf7a1eaf6dcac37b115cc07d44db8ac2c9b9859d71408c6378933c0"
+    },
+    {
+      "source": "repo/src/ova_apps/claims/data/policies.json",
+      "destination": "full-app/src/ova_apps/claims/data/policies.json",
+      "sha256": "55870e8ff6a5e4b146c94ae5852b7f824434072bb3faa164329461e72d69893e"
+    },
+    {
+      "source": "code-labs/builders/ch01/call_budget_lab.py",
+      "destination": "chapters/ch01/call_budget_lab.py",
+      "sha256": "ff86f86009a636477b2deb518bd93ff6ed648506f4545d8865703aadfad51e9e"
+    },
+    {
+      "source": "code-labs/builders/ch01/fixtures/call_log.json",
+      "destination": "chapters/ch01/fixtures/call_log.json",
+      "sha256": "d77be8439f3dd341d1ae36bc01158677024c5b04e2e4822f0c377210db2fa72c"
+    },
+    {
+      "source": "code-labs/builders/ch01/fixtures/turns.json",
+      "destination": "chapters/ch01/fixtures/turns.json",
+      "sha256": "1ca199a5493ee2877f437abc8cd07244ebe8b5e1bd9c84ebc1127fa1c8bfeedc"
+    },
+    {
+      "source": "code-labs/builders/ch01/outputs/call_budget_lab.fixture.out.txt",
+      "destination": "chapters/ch01/outputs/call_budget_lab.fixture.out.txt",
+      "sha256": "46e6e959094160189e5afde4d9ac4c0b85d79096db58b9a2bb6be5bafc4d516b"
+    },
+    {
+      "source": "code-labs/builders/ch01/outputs/call_budget_lab.mock.out.txt",
+      "destination": "chapters/ch01/outputs/call_budget_lab.mock.out.txt",
+      "sha256": "d489360a7afe463e97c2727785fbb623664f7a43df8977d5b35407d1b5d9244d"
+    },
+    {
+      "source": "code-labs/builders/ch01/test_call_budget_lab.py",
+      "destination": "chapters/ch01/test_call_budget_lab.py",
+      "sha256": "8efb04c63a8178f834524846c49a681e2bdc0160f38e9550bd54080b8b96e7bd"
+    },
+    {
+      "source": "code-labs/builders/ch02/fixtures/call.json",
+      "destination": "chapters/ch02/fixtures/call.json",
+      "sha256": "d7a9578c664518a8e64db1a4d970cb0e521af52d7b2b233efdd3dc4dc508cae3"
+    },
+    {
+      "source": "code-labs/builders/ch02/fixtures/designs.json",
+      "destination": "chapters/ch02/fixtures/designs.json",
+      "sha256": "5ee2e969cb42e2dabbc1c7363073c3122be21168a0ff551abbca2da4300df2c0"
+    },
+    {
+      "source": "code-labs/builders/ch02/outputs/seat_lab.fixture.out.txt",
+      "destination": "chapters/ch02/outputs/seat_lab.fixture.out.txt",
+      "sha256": "0db1a9b03a7325649a88315ddd6c6a1cde78470dc51e2dfff63859b561add996"
+    },
+    {
+      "source": "code-labs/builders/ch02/outputs/seat_lab.mock.out.txt",
+      "destination": "chapters/ch02/outputs/seat_lab.mock.out.txt",
+      "sha256": "c38f8cd9b4d1623d2fb63cfb38fceb38172caa2933f57697fca8b21a84159981"
+    },
+    {
+      "source": "code-labs/builders/ch02/seat_lab.py",
+      "destination": "chapters/ch02/seat_lab.py",
+      "sha256": "83d10d33c569185e9f4c45645d648a767cae120d5f6a7d01f41814ffb29d4027"
+    },
+    {
+      "source": "code-labs/builders/ch02/test_seat_lab.py",
+      "destination": "chapters/ch02/test_seat_lab.py",
+      "sha256": "3da0fb39938b4c4a877d715e8931e354e7453ef588f8066a637f9124e36d90e1"
+    },
+    {
+      "source": "code-labs/builders/ch03/fixtures/brief.json",
+      "destination": "chapters/ch03/fixtures/brief.json",
+      "sha256": "b3e8f0cf985f68aae3894193edde71c81c279452b60e41dded7e7c65ebe543bc"
+    },
+    {
+      "source": "code-labs/builders/ch03/fixtures/panel.json",
+      "destination": "chapters/ch03/fixtures/panel.json",
+      "sha256": "1ef0f5a29421eea55c885c9a9d6d9a5a66a748efba3164e015f54fac79a23744"
+    },
+    {
+      "source": "code-labs/builders/ch03/outputs/voice_lab.fixture.out.txt",
+      "destination": "chapters/ch03/outputs/voice_lab.fixture.out.txt",
+      "sha256": "f2e565db21819da25d74365e4dbed0e668b0a081dd8b2477de7c629263a22cdb"
+    },
+    {
+      "source": "code-labs/builders/ch03/outputs/voice_lab.mock.out.txt",
+      "destination": "chapters/ch03/outputs/voice_lab.mock.out.txt",
+      "sha256": "2725a935f9edcb5b07f03048b6d9b1e0ddc33c2fad84ecc235bb3ba1d758525b"
+    },
+    {
+      "source": "code-labs/builders/ch03/test_voice_lab.py",
+      "destination": "chapters/ch03/test_voice_lab.py",
+      "sha256": "9452ea7158a6860eeca122efa535abe86e59471ddebf3d672c11a9a707d3fda2"
+    },
+    {
+      "source": "code-labs/builders/ch03/voice_lab.py",
+      "destination": "chapters/ch03/voice_lab.py",
+      "sha256": "d3b5906b136e8b045b0c87d7575c9371bc99df7b359822255a9e0e11a7a3cbe0"
+    },
+    {
+      "source": "code-labs/builders/ch04/dialogue_lab.py",
+      "destination": "chapters/ch04/dialogue_lab.py",
+      "sha256": "55a2063de9c16d4f9c2b00e81f7b27eac1f1945e49c1e61a0b755793ee284bba"
+    },
+    {
+      "source": "code-labs/builders/ch04/fixtures/callers.json",
+      "destination": "chapters/ch04/fixtures/callers.json",
+      "sha256": "a7a470de7b4c9e66e126ed78699b92fb926a4ebf11cec95847dde47c44ae1f77"
+    },
+    {
+      "source": "code-labs/builders/ch04/fixtures/flow.json",
+      "destination": "chapters/ch04/fixtures/flow.json",
+      "sha256": "6d282249782590006e17e232f4af131a6e7717fc1f3b9ff7f8e9faaaaa621f50"
+    },
+    {
+      "source": "code-labs/builders/ch04/outputs/dialogue_lab.fixture.out.txt",
+      "destination": "chapters/ch04/outputs/dialogue_lab.fixture.out.txt",
+      "sha256": "891f49f270130e7ffc7a9d3fccc8bf88b6643bba8fcb3e15b13bad9b36256f59"
+    },
+    {
+      "source": "code-labs/builders/ch04/outputs/dialogue_lab.mock.out.txt",
+      "destination": "chapters/ch04/outputs/dialogue_lab.mock.out.txt",
+      "sha256": "54628b7b691e860b5795599bac6147528c96c9599599f0d2740e899f73f40d07"
+    },
+    {
+      "source": "code-labs/builders/ch04/test_dialogue_lab.py",
+      "destination": "chapters/ch04/test_dialogue_lab.py",
+      "sha256": "5aee08d0ae71bb8a735329026882172190fe6f1a2f9229289b9fe40074e29bc2"
+    },
+    {
+      "source": "code-labs/builders/ch05/fixtures/call.json",
+      "destination": "chapters/ch05/fixtures/call.json",
+      "sha256": "c26ef9ee81134cd6ac8f33315f57791e8848db42d1360f695ed80385ae3427b4"
+    },
+    {
+      "source": "code-labs/builders/ch05/fixtures/drivers.json",
+      "destination": "chapters/ch05/fixtures/drivers.json",
+      "sha256": "a12858ee8f1abff57a16dae1b2c3c1094ff8d91a45607ba71830dec9abe353f8"
+    },
+    {
+      "source": "code-labs/builders/ch05/fixtures/reminders.json",
+      "destination": "chapters/ch05/fixtures/reminders.json",
+      "sha256": "ceaf8114116f273b52a54d45408f11e9f2ef299978800a6d9d81fa5633d862b3"
+    },
+    {
+      "source": "code-labs/builders/ch05/fixtures/sop_document.json",
+      "destination": "chapters/ch05/fixtures/sop_document.json",
+      "sha256": "820ab1edeec3e8b439009d0dc11b48f2e2e9b3d8448129e31d3118afc2fc4586"
+    },
+    {
+      "source": "code-labs/builders/ch05/fixtures/sop_practice.json",
+      "destination": "chapters/ch05/fixtures/sop_practice.json",
+      "sha256": "bd619a1ddf1b04fdc33c1888f010dce984123ce0861b3c18b6becd82b5b72b51"
+    },
+    {
+      "source": "code-labs/builders/ch05/outputs/sop_lab.fixture.out.txt",
+      "destination": "chapters/ch05/outputs/sop_lab.fixture.out.txt",
+      "sha256": "aa3a829378b716843dbb3cd04672efe3b1846cb21c313596cb0233e035878b56"
+    },
+    {
+      "source": "code-labs/builders/ch05/outputs/sop_lab.mock.out.txt",
+      "destination": "chapters/ch05/outputs/sop_lab.mock.out.txt",
+      "sha256": "203c8faa824f0ba22b26219b06467edbb3dd374d19fc3752ac4a6b6563cc5e9b"
+    },
+    {
+      "source": "code-labs/builders/ch05/sop_lab.py",
+      "destination": "chapters/ch05/sop_lab.py",
+      "sha256": "12f1fccb669fca3fdb962527fce1d596940053592addc0b499a7c5fe4945e5c4"
+    },
+    {
+      "source": "code-labs/builders/ch05/test_sop_lab.py",
+      "destination": "chapters/ch05/test_sop_lab.py",
+      "sha256": "d58f62c38f0f4c292f3ea09e94d1f962ce17ba123285f18d54eef6612e2d7cbf"
+    },
+    {
+      "source": "code-labs/builders/ch06/fixtures/turns.json",
+      "destination": "chapters/ch06/fixtures/turns.json",
+      "sha256": "bc1afbe63ca9eaf49679746660f376f50b18e18151139ddca170ecab8b0633f3"
+    },
+    {
+      "source": "code-labs/builders/ch06/outputs/stack_lab.fixture.out.txt",
+      "destination": "chapters/ch06/outputs/stack_lab.fixture.out.txt",
+      "sha256": "dcdb2d6d790ce1b9def30c54598a2fa2e58dcd11814b0aa92d6c64675eb5cb6f"
+    },
+    {
+      "source": "code-labs/builders/ch06/outputs/stack_lab.mock.out.txt",
+      "destination": "chapters/ch06/outputs/stack_lab.mock.out.txt",
+      "sha256": "9fbc67f453d975996f4f6790345ce533c0eb21da0663b30235b50b7d052e83ab"
+    },
+    {
+      "source": "code-labs/builders/ch06/stack_lab.py",
+      "destination": "chapters/ch06/stack_lab.py",
+      "sha256": "28eb7d0f1e15e83af947598eec1e767d26fd26167b417f21d4f800cdbffb7823"
+    },
+    {
+      "source": "code-labs/builders/ch06/test_stack_lab.py",
+      "destination": "chapters/ch06/test_stack_lab.py",
+      "sha256": "3912f703e01f362e2c7be3c886d1c5b310d7b8728eb71edda9ef6b7d33cd5872"
+    },
+    {
+      "source": "code-labs/builders/ch07/fixtures/telephony.json",
+      "destination": "chapters/ch07/fixtures/telephony.json",
+      "sha256": "125724e27ee271c77e41bc4698db45c3653d7ea531e9960c626474f2e882bc44"
+    },
+    {
+      "source": "code-labs/builders/ch07/outputs/telephony_lab.fixture.out.txt",
+      "destination": "chapters/ch07/outputs/telephony_lab.fixture.out.txt",
+      "sha256": "86b9f609107564aae22018654da419fef4e681ed8751a5c052d1905bb0716c51"
+    },
+    {
+      "source": "code-labs/builders/ch07/outputs/telephony_lab.mock.out.txt",
+      "destination": "chapters/ch07/outputs/telephony_lab.mock.out.txt",
+      "sha256": "4a1b5d3f8c22a2f9cb7bace1b2ac9afca1c96a9de470c800388f240b559c2de1"
+    },
+    {
+      "source": "code-labs/builders/ch07/telephony_lab.py",
+      "destination": "chapters/ch07/telephony_lab.py",
+      "sha256": "85091ebf0eac7ef0bc0625b44aed0fbb9bf542d923622b462518c82b16f74f10"
+    },
+    {
+      "source": "code-labs/builders/ch07/test_telephony_lab.py",
+      "destination": "chapters/ch07/test_telephony_lab.py",
+      "sha256": "24de6befcce36b8006bd9d14b3c164cd2a4b64f084610cabfe36a6a048394156"
+    },
+    {
+      "source": "code-labs/builders/ch08/entry_lab.py",
+      "destination": "chapters/ch08/entry_lab.py",
+      "sha256": "fd84b1d2a1849358ef381685f420db462838644383d3f3e1cf325ccfdd578853"
+    },
+    {
+      "source": "code-labs/builders/ch08/fixtures/entry.json",
+      "destination": "chapters/ch08/fixtures/entry.json",
+      "sha256": "c4690019b0b1e4201d3b92c5b9a3578df3890fef6b33ff3f3091a65e4389e872"
+    },
+    {
+      "source": "code-labs/builders/ch08/outputs/entry_lab.fixture.out.txt",
+      "destination": "chapters/ch08/outputs/entry_lab.fixture.out.txt",
+      "sha256": "7f9e43090be9d61d05a3f383e15bf9e73a15ad65c37a117ec6503165e7b0419f"
+    },
+    {
+      "source": "code-labs/builders/ch08/outputs/entry_lab.mock.out.txt",
+      "destination": "chapters/ch08/outputs/entry_lab.mock.out.txt",
+      "sha256": "4380cf4ec39dab7f7943e82d69e3d500d1f1207fa7094afa30ceac908df84098"
+    },
+    {
+      "source": "code-labs/builders/ch08/test_entry_lab.py",
+      "destination": "chapters/ch08/test_entry_lab.py",
+      "sha256": "45c5bc188f99eab48e0baf2db1cef4a9e36a96821b9c938fb9608c34141f3ce8"
+    },
+    {
+      "source": "code-labs/builders/ch09/fixtures/surface.json",
+      "destination": "chapters/ch09/fixtures/surface.json",
+      "sha256": "76d90b2c8bcba744fd2242e0d0dedd1429b76df2fd2b655fe2fa2961b9ff44ef"
+    },
+    {
+      "source": "code-labs/builders/ch09/outputs/surface_lab.fixture.out.txt",
+      "destination": "chapters/ch09/outputs/surface_lab.fixture.out.txt",
+      "sha256": "a7eb7d886580cf5bb7ce5f294c46085e1ba158e260cbb12d10481f51e17d563a"
+    },
+    {
+      "source": "code-labs/builders/ch09/outputs/surface_lab.mock.out.txt",
+      "destination": "chapters/ch09/outputs/surface_lab.mock.out.txt",
+      "sha256": "90a30ea76216e25c0c279f33ad794b05af7fb2340869c029cf228d39034813e3"
+    },
+    {
+      "source": "code-labs/builders/ch09/surface_lab.py",
+      "destination": "chapters/ch09/surface_lab.py",
+      "sha256": "707201c2e62687b047476bc7b6f43008da2072ab9241395bae198bdd1fcbd408"
+    },
+    {
+      "source": "code-labs/builders/ch09/test_surface_lab.py",
+      "destination": "chapters/ch09/test_surface_lab.py",
+      "sha256": "e5e39b0d689fb1a7026914496c2e5f983af9d86fe298c2519ff3fc12d6ca357b"
+    },
+    {
+      "source": "code-labs/builders/ch10/fixtures/hearing.json",
+      "destination": "chapters/ch10/fixtures/hearing.json",
+      "sha256": "e8ded0d61fa46c80fc9c304e8fd60a28419251d3df40749dfbe492e8c732fc8d"
+    },
+    {
+      "source": "code-labs/builders/ch10/hearing_lab.py",
+      "destination": "chapters/ch10/hearing_lab.py",
+      "sha256": "3c09b85b0736d07310f0bf3d1de0d59db614554abd3a848ef0413e1d47dec198"
+    },
+    {
+      "source": "code-labs/builders/ch10/outputs/hearing_lab.fixture.out.txt",
+      "destination": "chapters/ch10/outputs/hearing_lab.fixture.out.txt",
+      "sha256": "63316b7fda2318b57088962ea1b7272e4505fb1dc6c53091d87b2ca341a031f1"
+    },
+    {
+      "source": "code-labs/builders/ch10/outputs/hearing_lab.mock.out.txt",
+      "destination": "chapters/ch10/outputs/hearing_lab.mock.out.txt",
+      "sha256": "d6d4109e5622b6cae392ba1db8b489dce7b101483fd4acba353e649374c2f6d8"
+    },
+    {
+      "source": "code-labs/builders/ch10/test_hearing_lab.py",
+      "destination": "chapters/ch10/test_hearing_lab.py",
+      "sha256": "519e9de30d52c9d404885ead149526928eb7968e7896408c566bc6aad750a358"
+    },
+    {
+      "source": "code-labs/builders/ch11/fixtures/turns.json",
+      "destination": "chapters/ch11/fixtures/turns.json",
+      "sha256": "3acf102599b534a3c8b21c1f0286917a66c1e8a4d2eec660f7cd16442be77b0f"
+    },
+    {
+      "source": "code-labs/builders/ch11/outputs/turn_lab.fixture.out.txt",
+      "destination": "chapters/ch11/outputs/turn_lab.fixture.out.txt",
+      "sha256": "21c0d3a2ef7afc4c989e10d075a58e09d56663bd6b860efa9ca04d9693d0ae3c"
+    },
+    {
+      "source": "code-labs/builders/ch11/outputs/turn_lab.mock.out.txt",
+      "destination": "chapters/ch11/outputs/turn_lab.mock.out.txt",
+      "sha256": "eb0d03c7981352f1f7c44797db1873374b41062771ed67c8bc46e08de31dae63"
+    },
+    {
+      "source": "code-labs/builders/ch11/test_turn_lab.py",
+      "destination": "chapters/ch11/test_turn_lab.py",
+      "sha256": "124a11a54eedcc252ed3e4cac757915984e816c0f9d93f1287a1dc38823d826d"
+    },
+    {
+      "source": "code-labs/builders/ch11/turn_lab.py",
+      "destination": "chapters/ch11/turn_lab.py",
+      "sha256": "adde204ba418c5b3c1806a8829143b65a6712ea34bf69a314f93685e0fa40f92"
+    },
+    {
+      "source": "code-labs/builders/ch12/fixtures/speaking.json",
+      "destination": "chapters/ch12/fixtures/speaking.json",
+      "sha256": "825cc0f395596b9f2887600d4c0cee0a726a1f35aef1d5fa04356dc1ec16a55f"
+    },
+    {
+      "source": "code-labs/builders/ch12/outputs/speaking_lab.fixture.out.txt",
+      "destination": "chapters/ch12/outputs/speaking_lab.fixture.out.txt",
+      "sha256": "46c50e136ae802cd1dc497f26507a05ab7a54b23f018eca0400fe08678bfa3e7"
+    },
+    {
+      "source": "code-labs/builders/ch12/outputs/speaking_lab.mock.out.txt",
+      "destination": "chapters/ch12/outputs/speaking_lab.mock.out.txt",
+      "sha256": "aac04fc63c7585b36d34f4b6e5d6b3a6527eb7fec5498d0056c03f13b25935b2"
+    },
+    {
+      "source": "code-labs/builders/ch12/speaking_lab.py",
+      "destination": "chapters/ch12/speaking_lab.py",
+      "sha256": "1e5b017596c39459ee8e3058c3b00ccf1b572c9cb3a592f3ccea5279926b6e11"
+    },
+    {
+      "source": "code-labs/builders/ch12/test_speaking_lab.py",
+      "destination": "chapters/ch12/test_speaking_lab.py",
+      "sha256": "771f22798c2bc9fb5303e4033ce974c69c8925aeaf0fecae725e2ee11bce7eb6"
+    },
+    {
+      "source": "code-labs/builders/ch13/fixtures/s2s.json",
+      "destination": "chapters/ch13/fixtures/s2s.json",
+      "sha256": "875d05369d083590c80a6cc9dc5e1aa40a383a27116d8c7e4f7e359acf9c94d1"
+    },
+    {
+      "source": "code-labs/builders/ch13/outputs/s2s_lab.fixture.out.txt",
+      "destination": "chapters/ch13/outputs/s2s_lab.fixture.out.txt",
+      "sha256": "2b9014d02620ff8fd07590172f7a6e425e0825cf8435b7360e2cacceabb605d4"
+    },
+    {
+      "source": "code-labs/builders/ch13/outputs/s2s_lab.mock.out.txt",
+      "destination": "chapters/ch13/outputs/s2s_lab.mock.out.txt",
+      "sha256": "d0bff6fb32a5b1a5a69e5326732c6fd9513eac9348a45bcfde9f6283e67a7f4d"
+    },
+    {
+      "source": "code-labs/builders/ch13/s2s_lab.py",
+      "destination": "chapters/ch13/s2s_lab.py",
+      "sha256": "222553b0d2ee9620b8434f8f363a2272067c6d35f5047074fecc0d36bde131fd"
+    },
+    {
+      "source": "code-labs/builders/ch13/test_s2s_lab.py",
+      "destination": "chapters/ch13/test_s2s_lab.py",
+      "sha256": "e3262c0782fb0432ad0ed7332600de2d5c9343d244e958c1a28652bf61baeebe"
+    },
+    {
+      "source": "code-labs/builders/ch14/core_lab.py",
+      "destination": "chapters/ch14/core_lab.py",
+      "sha256": "14ca5a24659c28542c8a9eeb496e21d4567c055ca3d1a84bab15909b7cc0c25e"
+    },
+    {
+      "source": "code-labs/builders/ch14/fixtures/core.json",
+      "destination": "chapters/ch14/fixtures/core.json",
+      "sha256": "2066f2c9277550aa03081d8d281c3e1b2198b663e911a844b83b4f5bf6bdc854"
+    },
+    {
+      "source": "code-labs/builders/ch14/outputs/core_lab.fixture.out.txt",
+      "destination": "chapters/ch14/outputs/core_lab.fixture.out.txt",
+      "sha256": "a243570a9ba023803e6d5cf9a12c2792bc16f218f4470ba3ae773a54fdc290cd"
+    },
+    {
+      "source": "code-labs/builders/ch14/outputs/core_lab.mock.out.txt",
+      "destination": "chapters/ch14/outputs/core_lab.mock.out.txt",
+      "sha256": "b3d745ffd648429f47aca8b1c6ebd7f551b3d8a203d9edae2dc6af4db22df911"
+    },
+    {
+      "source": "code-labs/builders/ch14/test_core_lab.py",
+      "destination": "chapters/ch14/test_core_lab.py",
+      "sha256": "1f097fb551906c30b0298f5a256e8b18a958992e39dae9b853fa81db0b05ace0"
+    },
+    {
+      "source": "code-labs/builders/ch15/fixtures/model.json",
+      "destination": "chapters/ch15/fixtures/model.json",
+      "sha256": "70a3dd300f505636a820765408336bba9597718a1268802d280b914ff3aa8ca0"
+    },
+    {
+      "source": "code-labs/builders/ch15/model_lab.py",
+      "destination": "chapters/ch15/model_lab.py",
+      "sha256": "e262c40fc64028712578d1b821c8847c6d6364726bab7363659929e0707f1991"
+    },
+    {
+      "source": "code-labs/builders/ch15/outputs/model_lab.fixture.out.txt",
+      "destination": "chapters/ch15/outputs/model_lab.fixture.out.txt",
+      "sha256": "48763ea8c252306ce384271bab585c35adb9cdc4a84b45d91b55f90b97b43fad"
+    },
+    {
+      "source": "code-labs/builders/ch15/outputs/model_lab.mock.out.txt",
+      "destination": "chapters/ch15/outputs/model_lab.mock.out.txt",
+      "sha256": "9ca292a945fa9ef4c219968bca8b0e21531344b6d96f27fd5e1221f9ef0dd45a"
+    },
+    {
+      "source": "code-labs/builders/ch15/test_model_lab.py",
+      "destination": "chapters/ch15/test_model_lab.py",
+      "sha256": "55bf7da652209b4e0d29133d0335e4c39d815744eb492fa56dcfdbf564a7b503"
+    },
+    {
+      "source": "code-labs/builders/ch16/fixtures/knowledge.json",
+      "destination": "chapters/ch16/fixtures/knowledge.json",
+      "sha256": "49b467780a83cd90814d1e024e9db13ea5d505fbbe0608b235a61e3c448a93e9"
+    },
+    {
+      "source": "code-labs/builders/ch16/knowledge_lab.py",
+      "destination": "chapters/ch16/knowledge_lab.py",
+      "sha256": "f3ac069b518e18931db752e92cf866a13aa65b85dcaa7ee43316d7def1b8df14"
+    },
+    {
+      "source": "code-labs/builders/ch16/outputs/knowledge_lab.fixture.out.txt",
+      "destination": "chapters/ch16/outputs/knowledge_lab.fixture.out.txt",
+      "sha256": "f4ad6924ae7142e40667e46f953a239f19bac8e2efec50b110168a4a312a3246"
+    },
+    {
+      "source": "code-labs/builders/ch16/outputs/knowledge_lab.mock.out.txt",
+      "destination": "chapters/ch16/outputs/knowledge_lab.mock.out.txt",
+      "sha256": "a4e5f76cf5825fab4d82c6b6fc846cc42dae3681f898b1670a135b17d4935fa0"
+    },
+    {
+      "source": "code-labs/builders/ch16/test_knowledge_lab.py",
+      "destination": "chapters/ch16/test_knowledge_lab.py",
+      "sha256": "54c6168aec77fe07ef6a7a6da3cd50969b8d8ed1e0edb525325df6ea10bb6039"
+    },
+    {
+      "source": "code-labs/builders/ch17/fixtures/faults.json",
+      "destination": "chapters/ch17/fixtures/faults.json",
+      "sha256": "2efbe8a21af637b5996fd934d2aa1c4025fb71e853ba256efea61f9e5471c231"
+    },
+    {
+      "source": "code-labs/builders/ch17/outputs/tools_lab.fixture.out.txt",
+      "destination": "chapters/ch17/outputs/tools_lab.fixture.out.txt",
+      "sha256": "ff74db9d0351e9ccd676f88c9b8f4a460694c25a30604c15f00740b54a7842bc"
+    },
+    {
+      "source": "code-labs/builders/ch17/outputs/tools_lab.mock.out.txt",
+      "destination": "chapters/ch17/outputs/tools_lab.mock.out.txt",
+      "sha256": "6ce5759e6d103e6789a4ef3fa1d2e0653d249b1a1b20334e5f15e7b24ae55896"
+    },
+    {
+      "source": "code-labs/builders/ch17/test_tools_lab.py",
+      "destination": "chapters/ch17/test_tools_lab.py",
+      "sha256": "9a23e38a62203bf6502b9b062c95669b2e3067796f607fc197e67e15565a3820"
+    },
+    {
+      "source": "code-labs/builders/ch17/tools_lab.py",
+      "destination": "chapters/ch17/tools_lab.py",
+      "sha256": "09f54738cd4acca25e4504e1c87fdbb7fe7c2abfdbc9ec84c727dcc0cf0acbfc"
+    },
+    {
+      "source": "code-labs/builders/ch18/fixtures/guard.json",
+      "destination": "chapters/ch18/fixtures/guard.json",
+      "sha256": "d70be9acc0c2796878de57c576f2e9ae89059c0a557d6959f5d62b8810587646"
+    },
+    {
+      "source": "code-labs/builders/ch18/guard_lab.py",
+      "destination": "chapters/ch18/guard_lab.py",
+      "sha256": "5ad428c284b9f3976da91099aa202c2db574860bec6b4795c4d04b088a517926"
+    },
+    {
+      "source": "code-labs/builders/ch18/outputs/guard_lab.fixture.out.txt",
+      "destination": "chapters/ch18/outputs/guard_lab.fixture.out.txt",
+      "sha256": "a65202c1b7f724c38d92e00cdc8d1fadbd4f690964fdb97d4db4f11a3edc43e2"
+    },
+    {
+      "source": "code-labs/builders/ch18/outputs/guard_lab.mock.out.txt",
+      "destination": "chapters/ch18/outputs/guard_lab.mock.out.txt",
+      "sha256": "3ffa34f9729cc1b0a170b6ad7e8eeb6c641ce49974cee656f56ce2d39f99591d"
+    },
+    {
+      "source": "code-labs/builders/ch18/test_guard_lab.py",
+      "destination": "chapters/ch18/test_guard_lab.py",
+      "sha256": "cb87dd3f1cdd4b577fae19f2c58f4a33e1e421f289c58abbac06209eec7dd713"
+    },
+    {
+      "source": "code-labs/builders/ch19/fixtures/orch.json",
+      "destination": "chapters/ch19/fixtures/orch.json",
+      "sha256": "b26a89c0fa23159a09066d95f99f0e0077133ceec95ed47ffaf915227edb57c6"
+    },
+    {
+      "source": "code-labs/builders/ch19/orch_lab.py",
+      "destination": "chapters/ch19/orch_lab.py",
+      "sha256": "5300bbd523e05d8f39da747e95267b7b9b3266ef4058060b118427ae9129f0cd"
+    },
+    {
+      "source": "code-labs/builders/ch19/outputs/orch_lab.fixture.out.txt",
+      "destination": "chapters/ch19/outputs/orch_lab.fixture.out.txt",
+      "sha256": "e9d78f5ff17cf6adb580946b59ebeec6a9692f9bba9e8457ce1fe968d5ca76ee"
+    },
+    {
+      "source": "code-labs/builders/ch19/outputs/orch_lab.mock.out.txt",
+      "destination": "chapters/ch19/outputs/orch_lab.mock.out.txt",
+      "sha256": "c1631b46bfa0199e5d54002d3049f803c605b8e4e0db526636e80374c662c421"
+    },
+    {
+      "source": "code-labs/builders/ch19/test_orch_lab.py",
+      "destination": "chapters/ch19/test_orch_lab.py",
+      "sha256": "a42dd913ca7e5538fa11621c32f2752daa351336c3763b2cd578b3a139e90413"
+    },
+    {
+      "source": "code-labs/builders/ch20/fixtures/identity.json",
+      "destination": "chapters/ch20/fixtures/identity.json",
+      "sha256": "04778a9bd6a415dea22535d9438329c94b9ed604171b651cb34ace318ddd9f96"
+    },
+    {
+      "source": "code-labs/builders/ch20/identity_lab.py",
+      "destination": "chapters/ch20/identity_lab.py",
+      "sha256": "747ccd74394a0282f835acfe45f71a9c79191c14802fbe939df15df7f521f30c"
+    },
+    {
+      "source": "code-labs/builders/ch20/outputs/identity_lab.fixture.out.txt",
+      "destination": "chapters/ch20/outputs/identity_lab.fixture.out.txt",
+      "sha256": "31d0ea18dbb6a8bdc15f12e2274c4d8ea54aa40f0422dee7344e7ced4c119efc"
+    },
+    {
+      "source": "code-labs/builders/ch20/outputs/identity_lab.mock.out.txt",
+      "destination": "chapters/ch20/outputs/identity_lab.mock.out.txt",
+      "sha256": "a64ab183bf1785f48f3f7f749cd5c81223959b24c8eafe294f94279e21c858ea"
+    },
+    {
+      "source": "code-labs/builders/ch20/test_identity_lab.py",
+      "destination": "chapters/ch20/test_identity_lab.py",
+      "sha256": "35443f6d9929f0358b93b2c632fed7b088fa2e538d475045755f6f3b327d4a51"
+    },
+    {
+      "source": "code-labs/builders/ch21/fixtures/handoff.json",
+      "destination": "chapters/ch21/fixtures/handoff.json",
+      "sha256": "b682362644e037d944c17a1b76e8cc39da983ffe1f114dfc521078efa8b5deb3"
+    },
+    {
+      "source": "code-labs/builders/ch21/handoff_lab.py",
+      "destination": "chapters/ch21/handoff_lab.py",
+      "sha256": "1c038a79d57405029ff775a361edfe9c1633ed2fa71b7d9e419f53b3d8c1f6e0"
+    },
+    {
+      "source": "code-labs/builders/ch21/outputs/handoff_lab.fixture.out.txt",
+      "destination": "chapters/ch21/outputs/handoff_lab.fixture.out.txt",
+      "sha256": "4b11954cb809de8b767a6d5a1447486eed0f43720f38f4fbea533958f5f765ce"
+    },
+    {
+      "source": "code-labs/builders/ch21/outputs/handoff_lab.mock.out.txt",
+      "destination": "chapters/ch21/outputs/handoff_lab.mock.out.txt",
+      "sha256": "2590dc72fc44da1f0a6b447d322ef96a7ffad5e106c212756cc86b70a310d438"
+    },
+    {
+      "source": "code-labs/builders/ch21/test_handoff_lab.py",
+      "destination": "chapters/ch21/test_handoff_lab.py",
+      "sha256": "652ec8b175bd3e5252fefe328f1ef0d4a1abbab20968d53c5e124d11cd861eca"
+    },
+    {
+      "source": "code-labs/builders/ch22/agents_lab.py",
+      "destination": "chapters/ch22/agents_lab.py",
+      "sha256": "bf59253b7b988b651df232510aa0f6012f37b68b5e798ffe8985a1592fad0709"
+    },
+    {
+      "source": "code-labs/builders/ch22/fixtures/agents.json",
+      "destination": "chapters/ch22/fixtures/agents.json",
+      "sha256": "bbc3a1232937e13cfd063d9504c172faab9b69179dd9565ec39536b2542b1795"
+    },
+    {
+      "source": "code-labs/builders/ch22/outputs/agents_lab.fixture.out.txt",
+      "destination": "chapters/ch22/outputs/agents_lab.fixture.out.txt",
+      "sha256": "ba2df01d72636716fe1508ea8e13e717b532dcbe472915ce0c3394dd305116cc"
+    },
+    {
+      "source": "code-labs/builders/ch22/outputs/agents_lab.mock.out.txt",
+      "destination": "chapters/ch22/outputs/agents_lab.mock.out.txt",
+      "sha256": "e881315c54c93d503c630a57601631ac05c4e16da1460c540da2f46d17fddb76"
+    },
+    {
+      "source": "code-labs/builders/ch22/test_agents_lab.py",
+      "destination": "chapters/ch22/test_agents_lab.py",
+      "sha256": "98da97e0f60bd97b43edac348f4d36b81e6b9643db1681dbf04fdc9252cfc71e"
+    },
+    {
+      "source": "code-labs/builders/ch23/fixtures/trust.json",
+      "destination": "chapters/ch23/fixtures/trust.json",
+      "sha256": "a34951e482e0ef1fd34b4486e4083ca544c8cac4633488442fc3ee2964c5c1a6"
+    },
+    {
+      "source": "code-labs/builders/ch23/outputs/trust_lab.fixture.out.txt",
+      "destination": "chapters/ch23/outputs/trust_lab.fixture.out.txt",
+      "sha256": "4b11ee11c2b9a750e5abc61af337b02cddd1d04227473c7ad4799081f59de7e4"
+    },
+    {
+      "source": "code-labs/builders/ch23/outputs/trust_lab.mock.out.txt",
+      "destination": "chapters/ch23/outputs/trust_lab.mock.out.txt",
+      "sha256": "c12cd8f49f6d30a07f8320657ed2d267fc925788d69fc8701a14f3d18ebc50a8"
+    },
+    {
+      "source": "code-labs/builders/ch23/test_trust_lab.py",
+      "destination": "chapters/ch23/test_trust_lab.py",
+      "sha256": "67e6fcfc9514644f00f1d7ab8f88e51c5dd1c60b62f49668764fa559075139aa"
+    },
+    {
+      "source": "code-labs/builders/ch23/trust_lab.py",
+      "destination": "chapters/ch23/trust_lab.py",
+      "sha256": "557e3549c3d1bd8758821736aa6410069866ab5e561fd1b99f4c4c79986ff092"
+    },
+    {
+      "source": "code-labs/builders/ch24/fixtures/metrics.json",
+      "destination": "chapters/ch24/fixtures/metrics.json",
+      "sha256": "3c22377622845d796ccd9612ba34e7afa2c1811c93220a70ab983f560aa5237c"
+    },
+    {
+      "source": "code-labs/builders/ch24/metrics_lab.py",
+      "destination": "chapters/ch24/metrics_lab.py",
+      "sha256": "79f6e6c0edc46f73388e34abc27d5a501151575e1bcb9308b3a7bd6701829a43"
+    },
+    {
+      "source": "code-labs/builders/ch24/outputs/metrics_lab.fixture.out.txt",
+      "destination": "chapters/ch24/outputs/metrics_lab.fixture.out.txt",
+      "sha256": "e0cc3c18da6cfbe56c9114ace5269c070c859a44a6351a35011ac990337c36f7"
+    },
+    {
+      "source": "code-labs/builders/ch24/outputs/metrics_lab.mock.out.txt",
+      "destination": "chapters/ch24/outputs/metrics_lab.mock.out.txt",
+      "sha256": "3d2f1437a5313d7b9f6a1894f7f96df57bb7704d751dba7fdfe3def697b31307"
+    },
+    {
+      "source": "code-labs/builders/ch24/test_metrics_lab.py",
+      "destination": "chapters/ch24/test_metrics_lab.py",
+      "sha256": "00a5634c12334a6842dc63a789ca300f83f8f6298095f4dafadb01772cfaa5ee"
+    },
+    {
+      "source": "code-labs/builders/ch25/fixtures/testing.json",
+      "destination": "chapters/ch25/fixtures/testing.json",
+      "sha256": "dc685865888a6522fff1808d746a77a5e5034c87948f1be19ad2f45f804b5e79"
+    },
+    {
+      "source": "code-labs/builders/ch25/outputs/testing_lab.fixture.out.txt",
+      "destination": "chapters/ch25/outputs/testing_lab.fixture.out.txt",
+      "sha256": "d1dea4817788194c90a06622583733e7bc28c1d908b425bc9480bb8320e85102"
+    },
+    {
+      "source": "code-labs/builders/ch25/outputs/testing_lab.mock.out.txt",
+      "destination": "chapters/ch25/outputs/testing_lab.mock.out.txt",
+      "sha256": "c001f45f843bc978982086717c261fadfbb6d088e7eff5320f7600f317af1e9e"
+    },
+    {
+      "source": "code-labs/builders/ch25/test_testing_lab.py",
+      "destination": "chapters/ch25/test_testing_lab.py",
+      "sha256": "64f7f70d8e285c94fc8a507f86b25337b4d58d75eb9a1fd158762569d6b01610"
+    },
+    {
+      "source": "code-labs/builders/ch25/testing_lab.py",
+      "destination": "chapters/ch25/testing_lab.py",
+      "sha256": "032824d69d9e97c7020d0656431233068300e45def50b5a02a51c7908a9f815b"
+    },
+    {
+      "source": "code-labs/builders/ch26/fixtures/observe.json",
+      "destination": "chapters/ch26/fixtures/observe.json",
+      "sha256": "2a198e10bad06f9d3002c02219faa4514fc9a858d83fecc75088753a436af067"
+    },
+    {
+      "source": "code-labs/builders/ch26/observe_lab.py",
+      "destination": "chapters/ch26/observe_lab.py",
+      "sha256": "581f50cc154f644cefc40956da4b0483371038a5781568a751098f962abdd5fc"
+    },
+    {
+      "source": "code-labs/builders/ch26/outputs/observe_lab.fixture.out.txt",
+      "destination": "chapters/ch26/outputs/observe_lab.fixture.out.txt",
+      "sha256": "3ab42a546dce682b6583e9074397ded6a552d6766744cfd4edb1e92ac4198968"
+    },
+    {
+      "source": "code-labs/builders/ch26/outputs/observe_lab.mock.out.txt",
+      "destination": "chapters/ch26/outputs/observe_lab.mock.out.txt",
+      "sha256": "993a6bd3c49673f90cfc8da480a390c0429b1eb320e25134824f46eb514c064f"
+    },
+    {
+      "source": "code-labs/builders/ch26/test_observe_lab.py",
+      "destination": "chapters/ch26/test_observe_lab.py",
+      "sha256": "4ec5334526dffc6c0b5f9f0f670a4aabd59d099f7cbb71cd4f44a11b01cd7eb9"
+    },
+    {
+      "source": "code-labs/builders/ch27/deploy_lab.py",
+      "destination": "chapters/ch27/deploy_lab.py",
+      "sha256": "47d7750d817d0081c4c66838abd9e3bad1ab6ab881f17f029d9a56018e91dff1"
+    },
+    {
+      "source": "code-labs/builders/ch27/fixtures/deploy.json",
+      "destination": "chapters/ch27/fixtures/deploy.json",
+      "sha256": "63b86dab628f7b0bb6c59acd1388b318b2eba2fa232e09829c5b2ae6e3458d12"
+    },
+    {
+      "source": "code-labs/builders/ch27/outputs/deploy_lab.fixture.out.txt",
+      "destination": "chapters/ch27/outputs/deploy_lab.fixture.out.txt",
+      "sha256": "09ee7db4ab18ba7a4d38c695fbb9836eae4207b1b01947456fad9b98d859a05e"
+    },
+    {
+      "source": "code-labs/builders/ch27/outputs/deploy_lab.mock.out.txt",
+      "destination": "chapters/ch27/outputs/deploy_lab.mock.out.txt",
+      "sha256": "4a28d7f86bc89a48cac3bb26cac74f8325e14bbe406cd60da001bd8d6ee45c9d"
+    },
+    {
+      "source": "code-labs/builders/ch27/test_deploy_lab.py",
+      "destination": "chapters/ch27/test_deploy_lab.py",
+      "sha256": "73bd1a913ee1055e1fc3439f22b85cd9e1f2c0f2da4417f68c5f064ff16d9e07"
+    },
+    {
+      "source": "code-labs/builders/ch28/fixtures/resilience.json",
+      "destination": "chapters/ch28/fixtures/resilience.json",
+      "sha256": "99d9bdd62f4dd8420268e7e8f4a097bff0beb69b751bfcfafb50ffe9d72328c5"
+    },
+    {
+      "source": "code-labs/builders/ch28/outputs/resilience_lab.fixture.out.txt",
+      "destination": "chapters/ch28/outputs/resilience_lab.fixture.out.txt",
+      "sha256": "135b221004e9e9f023e607833834efef12058407830b1d02a1b02be18653b30c"
+    },
+    {
+      "source": "code-labs/builders/ch28/outputs/resilience_lab.mock.out.txt",
+      "destination": "chapters/ch28/outputs/resilience_lab.mock.out.txt",
+      "sha256": "7c50e84094a9e841fe38cc0a8447e5a66f24b72f82edf20df9b9edeaece2a401"
+    },
+    {
+      "source": "code-labs/builders/ch28/resilience_lab.py",
+      "destination": "chapters/ch28/resilience_lab.py",
+      "sha256": "91e1450a2121555b17d9cb2654ebea0925aec1ce682524eb2959fb108d5b2bf9"
+    },
+    {
+      "source": "code-labs/builders/ch28/test_resilience_lab.py",
+      "destination": "chapters/ch28/test_resilience_lab.py",
+      "sha256": "d501bb1a80b08f899fad46ad30983a98dbc2364c7cccab7465477d520ad6ca0d"
+    },
+    {
+      "source": "code-labs/builders/ch29/care_lab.py",
+      "destination": "chapters/ch29/care_lab.py",
+      "sha256": "c980da02ddcc6344da19c6a30912df262e7905957169c700e8d21b3bf3d9471c"
+    },
+    {
+      "source": "code-labs/builders/ch29/fixtures/care.json",
+      "destination": "chapters/ch29/fixtures/care.json",
+      "sha256": "d7e0c18e443ea43d25da1e9a01dd63d81851312929bf54e695640445c7c9ea5f"
+    },
+    {
+      "source": "code-labs/builders/ch29/outputs/care_lab.fixture.out.txt",
+      "destination": "chapters/ch29/outputs/care_lab.fixture.out.txt",
+      "sha256": "2d38331e4f6eb04256acf0c190e2e721dff605afce328c11d2e9aa37e1f7ec6c"
+    },
+    {
+      "source": "code-labs/builders/ch29/outputs/care_lab.mock.out.txt",
+      "destination": "chapters/ch29/outputs/care_lab.mock.out.txt",
+      "sha256": "7f8f2cf0d2ab2bc35dfd13c8e4c36d33e9fe230a076b50ea8a60bc4208441fba"
+    },
+    {
+      "source": "code-labs/builders/ch29/test_care_lab.py",
+      "destination": "chapters/ch29/test_care_lab.py",
+      "sha256": "d9ac82aadd2eb41a2eb2ff51c5a7a0b097355f1b1fff78faceeb4ba80a8f55fe"
+    },
+    {
+      "source": "code-labs/builders/interlude-a/appointment_line.py",
+      "destination": "chapters/interlude-a/appointment_line.py",
+      "sha256": "2eabcee27448296af376409122df32f983bd227ded65ae02a176ab70f4c767f0"
+    },
+    {
+      "source": "code-labs/builders/interlude-a/fixtures/calendar.json",
+      "destination": "chapters/interlude-a/fixtures/calendar.json",
+      "sha256": "0cf0a158d4238015d4e4fd11b6292dc1ba80378296b42326def4ae2f805fcce0"
+    },
+    {
+      "source": "code-labs/builders/interlude-a/fixtures/calls.json",
+      "destination": "chapters/interlude-a/fixtures/calls.json",
+      "sha256": "9ead46d0cdfd1eb5cc915e5c1018b28531e46270eda7ba23e29e6a1e34162d43"
+    },
+    {
+      "source": "code-labs/builders/interlude-a/fixtures/documents.json",
+      "destination": "chapters/interlude-a/fixtures/documents.json",
+      "sha256": "c6cd7af9f8ba327baed465b49c03497f9a372637bdbb9c7c59f254e007a21c53"
+    },
+    {
+      "source": "code-labs/builders/interlude-a/outputs/appointment_line.fixture.out.txt",
+      "destination": "chapters/interlude-a/outputs/appointment_line.fixture.out.txt",
+      "sha256": "ed1f141ebd2db36b5c52fc219a477b5e8a86f6ead7f77e014c53a2b5599ba0d5"
+    },
+    {
+      "source": "code-labs/builders/interlude-a/outputs/appointment_line.mock.out.txt",
+      "destination": "chapters/interlude-a/outputs/appointment_line.mock.out.txt",
+      "sha256": "ec260fbad735fd0a99fcd6a32460fcd97a6bb21b5cc553296254723cdfbf40b1"
+    },
+    {
+      "source": "code-labs/builders/interlude-a/test_appointment_line.py",
+      "destination": "chapters/interlude-a/test_appointment_line.py",
+      "sha256": "bbe2c0cf1b67fe2d40cda4f738ef16a8a77ff4780b73819fb8642c19f4ac189e"
+    },
+    {
+      "source": "code-labs/builders/interlude-b/fixtures/slice.json",
+      "destination": "chapters/interlude-b/fixtures/slice.json",
+      "sha256": "55b2d42785f8ae6dae330ea59ac6f27d2dd530c1d5c40bbe6478a813985c485a"
+    },
+    {
+      "source": "code-labs/builders/interlude-b/outputs/service_slice.fixture.out.txt",
+      "destination": "chapters/interlude-b/outputs/service_slice.fixture.out.txt",
+      "sha256": "3036a03e21537c0aa93d8549c82c484639aca18008ac97216c1f9c53c3d808ff"
+    },
+    {
+      "source": "code-labs/builders/interlude-b/outputs/service_slice.mock.out.txt",
+      "destination": "chapters/interlude-b/outputs/service_slice.mock.out.txt",
+      "sha256": "44f3336795e06a5bf44f8027f6eff854ae0e941a534ee0cea68f036078f1aba7"
+    },
+    {
+      "source": "code-labs/builders/interlude-b/service_slice.py",
+      "destination": "chapters/interlude-b/service_slice.py",
+      "sha256": "b298be5f384a50b462f854f0b1f9891af461472de24e3a1e04d2a4c8c3cb4caf"
+    },
+    {
+      "source": "code-labs/builders/interlude-b/test_service_slice.py",
+      "destination": "chapters/interlude-b/test_service_slice.py",
+      "sha256": "6806db1950d021eb187e1260057f4c41771422ca842f46c83f24e037deee8ffe"
+    },
+    {
+      "source": "code-labs/builders/appendix-m/fixtures/catalogue.json",
+      "destination": "chapters/appendix-m/fixtures/catalogue.json",
+      "sha256": "80aed55a633c96bedbf881b666afa7dabdd6c5629ec15bfc07186ee60c6eeac6"
+    },
+    {
+      "source": "code-labs/builders/appendix-m/fixtures/tt-17.json",
+      "destination": "chapters/appendix-m/fixtures/tt-17.json",
+      "sha256": "3d0349794de7953921d79af43d048c2de5d32e0bf68b7092c8fe5ca98e9d9b6e"
+    },
+    {
+      "source": "code-labs/builders/appendix-m/outputs/scenario_lab.fixture.out.txt",
+      "destination": "chapters/appendix-m/outputs/scenario_lab.fixture.out.txt",
+      "sha256": "094a2d0be826b75ba4653e710340ce96467516c3f916044f610b2d9c8a5d2008"
+    },
+    {
+      "source": "code-labs/builders/appendix-m/outputs/scenario_lab.mock.out.txt",
+      "destination": "chapters/appendix-m/outputs/scenario_lab.mock.out.txt",
+      "sha256": "1016aa9d7ba85a86f8ab18b1bb5331b76d4b643a1d6d3972f72405ad1411e5c0"
+    },
+    {
+      "source": "code-labs/builders/appendix-m/scenario_lab.py",
+      "destination": "chapters/appendix-m/scenario_lab.py",
+      "sha256": "5cb1c84976b10646de3ebe7b64bf2f1ec076b1817ba3700461313ef9f0fc41ff"
+    },
+    {
+      "source": "code-labs/builders/appendix-m/test_scenario_lab.py",
+      "destination": "chapters/appendix-m/test_scenario_lab.py",
+      "sha256": "d29931f29b01e71bfc2358104f3e6d02515bfa5c4ba11d6b23b7d0be21afa399"
+    }
+  ],
+  "labs": {
+    "date": "2026-10-03",
+    "source_commit": "eff857c9f2bab397b56fe86c7d44bee1b0d07358",
+    "labs": 32
+  }
+}

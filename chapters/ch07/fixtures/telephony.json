@@ -1,0 +1,322 @@
+{
+ "invite": "INVITE sip:+13125550100@agent.utility.example SIP/2.0\r\nVia: SIP/2.0/TLS 203.0.113.10:5061;branch=z9hG4bK77f3\r\nFrom: <sip:+13125550142@carrier.example>;tag=4417\r\nTo: <sip:+13125550100@agent.utility.example>\r\nCall-ID: 7f3a2231@carrier.example\r\nP-Asserted-Identity: <sip:+13125550142@carrier.example>\r\nIdentity: eyJhbGciOiAiRVMyNTYiLCAicHB0IjogInNoYWtlbiJ9.eyJhdHRlc3QiOiAiQSIsICJvcmlnIjogeyJ0biI6ICIxMzEyNTU1MDE0MiJ9LCAiZGVzdCI6IHsidG4iOiBbIjEzMTI1NTUwMTAwIl19fQ.sig\r\nContent-Type: application/sdp\r\n\r\nv=0\r\no=carrier 2231 1 IN IP4 10.20.30.40\r\nc=IN IP4 10.20.30.40\r\nm=audio 40000 RTP/AVP 0 8 101\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:101 telephone-event/8000\r\na=fmtp:101 0-16\r\na=ptime:20",
+ "attempts": [
+  {
+   "to": "+13125550199",
+   "hour": 18,
+   "kind": "owner",
+   "why": "owner, a transfer"
+  },
+  {
+   "to": "+13125550142",
+   "hour": 10,
+   "kind": "customer",
+   "why": "customer callback"
+  },
+  {
+   "to": "911",
+   "hour": 10,
+   "kind": "customer",
+   "why": "a caller's request"
+  },
+  {
+   "to": "+19005550123",
+   "hour": 10,
+   "kind": "customer",
+   "why": "premium number"
+  },
+  {
+   "to": "+882345678901",
+   "hour": 11,
+   "kind": "customer",
+   "why": "international"
+  },
+  {
+   "to": "+13125550157",
+   "hour": 22,
+   "kind": "customer",
+   "why": "late callback"
+  },
+  {
+   "to": "+13125551000",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551001",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551002",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551003",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551004",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551005",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551006",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551007",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551008",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551009",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551010",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551011",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551012",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551013",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551014",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551015",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551016",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551017",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551018",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551019",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551020",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551021",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551022",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551023",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551024",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551025",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551026",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551027",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551028",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551029",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551030",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551031",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551032",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551033",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551034",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551035",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551036",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551037",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551038",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  },
+  {
+   "to": "+13125551039",
+   "hour": 14,
+   "kind": "customer",
+   "why": "a stolen credential"
+  }
+ ],
+ "texts": [
+  {
+   "from": "+13125550100",
+   "to": "+13125550142",
+   "kind": "confirmation"
+  },
+  {
+   "from": "+13125550101",
+   "to": "+13125550142",
+   "kind": "confirmation"
+  },
+  {
+   "from": "+18885550100",
+   "to": "+13125550142",
+   "kind": "confirmation"
+  },
+  {
+   "from": "+13125550100",
+   "to": "+13125550163",
+   "kind": "confirmation"
+  },
+  {
+   "from": "+13125550100",
+   "to": "+13125550187",
+   "kind": "reminder"
+  }
+ ],
+ "consent": [
+  "+13125550142",
+  "+13125550187"
+ ],
+ "stopped": [
+  "+13125550187"
+ ],
+ "lost": [
+  3,
+  4,
+  5,
+  17,
+  26
+ ]
+}

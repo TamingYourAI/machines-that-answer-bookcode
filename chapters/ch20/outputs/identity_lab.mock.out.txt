@@ -1,0 +1,61 @@
+identity lab, mode=mock; checks on stand-in records
+
+1. lookup by number: a candidate, never proof
+   number    caller ID  accounts            the agent may
+   555 0131  A          2231                ask for 2231's PIN
+   555 0158  A          6120, 6127, 6133    ask which property first
+   555 0107  B          4012                ask for 4012's PIN
+   555 0199  none       (none)              ask for the account
+   account data spoken before verification: none
+
+2. the proof ladder: the level each action needs
+   none        outage_status, office_hours
+   pin         read_bill, book_visit, meter_reading
+   pin + code  change_address, payment_plan
+   a person    card_payment, close_account
+   what each method proves on its own
+   number match                        selects, never proves
+   caller-ID attestation A             selects, never proves
+   knowledge question                  selects, never proves
+   voiceprint                          selects, never proves
+   account and PIN                     pin
+   app sign-in                         pin
+   code to the phone on the account    pin + code
+   a step-up: account 2231 asks to change the billing address
+   verified by account and PIN         level pin
+   change_address                      refused
+   code to the phone on the account    level pin + code (45 s, stand-in)
+   change_address                      allowed
+
+3. the identity chain: one signed statement, checked on every request
+   the statement: caller 6120, actor service-line-agent, level pin, for
+   billing and scheduling, from 20:05 to 20:20 (signed with the stand-in key)
+   20:06  billing    read_bill 6120
+          allowed; audit: read_bill 6120, caller 6120, actor
+          service-line-agent, statement v-6120-1
+   20:06  billing    read_bill 6127
+          refused: the statement is for 6120
+   20:07  billing    change_address 6120
+          refused: change_address needs pin + code
+   20:08  scheduling book_visit 6120
+          allowed; audit: book_visit 6120, caller 6120, actor
+          service-line-agent, statement v-6120-1
+   20:08  payments   read_bill 6120
+          refused: not issued for payments
+   20:09  billing    change_address 6120 (level edited to pin + code)
+          refused: the signature does not match
+   20:21  billing    read_bill 6120
+          refused: expired at 20:20
+   after the fix, on his next call: "Which property is it?", then 6127's PIN
+   09:12  billing    read_bill 6127
+          allowed; audit: read_bill 6127, caller 6127, actor
+          service-line-agent, statement v-6127-1
+
+4. memory: five tests, a naive memory against a designed one
+   test                naive                       designed
+   the wrong person    reads her visit to him      the opening only
+   a stale preference  used, 14 months old         expired: not used
+   a corrected fact    555 0131 and 555 0132       555 0132
+   consent withdrawn   still used                  deleted, logged
+   deletion            a summary still holds it    gone, summaries too
+   passed              0 of 5                      5 of 5

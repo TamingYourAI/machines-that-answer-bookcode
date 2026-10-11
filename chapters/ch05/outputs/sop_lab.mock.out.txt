@@ -1,0 +1,73 @@
+sop lab, mode=mock; composite call volumes; methods, not measurements
+
+1. call drivers: 200,000 calls a month, ranked by calls the agent could finish
+   reason              calls   fit   score  decision
+   payment            35,000   0.7  24,500  later: after its controls
+   billing question   30,000   0.6  18,000  first
+   technician visit   20,000   0.7  14,000  first
+   meter reading      15,000   0.8  12,000  next
+   moving home        25,000   0.4  10,000  next
+   outage status      40,000   0.2   8,000  spike variant only
+   complaint           8,000   0.0       0  never: the counter-atlas
+   bill dispute        6,000   0.0       0  never: the counter-atlas
+   bereavement         1,500   0.0       0  never: the counter-atlas
+   other              19,500   0.0       0  listen: code more calls
+
+2. the SOP compiled: meter fault, book a technician visit
+   step  block     touch              source
+   1     greet     -                  document
+   2     identify  read crm           document
+   2a    verify    read outage map    practice  <- drift: not in the document
+   3     capture   write ticket       document
+   4     escalate  human              document
+   5     collect   read calendar      document
+   5a    escalate  human              practice  <- drift: not in the document
+   6     act       write booking      document
+   7     confirm   write text         document
+   8     close     write disposition  document
+   touches: 3 reads, 4 writes, 2 human steps; drift: 2 steps
+
+3. variations: the same blocks in different orders
+   inbound status     greet > identify > act: read > close
+   booking            greet > identify > verify > capture > collect > act >
+                      confirm > close
+   outbound reminder  verify who answered > confirm: keep or change > act >
+                      close
+
+4. outbound gate: River Plumbing's reminder queue for tomorrow's visits
+   555 0142  call now
+   555 0177  call now
+   555 0118  defer: 21:05 is outside 08:00 to 21:00 local
+   555 0134  skip: no consent on record
+   555 0156  skip: opted out
+   555 0171  defer: 07:40 is outside 08:00 to 21:00 local
+   2 of 6 may be called now
+
+5. one call, end to end: the recurring caller, block by block
+   time        block     what she hears, or what happens (* Part II)
+   20:10:06  * greet     "This is the utility's automated assistant. How can I
+                         help?"
+   20:10:09    greet     she says her meter's display has gone blank
+   20:10:12  * identify  "To find your account, what's the number on your
+                         bill?"
+   20:10:16  * identify  she asks for a moment; the agent holds, checking in
+                         every 30 seconds
+   20:11:40  * identify  "That's two two, three one. Is that right?"
+   20:11:48  * identify  "Is the visit for fourteen Alder Road?"
+   20:11:53  * verify    no outage at fourteen Alder Road; nothing is said
+   20:11:55  * capture   her first sentence goes on a fault ticket; nothing is
+                         asked twice
+   20:12:10  * capture   "I've texted a link to the number you're calling
+                         from, for a photo of the meter."
+   20:13:02    capture   the photo lands on the fault ticket
+   20:13:08  * capture   "Thanks, that's come through. Is the power on in the
+                         rest of the house?"
+   20:14:20    capture   she checks the lights: it is
+   20:14:30  * collect   "The first opening is Tuesday at nine. There's a
+                         forty-dollar call-out fee. Shall I book it?"
+   20:14:40    act       "Yes, go ahead." The booking is made
+   20:14:42  * confirm   "You're booked for Tuesday at nine."
+   20:15:00    confirm   the confirmation text goes
+   20:15:20    close     the disposition: visit booked by the agent
+   the blocks follow the compiled order: yes
+   escalations not reached: 4 (no gas smell); 5a (the meter is two years old)

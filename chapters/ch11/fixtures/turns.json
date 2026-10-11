@@ -1,0 +1,2178 @@
+{
+ "turns": [
+  {
+   "kind": "a yes, then more",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes",
+     531
+    ],
+    [
+     "and can he call first",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a yes, then more",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes",
+     586
+    ],
+    [
+     "and can he call first",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no that's not it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no that's not it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes book it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes please",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no that's not it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes please",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no that's not it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no thank you",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes please",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yeah go ahead",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no that's not it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes please",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes book it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes book it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no that's not it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "that's right",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no that's not it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes book it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes book it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no thank you",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no that's not it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no that's not it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no thank you",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yeah go ahead",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no thank you",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "that's right",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes book it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no thank you",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yeah go ahead",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no thank you",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yeah go ahead",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes book it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes book it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no that's not it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yeah go ahead",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yeah go ahead",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yeah go ahead",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "no",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "yes or no",
+   "asked": "yesno",
+   "segments": [
+    [
+     "yes book it",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in two halves",
+   "asked": "account",
+   "segments": [
+    [
+     "my account number is five four",
+     744
+    ],
+    [
+     "two zero",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in two halves",
+   "asked": "account",
+   "segments": [
+    [
+     "my account number is two four",
+     718
+    ],
+    [
+     "two seven",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in two halves",
+   "asked": "account",
+   "segments": [
+    [
+     "my account number is six four",
+     415
+    ],
+    [
+     "four nine",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in two halves",
+   "asked": "account",
+   "segments": [
+    [
+     "my account number is seven seven",
+     520
+    ],
+    [
+     "one eight",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in two halves",
+   "asked": "account",
+   "segments": [
+    [
+     "my account number is three two",
+     652
+    ],
+    [
+     "zero five",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in two halves",
+   "asked": "account",
+   "segments": [
+    [
+     "my account number is two six",
+     411
+    ],
+    [
+     "five five",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in two halves",
+   "asked": "account",
+   "segments": [
+    [
+     "my account number is one nine",
+     876
+    ],
+    [
+     "eight one",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in two halves",
+   "asked": "account",
+   "segments": [
+    [
+     "my account number is eight nine",
+     581
+    ],
+    [
+     "seven six",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in two halves",
+   "asked": "account",
+   "segments": [
+    [
+     "my account number is four zero",
+     858
+    ],
+    [
+     "eight six",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in two halves",
+   "asked": "account",
+   "segments": [
+    [
+     "my account number is nine three",
+     595
+    ],
+    [
+     "three seven",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in two halves",
+   "asked": "account",
+   "segments": [
+    [
+     "my account number is three one",
+     829
+    ],
+    [
+     "four five",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "seven two eight seven",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "two nine zero eight",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "seven four six nine",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "seven eight nine three",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "four four eight seven",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "one zero zero seven",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "five four two zero",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "five nine eight three",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "one three two one",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "four four five two",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "four zero six eight",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "seven four five nine",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "two six four three",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "one six eight nine",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "three three nine seven",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "four four nine three",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "eight two three four",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "five two three one",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "one one five six",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "six three eight nine",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "five eight five four",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "seven three two seven",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "two two zero two",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "two two one seven",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "two four seven six",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "four four one nine",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "four nine eight one",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "one two five four",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "seven zero four zero",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "seven zero eight nine",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "eight four two five",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "three zero eight four",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "eight nine two five",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "three two two three",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "seven three two five",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "three nine nine five",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "three five two five",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "six zero nine two",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "a number in one go",
+   "asked": "account",
+   "segments": [
+    [
+     "four seven four one",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address, a pause",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen",
+     494
+    ],
+    [
+     "alder road",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address, a pause",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen",
+     867
+    ],
+    [
+     "alder road",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address, a pause",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen",
+     697
+    ],
+    [
+     "alder road",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address, a pause",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen",
+     380
+    ],
+    [
+     "kestrel way",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address, a pause",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen",
+     348
+    ],
+    [
+     "kestrel way",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address, no 'road'",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen alder",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address, no 'road'",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen alder",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address, no 'road'",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen alder",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen kestrel way",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen alder road",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen kestrel way",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen kestrel way",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen kestrel way",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen kestrel way",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen kestrel way",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen alder road",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen alder road",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen alder road",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen alder road",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen kestrel way",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen alder road",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen kestrel way",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen alder road",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen alder road",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen alder road",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen alder road",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen kestrel way",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen kestrel way",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen kestrel way",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an address in one go",
+   "asked": "address",
+   "segments": [
+    [
+     "fourteen alder road",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an answer, a pause",
+   "asked": "open",
+   "segments": [
+    [
+     "my bill has doubled because",
+     480
+    ],
+    [
+     "the display on my meter has gone blank",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an answer, a pause",
+   "asked": "open",
+   "segments": [
+    [
+     "um",
+     843
+    ],
+    [
+     "i'd like to book a technician",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an answer, a pause",
+   "asked": "open",
+   "segments": [
+    [
+     "my bill has doubled because",
+     394
+    ],
+    [
+     "my power's been off since this morning",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an answer, a pause",
+   "asked": "open",
+   "segments": [
+    [
+     "my bill has doubled because",
+     761
+    ],
+    [
+     "i'd like to book a technician",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an answer, a pause",
+   "asked": "open",
+   "segments": [
+    [
+     "my bill has doubled because",
+     904
+    ],
+    [
+     "i'd like to book a technician",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "an answer, a pause",
+   "asked": "open",
+   "segments": [
+    [
+     "my bill has doubled because",
+     786
+    ],
+    [
+     "the display on my meter has gone blank",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "two sentences",
+   "asked": "open",
+   "segments": [
+    [
+     "i'd like to book a technician",
+     409
+    ],
+    [
+     "and it was fine yesterday",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "two sentences",
+   "asked": "open",
+   "segments": [
+    [
+     "the display on my meter has gone blank",
+     260
+    ],
+    [
+     "and it was fine yesterday",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "trails off",
+   "asked": "open",
+   "segments": [
+    [
+     "my power's been off since this morning um",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "trails off",
+   "asked": "open",
+   "segments": [
+    [
+     "i need to change my payment date um",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "trails off",
+   "asked": "open",
+   "segments": [
+    [
+     "the display on my meter has gone blank um",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "trails off",
+   "asked": "open",
+   "segments": [
+    [
+     "is there an outage in ashby um",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "the display on my meter has gone blank",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i need to change my payment date",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i'd like to book a technician",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i'd like to book a technician",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i want to ask why my bill doubled",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "the display on my meter has gone blank",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "the display on my meter has gone blank",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "is there an outage in ashby",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "my power's been off since this morning",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i'd like to book a technician",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i need to change my payment date",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "the display on my meter has gone blank",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i need to change my payment date",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i need to change my payment date",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i need to change my payment date",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i want to ask why my bill doubled",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i'd like to book a technician",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i'd like to book a technician",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "the display on my meter has gone blank",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i need to change my payment date",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "is there an outage in ashby",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "the display on my meter has gone blank",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "is there an outage in ashby",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "the display on my meter has gone blank",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "is there an outage in ashby",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "my power's been off since this morning",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "the display on my meter has gone blank",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "my power's been off since this morning",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i need to change my payment date",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "is there an outage in ashby",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "is there an outage in ashby",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "my power's been off since this morning",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "the display on my meter has gone blank",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "my power's been off since this morning",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "the display on my meter has gone blank",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "the display on my meter has gone blank",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "the display on my meter has gone blank",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i need to change my payment date",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "the display on my meter has gone blank",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i'd like to book a technician",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "is there an outage in ashby",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i need to change my payment date",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i'd like to book a technician",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "is there an outage in ashby",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i need to change my payment date",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "i need to change my payment date",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "my power's been off since this morning",
+     null
+    ]
+   ]
+  },
+  {
+   "kind": "one sentence",
+   "asked": "open",
+   "segments": [
+    [
+     "is there an outage in ashby",
+     null
+    ]
+   ]
+  }
+ ],
+ "traced": {
+  "kind": "a number in two halves",
+  "asked": "account",
+  "segments": [
+   [
+    "my account number is two two",
+    700
+   ],
+   [
+    "three one",
+    null
+   ]
+  ],
+  "speak_ms": [
+   1900,
+   600
+  ]
+ },
+ "sounds": [
+  {
+   "name": "\"mm-hm\"",
+   "words": "mm-hm",
+   "keypress": false,
+   "agent_words": "the first opening is tuesday at nine there's a forty-dollar call-out fee shall i book it"
+  },
+  {
+   "name": "\"right\"",
+   "words": "right",
+   "keypress": false,
+   "agent_words": "the first opening is tuesday at nine there's a forty-dollar call-out fee shall i book it"
+  },
+  {
+   "name": "a dog barks",
+   "words": "",
+   "keypress": false,
+   "agent_words": "the first opening is tuesday at nine there's a forty-dollar call-out fee shall i book it"
+  },
+  {
+   "name": "own voice, echoed",
+   "words": "the first opening",
+   "keypress": false,
+   "agent_words": "the first opening is tuesday at nine there's a forty-dollar call-out fee shall i book it"
+  },
+  {
+   "name": "\"yes, book it\"",
+   "words": "yes book it",
+   "keypress": false,
+   "agent_words": "the first opening is tuesday at nine there's a forty-dollar call-out fee shall i book it"
+  },
+  {
+   "name": "\"no, Thursday\"",
+   "words": "no thursday",
+   "keypress": false,
+   "agent_words": "the first opening is tuesday at nine there's a forty-dollar call-out fee shall i book it"
+  },
+  {
+   "name": "keypad 2",
+   "words": "",
+   "keypress": true,
+   "agent_words": "the first opening is tuesday at nine there's a forty-dollar call-out fee shall i book it"
+  },
+  {
+   "name": "a television",
+   "words": "and in other news",
+   "keypress": false,
+   "agent_words": "the first opening is tuesday at nine there's a forty-dollar call-out fee shall i book it"
+  }
+ ],
+ "fee_line": "The first opening is Tuesday at nine. There's a forty-dollar call-out fee. Shall I book it?",
+ "barge_in_ms": 3300
+}

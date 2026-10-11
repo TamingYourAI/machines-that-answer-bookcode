@@ -1,0 +1,131 @@
+{
+ "records": {
+  "the Service Line's transfer": {
+   "account": "5108",
+   "intent": "a person about a doubled bill",
+   "verified": "PIN at 10:42",
+   "last two turns": "\"My bill doubled.\" / \"I'll put you through to billing.\"",
+   "ticket id": "T-88213",
+   "whisper": "Verified by PIN. Bill doubled after a meter swap. Wants a person."
+  },
+  "the prototype's transfer": {
+   "account": "5108",
+   "intent": "billing_question_v2",
+   "verified": "yes",
+   "last two turns": "",
+   "ticket id": "T-88213",
+   "whisper": "The caller, who was verified earlier in the call using her account number and PIN, says that her latest bill is roughly double the previous one and would now like to speak with a member of the billing team."
+  }
+ },
+ "routes": {
+  "service number": [
+   [
+    "agent",
+    "every call"
+   ]
+  ],
+  "agent": [
+   [
+    "billing queue",
+    "the caller asks for a person"
+   ],
+   [
+    "gas emergency team",
+    "a gas smell"
+   ]
+  ],
+  "billing queue": [
+   [
+    "service number",
+    "overflow after 12 minutes"
+   ],
+   [
+    "billing voicemail",
+    "desk closed"
+   ]
+  ],
+  "gas emergency team": []
+ },
+ "routes_fixed": {
+  "service number": [
+   [
+    "agent",
+    "every call"
+   ]
+  ],
+  "agent": [
+   [
+    "billing queue",
+    "the caller asks for a person"
+   ],
+   [
+    "gas emergency team",
+    "a gas smell"
+   ]
+  ],
+  "billing queue": [
+   [
+    "callback list",
+    "overflow after 12 minutes"
+   ],
+   [
+    "billing voicemail",
+    "desk closed"
+   ]
+  ],
+  "gas emergency team": []
+ },
+ "evening": {
+  "minutes": 240,
+  "profile": [
+   [
+    0,
+    40,
+    3.5
+   ],
+   [
+    40,
+    120,
+    6.5
+   ],
+   [
+    120,
+    180,
+    3.0
+   ]
+  ],
+  "per_minute": 5,
+  "overflow": 12,
+  "patience": [
+   20,
+   45
+  ],
+  "offer_after": 10,
+  "accept": 0.7,
+  "margin": 10,
+  "seed": 21
+ },
+ "carried": [
+  [
+   "pin",
+   3,
+   "explain_bill"
+  ],
+  [
+   "pin",
+   14,
+   "explain_bill"
+  ],
+  [
+   "pin",
+   2,
+   "change_address"
+  ],
+  [
+   "none",
+   0,
+   "explain_bill"
+  ]
+ ],
+ "fresh_min": 10
+}

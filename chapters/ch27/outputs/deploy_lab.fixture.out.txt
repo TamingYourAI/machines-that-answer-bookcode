@@ -1,0 +1,87 @@
+deploy lab, mode=fixture; evidence class: simulated
+
+1. the release manifest: every part that changes what callers hear
+   part                  release 31  release 32
+   instructions (core)   1.4         1.4
+   voice brief           1.3         1.3
+   billing procedure     2.1         2.2         changed
+   visit procedure       1.7         1.7
+   fixed lines           3.0         3.1         changed
+   knowledge             k-118       k-123       changed
+   policy rules          p-44        p-44
+   turn-taking rules     v2.4        v2.4
+   model                 m-12        m-12
+   recognizer            r-2.8       r-2.8
+   voice                 B 4.1       B 4.1
+   tools                 t-19        t-19
+   manifest id           0ba17b58    c8c0d25c    3 parts changed
+   what each environment would run, apart from endpoints, key
+   references, and region:
+   staging     matches c8c0d25c
+   production  voice speaking rate 1.1, the manifest says 1.0 (a hand edit in
+               the provider's console)
+   promotion refused until production matches the manifest
+
+2. shadow mode: release 32 hears a week of live calls (612), speaks to
+   nobody
+   tool              kind   by a flag each tool checks  at the tool layer
+   lookup_account    read   read 598                    read 598
+   outage_status     read   read 141                    read 141
+   find_visit_slots  read   read 92                     read 92
+   book_visit        write  held back, not logged       refused, logged 63
+   cancel_visit      write  held back, not logged       refused, logged 9
+   change_address    write  held back, not logged       refused, logged 4
+   send_receipt      write  SENT 72 to callers          refused, logged 72
+   writes that reached real systems: by a flag 72, at the tool layer 0
+   what release 32 would have written, against release 31's real writes:
+   book_visit 63 / 61, cancel_visit 9 / 9
+   change_address 4 / 4, send_receipt 72 / 70
+   2 calls to review, where release 32 booked and release 31 handed the caller
+   to a person
+
+3. the evidence gate for manifest c8c0d25c (release 32)
+   evidence                     manifest  age  result         verdict
+   text: 200 scenarios          c8c0d25c  0 d  200 of 200     ok
+   audio: 5 runs of each        c8c0d25c  1 d  996 of 1,000   ok
+   phone: 40 test calls         0ba17b58  6 d  40 of 40       another manifest
+   cross-chapter scenarios      c8c0d25c  0 d  4 of 4         ok
+   replay: 500 recorded calls   c8c0d25c  1 d  0 regressions  ok
+   shadow: 612 live calls       c8c0d25c  2 d  0 writes out   ok
+   sign-off: product owner      c8c0d25c  0 d  signed         ok
+   gate: closed, 1 of 7 not valid for c8c0d25c
+   after the phone tests rerun on c8c0d25c (40 of 40): gate open
+
+4. the canary: release 32 on 5% of evening calls for a week
+   stop rules, written first: the wait at the p95 over 800 ms; any false
+   commitment; transfers after a repair above release 31's rate, where release
+   32's 95% interval sits wholly above it
+   the wait at the p95   release 31 736 ms, release 32 742 ms   continue
+   false commitments     release 31 0, release 32 0             continue
+   transfers after a repair
+   group            release 31      release 32                 verdict
+   all callers      4.8% of 3,410   11 of 180: 3.4 to 10.6%    continue
+   first language   4.5% of 2,700   4 of 150: 1.0 to 6.7%      continue
+   second language  6.1% of 710     7 of 30: 11.8 to 40.9%     STOP
+   rollback: release 32's share set to 0; new calls meet release 31 at once;
+   the 2 calls in progress on release 32 finish on it
+
+5. drain before swap: release 31 to 33 at 14:00:00, 14 calls in progress
+   restart the workers   14 calls resume on release 33 mid-call, their state
+                         written by release 31
+   drain                 new calls meet release 33 from 14:00:00
+                         the 14 finish on release 31; the last at 14:11:20
+                         release 31's workers stop at 14:11:20
+   calls changed under a live caller: restart 14, drain 0
+   calls past the drain limit (30 min, then a person): 0
+
+6. the emergency stop: release 34 books visits whose yes missed the fee
+   found at 16:20:00 on its 25% canary; 9 calls in progress on release 34
+                                   drain               emergency stop
+   new calls                       release 33          release 33
+   book_visit, release 34          open                refused at the gateway
+   more bookings without the fee   4                   0
+   bookings in flight              2, as they land     2, read back
+   callers moved to a person       0                   4, at the booking
+   calls whose release changed     0                   0
+   read back: 1 landed, so a person calls that caller about the fee; 1 did
+   not, so the person on the call books it with the fee read

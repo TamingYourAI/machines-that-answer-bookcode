@@ -1,0 +1,73 @@
+mode=mock  evidence class: simulated (stand-in operations, injected faults)
+
+1. the tool contract table (Service Line)
+   tool             latency  confirm             effect        undo
+   lookup_account   instant  none                read          n/a
+   outage_status    short    none                read          n/a
+   find_visit_slots short    none                read          n/a
+   book_visit       short    explicit            write         cancel_visit
+   cancel_visit     short    explicit            write         book_visit
+   change_address   short    explicit + step-up  write         change_address
+   take_payment     short    explicit + step-up  irreversible  staff refund
+   send_receipt     long     implicit            write         none
+
+2. spoken failure: the class decides the words
+   invalid_input  fixed by the caller; retry: no; re-ask
+                  "That date's already passed on my side. Which day this week
+                  works for you?"
+   not_found      fixed by the caller; retry: no; re-ask
+                  "I can't find an account with that number. Could you read it
+                  to me once more?"
+   conflict       fixed by the agent; retry: no; offer another
+                  "Tuesday at nine was just taken. I can do Tuesday at one, or
+                  Wednesday at nine."
+   not_permitted  fixed by a step-up or a person; retry: no
+                  "I'll need to confirm it's you before I change that. I'll
+                  send a code to the phone on the account."
+   unavailable    fixed by time; retry: yes, silently, within budget
+                  "The booking system is slow right now. Give me a few more
+                  seconds."
+   timeout        fixed by reconciliation; retry: yes, same operation id
+                  "I've sent the booking and I'm waiting for it to confirm.
+                  I'll text you within five minutes either way."
+   internal       fixed by a person; retry: no
+                  "Something went wrong on our side, not yours. I can connect
+                  you to a colleague, or have someone call you back today."
+
+3. lost responses (500 bookings; 2 attempts; 8% of requests and
+   8% of responses lost on the link; same faults for every strategy)
+                                duplicate       false    said it   handed to
+   strategy                       actions  commitment     failed   a promise
+   naive retry                      5.8 %       2.8 %      3.0 %       0.0 %
+   operation id                     0.0 %       2.8 %      3.0 %       0.0 %
+   operation id + reconcile         0.0 %       0.0 %      0.0 %       1.0 %
+
+4. confirmation binding: what a yes may authorize
+   scenario                           call-bound    operation-bound
+   a plain yes                        executes      executes
+   changed mind: "make it Thursday"   UNCONFIRMED   re-confirms: terms changed
+   yes, then three minutes on hold    UNCONFIRMED   re-confirms: yes expired
+   barge-in before the fee was played UNCONFIRMED   re-confirms: fee not heard
+   late result from a canceled turn   UNCONFIRMED   re-confirms: canceled turn
+   unconfirmed actions: call-bound 4 of 5, operation-bound 0 of 5
+
+5. the last slot: two callers, every ordering of offer and book
+   strategy               orderings   double-booked   lost after offer
+   check then book                6               4                  0
+   conditional write              6               0                  4
+   hold at offer                  6               0                  0
+
+6. post-call promises (400 receipts; 15% of send attempts fail;
+   deadline 30 min; tracked attempts at 0, 5, 20 min after the call)
+   policy                promise keep rate   escalated   silently broken
+   fire and forget                  86.0 %       0.0 %            14.0 %
+   tracked promise                  99.8 %       0.2 %             0.0 %
+
+release-blocking invariants (must be exactly zero):
+   duplicate actions with an operation id          0.0   PASS
+   false commitments with reconciliation           0.0   PASS
+   unconfirmed actions with operation binding      0.0   PASS
+   double bookings with a conditional write        0.0   PASS
+   double bookings with a hold at offer            0.0   PASS
+regression band: invariants exactly zero; other rates within 2 points
+of the frozen output

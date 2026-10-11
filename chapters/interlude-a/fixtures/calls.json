@@ -1,0 +1,47 @@
+{
+ "hours": {
+  "from": "555 0161",
+  "turns": [
+   "Are you open Saturday?",
+   "No, that's all."
+  ]
+ },
+ "booking": {
+  "from": "555 0142",
+  "turns": [
+   "I've got a leak under the kitchen sink.",
+   "Tuesday at nine is fine.",
+   "Yes, go ahead."
+  ]
+ },
+ "change": {
+  "from": "555 0177",
+  "turns": [
+   "Can someone look at my boiler?",
+   "Tuesday at nine.",
+   "Actually, can we do Wednesday?",
+   "Yes, Wednesday."
+  ]
+ },
+ "person": {
+  "from": "555 0183",
+  "turns": [
+   "My drain's blocked and I'd like Tuesday.",
+   "I want a person."
+  ]
+ },
+ "deaf": {
+  "from": "555 0129",
+  "turns": [
+   "I need a plumber for a leak.",
+   "<recognizer down>",
+   "Hello?"
+  ]
+ },
+ "unknown": {
+  "from": "555 0150",
+  "turns": [
+   "Do you install solar panels?"
+  ]
+ }
+}

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Console · Knowledge Line</title>
+<meta name="theme-color" content="#1E2A32">
+<link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span>Console</span></div>
+  <a class="admin-link" href="/">Back to the app</a>
+</header>
+<div class="console">
+  <p class="note" id="open-note" hidden>The console is open because OVA_ADMIN_TOKEN is not set. Set it before this server is reachable by anyone else.</p>
+  <div class="grid">
+    <div class="panel"><div class="eyebrow">Kill switch</div><div id="kills"></div>
+      <p class="note">New calls hear a closing line and go to a person; calls in progress hand over at their next turn.</p></div>
+    <div class="panel"><div class="eyebrow">Live calls</div><div class="stat" id="live">0</div></div>
+    <div class="panel"><div class="eyebrow">Promise keep rate</div><div class="stat" id="keep">n/a</div>
+      <p class="note">Texts and callbacks delivered by the deadline the caller heard.</p></div>
+    <div class="panel"><div class="eyebrow">Providers</div><div id="prov" class="note"></div></div>
+  </div>
+  <div class="tabs" id="tabs">
+    <button class="chip" data-tab="calls" aria-pressed="true">Calls</button>
+    <button class="chip" data-tab="claims">Claims</button>
+    <button class="chip" data-tab="messages">Texts and email</button>
+    <button class="chip" data-tab="promises">Promises</button>
+  </div>
+  <section id="view"></section>
+  <section id="detail" class="panel" hidden></section>
+</div>
+<script type="module">
+const $ = (s) => document.querySelector(s);
+const el = (t, c, x) => { const n = document.createElement(t); if (c) n.className = c; if (x !== undefined) n.textContent = x; return n; };
+let token = localStorage.getItem("ova_admin") || "";
+let tab = "calls", data = null, detailId = null, detailKind = null;
+async function api(path, opts = {}) {
+  const r = await fetch(path, { ...opts, headers: { "Content-Type": "application/json", "x-admin-token": token, ...(opts.headers || {}) } });
+  if (r.status === 401) { token = prompt("Admin token") || ""; localStorage.setItem("ova_admin", token); return api(path, opts); }
+  return r.json();
+}
+const t = (s) => s ? new Date(s * 1000).toLocaleString() : "";
+function table(cols, rows, onPick) {
+  const tb = el("table");
+  const h = el("tr"); cols.forEach((c) => h.appendChild(el("th", "", c[0]))); tb.appendChild(h);
+  for (const r of rows) {
+    const tr = el("tr", onPick ? "pick" : "");
+    cols.forEach((c) => tr.appendChild(el("td", c[2] || "", String(c[1](r) ?? ""))));
+    if (onPick) tr.onclick = () => onPick(r);
+    tb.appendChild(tr);
+  }
+  return tb;
+}
+async function refresh() {
+  data = await api("/api/admin/overview");
+  $("#open-note").hidden = !data.open_console;
+  $("#live").textContent = data.live.length;
+  $("#keep").textContent = data.keep_rate == null ? "n/a" : Math.round(data.keep_rate * 100) + "%";
+  const p = data.providers;
+  $("#prov").textContent = `Hearing: ${p.stt || "browser or Twilio"}. Speaking: ${p.tts || "browser or Twilio"}. Model: ${p.llm || "rules only"}.` + (p.notes.length ? " " + p.notes.join("; ") : "");
+  const k = $("#kills"); k.innerHTML = "";
+  for (const [pack, on] of Object.entries(data.kill)) {
+    const row = el("div", "switch");
+    row.appendChild(el("span", "", pack));
+    const b = el("button", "toggle"); b.setAttribute("aria-pressed", String(on)); b.setAttribute("aria-label", `Pause ${pack}`);
+    b.onclick = async () => { await api("/api/admin/kill", { method: "POST", body: JSON.stringify({ pack, on: !on }) }); refresh(); };
+    row.appendChild(b); k.appendChild(row);
+  }
+  render();
+}
+function render() {
+  const v = $("#view"); v.innerHTML = "";
+  if (tab === "calls") v.appendChild(table([["Started", (r) => t(r.started_at)], ["Business", (r) => r.tenant], ["Channel", (r) => r.channel], ["Outcome", (r) => r.outcome || (r.ended_at ? "" : "live")], ["Summary", (r) => r.summary]], data.calls, (r) => showCall(r.id)));
+  if (tab === "claims") v.appendChild(table([["Claim", (r) => r.number, "mono"], ["Policy", (r) => r.policy, "mono"], ["Type", (r) => r.loss_type], ["Loss date", (r) => r.loss_date], ["Status", (r) => r.status], ["Photos", (r) => (r.photos || []).length], ["Adjuster", (r) => r.adjuster]], data.claims, (r) => showClaim(r.number)));
+  if (tab === "messages") v.appendChild(table([["Sent", (r) => t(r.created_at)], ["Channel", (r) => r.channel], ["To", (r) => r.to_addr], ["Status", (r) => r.status], ["Body", (r) => r.body]], data.messages));
+  if (tab === "promises") {
+    v.appendChild(table([["Kind", (r) => r.kind], ["Due", (r) => t(r.due_at)], ["State", (r) => r.state], ["Attempts", (r) => r.attempts], ["What", (r) => r.payload.summary || r.payload.body || r.payload.by || ""]], data.promises, async (r) => {
+      if (r.kind === "callback" && r.state === "open" && confirm("Mark this callback as made?")) { await api(`/api/admin/promises/${r.id}/keep`, { method: "POST" }); refresh(); }
+    }));
+    v.appendChild(el("p", "note", "Click an open callback to mark it made."));
+  }
+}
+async function showCall(id) {
+  const d = await api(`/api/admin/calls/${id}`);
+  const box = $("#detail"); box.hidden = false; box.innerHTML = "";
+  box.appendChild(el("div", "eyebrow", `Call ${id}`));
+  box.appendChild(el("h3", "", `${d.call.tenant} · ${d.call.channel} · ${d.call.outcome || "live"}`));
+  const conv = el("div", "convo");
+  for (const r of d.transcript) {
+    const b = el("div", "turn " + (r.who === "agent" ? "agent" : "caller"));
+    b.appendChild(el("div", "who", r.who));
+    b.appendChild(el("div", "", r.text));
+    conv.appendChild(b);
+  }
+  box.appendChild(conv);
+  box.appendChild(el("div", "eyebrow", "Operations"));
+  box.appendChild(table([["Tool", (r) => r.tool], ["State", (r) => r.state], ["Failure", (r) => r.failure || ""], ["Terms", (r) => JSON.stringify(r.terms)]], d.operations));
+  box.appendChild(el("div", "eyebrow", "Trace"));
+  const end = Math.max(1, ...d.spans.map((s) => s.end_ms));
+  for (const s of d.spans) {
+    const row = el("div"); row.style.display = "grid"; row.style.gridTemplateColumns = "180px 1fr 70px"; row.style.gap = "8px"; row.style.fontSize = "12px";
+    row.appendChild(el("span", "mono", `${s.turn} ${s.layer}:${s.name}`));
+    const w = el("div", "waterfall"); const i = el("i", s.layer === "tool" ? "tool" : s.layer === "llm" ? "llm" : "");
+    i.style.left = (100 * s.start_ms / end) + "%"; i.style.width = Math.max(0.5, 100 * (s.end_ms - s.start_ms) / end) + "%";
+    w.appendChild(i); row.appendChild(w);
+    row.appendChild(el("span", "mono", `${Math.round(s.end_ms - s.start_ms)} ms`));
+    box.appendChild(row);
+  }
+  box.scrollIntoView({ behavior: "smooth" });
+}
+async function showClaim(number) {
+  const d = await api(`/api/admin/claims/${number}`);
+  const box = $("#detail"); box.hidden = false; box.innerHTML = "";
+  box.appendChild(el("div", "eyebrow", `Claim ${number}`));
+  const c = d.claim;
+  box.appendChild(el("h3", "", `${c.loss_type} on ${c.loss_date}, ${c.status}`));
+  box.appendChild(el("p", "", c.description || ""));
+  box.appendChild(el("p", "note", `Where: ${c.location || ""}. Injured: ${c.injured}. Other party: ${c.other_party ?? "n/a"}. Police: ${c.police ?? "n/a"}. Drivable: ${c.drivable ?? "n/a"}. Reported by ${c.channel}.`));
+  const th = el("div", "thumbs");
+  for (const f of d.files) {
+    const fig = el("figure"); fig.style.margin = "0";
+    const img = el("img"); img.src = `/api/files/${f.id}?token=${encodeURIComponent(token)}`; img.alt = f.meta.name || "photo";
+    fig.appendChild(img);
+    if (f.meta.note) fig.appendChild(el("figcaption", "note", `${f.meta.label}: ${f.meta.note}`));
+    th.appendChild(fig);
+  }
+  box.appendChild(th);
+  box.scrollIntoView({ behavior: "smooth" });
+}
+document.querySelectorAll("#tabs .chip").forEach((b) => b.onclick = () => {
+  tab = b.dataset.tab;
+  document.querySelectorAll("#tabs .chip").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+  render();
+});
+refresh();
+setInterval(refresh, 4000);
+</script>
+</body>
+</html>

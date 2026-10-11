@@ -1,0 +1,80 @@
+orchestration lab, mode=fixture; evidence class: simulated
+
+1. one interruption, two queues (1,000 ms of audio queued ahead of play-out)
+   the interruption travels as                 audio after the barge-in
+   a data frame, in line behind the audio                   1,000 ms
+   a system frame, ahead of the queue                          20 ms
+
+2. playback truth: the fee line (91 characters, 6,400 ms), a mark every 200 ms
+   (the voice runs 1,000 ms ahead of play-out; the caller cuts in at 3,300 ms,
+   and the clear reaches the platform at 3,340 ms)
+   marks sent 21; echoed while playing 16; echoed by the clear 5
+   the orchestrator counts                   heard       the fee
+   every echoed mark as played               59 of 91    counted as heard
+   marks after the clear as cleared          45 of 91    not heard
+   heard: "The first opening is Tuesday at nine. There's"
+
+3. the interruption race suite: 500 seeded races on the fee line
+   (a barge-in anywhere from 1,000 to 6,000 ms; up to 300 ms of audio still in
+   flight from the voice; a late tool result in half the races; a reconnect in
+   one in five)
+   invariant broken                                 naive   correct
+   canceled audio reached the caller                  481         0
+   the fee counted as heard, unplayed                  94         0
+   a canceled reply's result spoken                   267         0
+
+4. speculative generation: 200 stand-in turns, 26 of them paused mid-thought
+   setting                                p50   p95  dropped  tokens  over
+   no speculation                         609   679        0       0     0
+   speculate the model                    447   497       26    1164     0
+   speculate the model and the voice      413   466       26    1164     0
+   play before the turn is confirmed      411   466       26    1164    26
+   (voice to voice at the caller in ms, on the turns that ended; dropped:
+   replies generated and discarded; tokens: generated for nothing; over: audio
+   played over a caller who went on)
+
+5. spans on your own clock: one turn on provider A's platform, before and
+   after a release that holds the text for a whole sentence
+   layer         span                                  before  after
+   transport     carrier and platform, in                  40     40 *
+   turn-taking   caller stops -> end of turn              220    220
+   hearing       end of turn -> final transcript           40     40
+   thinking      final transcript -> first token          170    170
+   orchestration first token -> text sent to voice          0    200 *
+   speaking      text sent -> first audio byte             85     85
+   transport     first audio -> audio leaves               10     10 *
+   transport     carrier and platform, out                 45     45 *
+   voice to voice at the caller                           610    810
+   the parts on the vendor dashboard                      515    515
+   * not on the vendor's per-part dashboard; only your own clock sees it
+
+6. the latency playbook: one turn, lever by lever (ms at the caller)
+   cold, far, whole sentences, no speculation           1,215
+   + connections kept warm                                935
+   + the model near the carrier                           810
+   + text streamed to the voice                           610
+   + the reply speculated                                 440
+   (round trips of 140 ms far and 15 ms near; 2 round trips to open a
+   connection, TCP then TLS 1.3; stand-in values)
+
+7. one call, end to end: the recurring caller's booking turn
+       ms    layer       event (* added in Part IV)
+        0    transport   "Yes, go ahead." leaves the caller
+       40    transport   her audio reaches the agent
+      240    turn-taking end of turn: the words answer the question
+      280    hearing     final transcript: "yes, go ahead"
+      281  * thinking    state loaded; the read-back was played in full, by
+                         marks: 91 of 91
+      283  * thinking    policy layer: book_visit allowed; the yes covers
+                         slot, address, fee
+      284  * thinking    op 7f3a journaled and the state saved, before the
+                         request leaves
+      285    systems     book_visit sent to the scheduler
+      295  * speaking    "Booking that now." from the line cache; checked:
+                         commits nothing
+      350    transport   the caller hears the filler
+    1,685  * systems     the scheduler commits op 7f3a; the state is saved
+    1,690  * speaking    "You're booked for Tuesday at nine." rendered from
+                         the state; checked: op 7f3a committed
+    1,745  * transport   the caller hears it; marks prove it played
+    1,746  * thinking    the explanation record for the turn is written

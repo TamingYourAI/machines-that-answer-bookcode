@@ -1,0 +1,206 @@
+{
+ "t0": 72600,
+ "caller_number": "555 0176",
+ "numbers": {
+  "555 0176": [
+   "5108"
+  ]
+ },
+ "bills": {
+  "5108": {
+   "sep": "184.20",
+   "aug": "91.60"
+  }
+ },
+ "booking_line": {
+  "text": "Tuesday at nine is free, and the call-out fee is forty dollars. Shall I book it?",
+  "terms": [
+   {
+    "term": "the slot",
+    "ends_ms": 900
+   },
+   {
+    "term": "the fee",
+    "ends_ms": 2600
+   }
+  ]
+ },
+ "marks_every": 200,
+ "cut_ms": 1300,
+ "forks_ok": [
+  {
+   "name": "recognizer",
+   "before": 96000,
+   "after": 96000
+  },
+  {
+   "name": "model",
+   "before": 96000,
+   "after": 96000
+  },
+  {
+   "name": "evaluation copy",
+   "before": 96000,
+   "after": 96000
+  },
+  {
+   "name": "recording",
+   "before": 96000,
+   "after": 96000
+  },
+  {
+   "name": "transcript",
+   "before": 96000,
+   "after": 96000
+  }
+ ],
+ "forks_bad": [
+  {
+   "name": "recognizer",
+   "before": 96000,
+   "after": 96000
+  },
+  {
+   "name": "model",
+   "before": 96000,
+   "after": 96000
+  },
+  {
+   "name": "evaluation copy",
+   "before": 96000,
+   "after": 96000
+  },
+  {
+   "name": "recording",
+   "before": 96000,
+   "after": 100000
+  },
+  {
+   "name": "transcript",
+   "before": 96000,
+   "after": 96000
+  }
+ ],
+ "record": {
+  "account": "5108",
+  "intent": "a person about a doubled bill",
+  "verified": "PIN at 20:10",
+  "last_two_turns": "\"It's gone and doubled.\" / \"I'll put you through.\"",
+  "ticket": "T-88213"
+ },
+ "whisper": "Verified by PIN. Bill doubled after a meter swap. Wants a person.",
+ "recurring_call": {
+  "start": "20:10:00",
+  "part_ii_end": "20:15:20",
+  "steps": [
+   [
+    "20:10:00",
+    "silent",
+    "555 0131 finds one account, 2231; nothing is said",
+    true
+   ],
+   [
+    "20:10:06",
+    "she hears",
+    "\"This is the utility's automated assistant. How can I help?\"",
+    false
+   ],
+   [
+    "20:10:09",
+    "she says",
+    "her meter's display has gone blank",
+    false
+   ],
+   [
+    "20:10:12",
+    "she hears",
+    "\"To check it's you, please key your PIN.\"",
+    true
+   ],
+   [
+    "20:10:19",
+    "keys",
+    "four keys reach the verification service as events; the transcript holds none",
+    true
+   ],
+   [
+    "20:10:20",
+    "silent",
+    "statement v-2231-1: level pin, for billing and scheduling; her note \"text me; don't call\" recalled",
+    true
+   ],
+   [
+    "20:10:24",
+    "she hears",
+    "\"Is the visit for fourteen Alder Road?\"",
+    false
+   ],
+   [
+    "20:10:29",
+    "silent",
+    "no outage at fourteen Alder Road",
+    false
+   ],
+   [
+    "20:10:31",
+    "silent",
+    "her first sentence goes on a fault ticket",
+    false
+   ],
+   [
+    "20:10:46",
+    "she hears",
+    "\"I've texted a link to the number you're calling from, for a photo of the meter.\"",
+    false
+   ],
+   [
+    "20:11:38",
+    "text",
+    "the photo lands on the fault ticket",
+    false
+   ],
+   [
+    "20:11:44",
+    "she hears",
+    "\"Thanks, that's come through. Is the power on in the rest of the house?\"",
+    false
+   ],
+   [
+    "20:12:56",
+    "she says",
+    "she checks the lights: the power is on",
+    false
+   ],
+   [
+    "20:13:06",
+    "she hears",
+    "\"The first opening is Tuesday at nine. There's a forty-dollar call-out fee. Shall I book it?\"",
+    false
+   ],
+   [
+    "20:13:16",
+    "silent",
+    "\"Yes, go ahead.\" Scheduling checks the statement: allowed, logged with caller 2231 and the agent",
+    true
+   ],
+   [
+    "20:13:18",
+    "she hears",
+    "\"You're booked for Tuesday at nine.\"",
+    false
+   ],
+   [
+    "20:13:36",
+    "text",
+    "the confirmation text; the day-before reminder set to a text, as she asked",
+    true
+   ],
+   [
+    "20:13:56",
+    "silent",
+    "the disposition: visit booked by the agent",
+    false
+   ]
+  ]
+ }
+}

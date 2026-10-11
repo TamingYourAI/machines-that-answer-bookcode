@@ -1,0 +1,762 @@
+{
+"A": [
+{
+"line": 1,
+"listener": 1,
+"fits": 3,
+"natural": 5,
+"heard_ok": null
+},
+{
+"line": 1,
+"listener": 2,
+"fits": 4,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 1,
+"listener": 3,
+"fits": 5,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 1,
+"listener": 4,
+"fits": 4,
+"natural": 5,
+"heard_ok": null
+},
+{
+"line": 1,
+"listener": 5,
+"fits": 4,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 1,
+"listener": 6,
+"fits": 3,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 2,
+"listener": 1,
+"fits": 4,
+"natural": 5,
+"heard_ok": true
+},
+{
+"line": 2,
+"listener": 2,
+"fits": 4,
+"natural": 4,
+"heard_ok": false
+},
+{
+"line": 2,
+"listener": 3,
+"fits": 5,
+"natural": 5,
+"heard_ok": true
+},
+{
+"line": 2,
+"listener": 4,
+"fits": 3,
+"natural": 5,
+"heard_ok": true
+},
+{
+"line": 2,
+"listener": 5,
+"fits": 5,
+"natural": 5,
+"heard_ok": true
+},
+{
+"line": 2,
+"listener": 6,
+"fits": 5,
+"natural": 5,
+"heard_ok": false
+},
+{
+"line": 3,
+"listener": 1,
+"fits": 4,
+"natural": 5,
+"heard_ok": true
+},
+{
+"line": 3,
+"listener": 2,
+"fits": 4,
+"natural": 5,
+"heard_ok": true
+},
+{
+"line": 3,
+"listener": 3,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 3,
+"listener": 4,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 3,
+"listener": 5,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 3,
+"listener": 6,
+"fits": 5,
+"natural": 5,
+"heard_ok": false
+},
+{
+"line": 4,
+"listener": 1,
+"fits": 5,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 4,
+"listener": 2,
+"fits": 4,
+"natural": 5,
+"heard_ok": true
+},
+{
+"line": 4,
+"listener": 3,
+"fits": 4,
+"natural": 5,
+"heard_ok": true
+},
+{
+"line": 4,
+"listener": 4,
+"fits": 3,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 4,
+"listener": 5,
+"fits": 5,
+"natural": 5,
+"heard_ok": true
+},
+{
+"line": 4,
+"listener": 6,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 5,
+"listener": 1,
+"fits": 3,
+"natural": 5,
+"heard_ok": true
+},
+{
+"line": 5,
+"listener": 2,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 5,
+"listener": 3,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 5,
+"listener": 4,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 5,
+"listener": 5,
+"fits": 4,
+"natural": 5,
+"heard_ok": true
+},
+{
+"line": 5,
+"listener": 6,
+"fits": 5,
+"natural": 4,
+"heard_ok": false
+},
+{
+"line": 6,
+"listener": 1,
+"fits": 5,
+"natural": 5,
+"heard_ok": null
+},
+{
+"line": 6,
+"listener": 2,
+"fits": 4,
+"natural": 5,
+"heard_ok": null
+},
+{
+"line": 6,
+"listener": 3,
+"fits": 4,
+"natural": 3,
+"heard_ok": null
+},
+{
+"line": 6,
+"listener": 4,
+"fits": 4,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 6,
+"listener": 5,
+"fits": 4,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 6,
+"listener": 6,
+"fits": 4,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 7,
+"listener": 1,
+"fits": 5,
+"natural": 5,
+"heard_ok": false
+},
+{
+"line": 7,
+"listener": 2,
+"fits": 5,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 7,
+"listener": 3,
+"fits": 4,
+"natural": 5,
+"heard_ok": false
+},
+{
+"line": 7,
+"listener": 4,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 7,
+"listener": 5,
+"fits": 3,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 7,
+"listener": 6,
+"fits": 5,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 8,
+"listener": 1,
+"fits": 4,
+"natural": 5,
+"heard_ok": null
+},
+{
+"line": 8,
+"listener": 2,
+"fits": 4,
+"natural": 5,
+"heard_ok": null
+},
+{
+"line": 8,
+"listener": 3,
+"fits": 3,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 8,
+"listener": 4,
+"fits": 4,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 8,
+"listener": 5,
+"fits": 4,
+"natural": 5,
+"heard_ok": null
+},
+{
+"line": 8,
+"listener": 6,
+"fits": 4,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 9,
+"listener": 1,
+"fits": 5,
+"natural": 5,
+"heard_ok": null
+},
+{
+"line": 9,
+"listener": 2,
+"fits": 4,
+"natural": 5,
+"heard_ok": null
+},
+{
+"line": 9,
+"listener": 3,
+"fits": 3,
+"natural": 5,
+"heard_ok": null
+},
+{
+"line": 9,
+"listener": 4,
+"fits": 3,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 9,
+"listener": 5,
+"fits": 5,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 9,
+"listener": 6,
+"fits": 4,
+"natural": 4,
+"heard_ok": null
+}
+],
+"B": [
+{
+"line": 1,
+"listener": 1,
+"fits": 3,
+"natural": 3,
+"heard_ok": null
+},
+{
+"line": 1,
+"listener": 2,
+"fits": 4,
+"natural": 3,
+"heard_ok": null
+},
+{
+"line": 1,
+"listener": 3,
+"fits": 4,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 1,
+"listener": 4,
+"fits": 4,
+"natural": 3,
+"heard_ok": null
+},
+{
+"line": 1,
+"listener": 5,
+"fits": 5,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 1,
+"listener": 6,
+"fits": 5,
+"natural": 3,
+"heard_ok": null
+},
+{
+"line": 2,
+"listener": 1,
+"fits": 5,
+"natural": 3,
+"heard_ok": true
+},
+{
+"line": 2,
+"listener": 2,
+"fits": 4,
+"natural": 3,
+"heard_ok": true
+},
+{
+"line": 2,
+"listener": 3,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 2,
+"listener": 4,
+"fits": 4,
+"natural": 3,
+"heard_ok": true
+},
+{
+"line": 2,
+"listener": 5,
+"fits": 5,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 2,
+"listener": 6,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 3,
+"listener": 1,
+"fits": 4,
+"natural": 5,
+"heard_ok": true
+},
+{
+"line": 3,
+"listener": 2,
+"fits": 5,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 3,
+"listener": 3,
+"fits": 4,
+"natural": 3,
+"heard_ok": true
+},
+{
+"line": 3,
+"listener": 4,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 3,
+"listener": 5,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 3,
+"listener": 6,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 4,
+"listener": 1,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 4,
+"listener": 2,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 4,
+"listener": 3,
+"fits": 4,
+"natural": 5,
+"heard_ok": true
+},
+{
+"line": 4,
+"listener": 4,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 4,
+"listener": 5,
+"fits": 3,
+"natural": 3,
+"heard_ok": true
+},
+{
+"line": 4,
+"listener": 6,
+"fits": 3,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 5,
+"listener": 1,
+"fits": 4,
+"natural": 5,
+"heard_ok": true
+},
+{
+"line": 5,
+"listener": 2,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 5,
+"listener": 3,
+"fits": 5,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 5,
+"listener": 4,
+"fits": 4,
+"natural": 5,
+"heard_ok": true
+},
+{
+"line": 5,
+"listener": 5,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 5,
+"listener": 6,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 6,
+"listener": 1,
+"fits": 4,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 6,
+"listener": 2,
+"fits": 4,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 6,
+"listener": 3,
+"fits": 5,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 6,
+"listener": 4,
+"fits": 3,
+"natural": 5,
+"heard_ok": null
+},
+{
+"line": 6,
+"listener": 5,
+"fits": 5,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 6,
+"listener": 6,
+"fits": 5,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 7,
+"listener": 1,
+"fits": 5,
+"natural": 3,
+"heard_ok": true
+},
+{
+"line": 7,
+"listener": 2,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 7,
+"listener": 3,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 7,
+"listener": 4,
+"fits": 3,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 7,
+"listener": 5,
+"fits": 4,
+"natural": 4,
+"heard_ok": false
+},
+{
+"line": 7,
+"listener": 6,
+"fits": 4,
+"natural": 4,
+"heard_ok": true
+},
+{
+"line": 8,
+"listener": 1,
+"fits": 5,
+"natural": 3,
+"heard_ok": null
+},
+{
+"line": 8,
+"listener": 2,
+"fits": 4,
+"natural": 5,
+"heard_ok": null
+},
+{
+"line": 8,
+"listener": 3,
+"fits": 4,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 8,
+"listener": 4,
+"fits": 5,
+"natural": 3,
+"heard_ok": null
+},
+{
+"line": 8,
+"listener": 5,
+"fits": 4,
+"natural": 5,
+"heard_ok": null
+},
+{
+"line": 8,
+"listener": 6,
+"fits": 5,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 9,
+"listener": 1,
+"fits": 5,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 9,
+"listener": 2,
+"fits": 5,
+"natural": 5,
+"heard_ok": null
+},
+{
+"line": 9,
+"listener": 3,
+"fits": 4,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 9,
+"listener": 4,
+"fits": 4,
+"natural": 4,
+"heard_ok": null
+},
+{
+"line": 9,
+"listener": 5,
+"fits": 5,
+"natural": 3,
+"heard_ok": null
+},
+{
+"line": 9,
+"listener": 6,
+"fits": 5,
+"natural": 4,
+"heard_ok": null
+}
+]
+}

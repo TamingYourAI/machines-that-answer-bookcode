@@ -1,0 +1,45 @@
+{
+  "_note": "Synthetic data for the Open Voice Agents demonstration. Quillmere Mutual is invented; so is every person, number, and address here. Phone numbers use the fictional 555-01xx range.",
+  "policies": [
+    {
+      "number": "QM-481273",
+      "kind": "auto",
+      "status": "active",
+      "holder": {"name": "Alex Rivera", "first": "Alex", "dob": "1985-03-04",
+                 "phone": "+13125550142", "email": "alex.rivera@example.com", "zip": "60614"},
+      "vehicle": "2021 hatchback, silver",
+      "deductibles": {"collision": 500, "comprehensive": 250, "glass": 0},
+      "coverages": {"liability": "100/300/100", "collision": true, "comprehensive": true,
+                    "full_glass": true, "roadside": true,
+                    "rental": {"per_day": 40, "max_days": 30}}
+    },
+    {
+      "number": "QM-730914",
+      "kind": "home",
+      "status": "active",
+      "holder": {"name": "Sam Okafor", "first": "Sam", "dob": "1992-11-19",
+                 "phone": "+13125550187", "email": "sam.okafor@example.com", "zip": "60201"},
+      "property": "42 Linden Ave, Evanston",
+      "deductibles": {"all_perils": 1000},
+      "coverages": {"dwelling": 350000, "personal_property": 175000,
+                    "additional_living_expenses": 20000, "water_backup": false,
+                    "flood": false}
+    },
+    {
+      "number": "QM-552806",
+      "kind": "auto",
+      "status": "active",
+      "holder": {"name": "Priya Nair", "first": "Priya", "dob": "1978-07-22",
+                 "phone": "+13125550163", "email": "priya.nair@example.com", "zip": "60657"},
+      "vehicle": "2019 sedan, blue",
+      "deductibles": {"collision": 1000, "comprehensive": 500, "glass": 500},
+      "coverages": {"liability": "50/100/50", "collision": true, "comprehensive": true,
+                    "full_glass": false, "roadside": false, "rental": null}
+    }
+  ],
+  "adjusters": [
+    {"name": "Dana Reyes", "line": "+13125550110"},
+    {"name": "Morgan Lee", "line": "+13125550111"},
+    {"name": "Chris Patel", "line": "+13125550112"}
+  ]
+}

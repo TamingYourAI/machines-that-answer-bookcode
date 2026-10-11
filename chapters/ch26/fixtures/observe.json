@@ -1,0 +1,202 @@
+{
+ "bad_call": {
+  "id": "c-8124-1",
+  "trace": "4f19a2e7",
+  "account": "8124",
+  "rules": "v2.3",
+  "offer": "Tuesday at nine is the first opening. Shall I book it?",
+  "answer": [
+   [
+    "not tuesday",
+    620,
+    700
+   ],
+   [
+    "wednesday if you can",
+    1100,
+    0
+   ]
+  ],
+  "after": [
+   "the agent stopped when she spoke over it, then offered Tuesday at one",
+   "she said \"Wednesday\" again and was cut off after \"Wed\"",
+   "she asked for a person; handed over at 01:52"
+  ]
+ },
+ "suite": [
+  {
+   "id": "tt-01",
+   "caller": [
+    [
+     "yes",
+     300,
+     0
+    ]
+   ],
+   "expect": {
+    "cut_off": false,
+    "max_wait": 200
+   }
+  },
+  {
+   "id": "tt-02",
+   "caller": [
+    [
+     "tuesday at nine is fine",
+     1200,
+     0
+    ]
+   ],
+   "expect": {
+    "cut_off": false,
+    "max_wait": 200
+   }
+  },
+  {
+   "id": "tt-05",
+   "caller": [
+    [
+     "two two",
+     650,
+     700
+    ],
+    [
+     "three one",
+     650,
+     0
+    ]
+   ],
+   "expect": {
+    "cut_off": false
+   }
+  },
+  {
+   "id": "tt-08",
+   "caller": [
+    [
+     "no",
+     250,
+     0
+    ]
+   ],
+   "expect": {
+    "cut_off": false,
+    "max_wait": 200
+   }
+  },
+  {
+   "id": "tt-11",
+   "caller": [
+    [
+     "um",
+     300,
+     900
+    ],
+    [
+     "the lights are on",
+     1000,
+     0
+    ]
+   ],
+   "expect": {
+    "cut_off": false
+   }
+  },
+  {
+   "id": "tt-14",
+   "caller": [
+    [
+     "not tuesday",
+     620,
+     0
+    ]
+   ],
+   "expect": {
+    "cut_off": false,
+    "max_wait": 1000
+   }
+  }
+ ],
+ "week": [
+  [
+   "hearing",
+   1
+  ],
+  [
+   "hearing",
+   2
+  ],
+  [
+   "hearing",
+   2
+  ],
+  [
+   "hearing",
+   3
+  ],
+  [
+   "hearing",
+   1
+  ],
+  [
+   "hearing",
+   4
+  ],
+  [
+   "hearing",
+   2
+  ],
+  [
+   "hearing",
+   6
+  ],
+  [
+   "turn-taking",
+   1
+  ],
+  [
+   "turn-taking",
+   2
+  ],
+  [
+   "turn-taking",
+   2
+  ],
+  [
+   "turn-taking",
+   3
+  ],
+  [
+   "turn-taking",
+   1
+  ],
+  [
+   "thinking",
+   3
+  ],
+  [
+   "thinking",
+   5
+  ],
+  [
+   "thinking",
+   4
+  ],
+  [
+   "systems of record",
+   2
+  ],
+  [
+   "systems of record",
+   9
+  ],
+  [
+   "speaking",
+   1
+  ],
+  [
+   "transport",
+   2
+  ]
+ ]
+}

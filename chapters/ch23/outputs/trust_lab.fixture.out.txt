@@ -1,0 +1,62 @@
+trust lab, mode=fixture; evidence class: simulated
+
+1. where a card number lands (a public test card)
+   design                             the whole number              part of it
+   week 8: read aloud to the agent    5 places                      none
+   at launch: stopped, then a person  a person on the payments line 4 places
+   the isolated path: keyed           the payment processor         none
+   week 8 reached: recognizer, model, transcript, evaluation copy, recording
+
+2. proving isolation: a 500 ms marker tone after the pause
+   run A, every fork stops
+     recognizer       paused       0 bytes   stopped
+     model            paused       0 bytes   stopped
+     transcript       paused       0 bytes   stopped
+     evaluation copy  paused       0 bytes   stopped
+     recording        paused       0 bytes   stopped
+     then: the path opens; the caller keys 16 digits, the expiry, and the
+           code; the processor alone receives them
+     the agent receives: token tok-5108-8841, approved, $184.20, card ending
+                         1111
+   run B, the recording says paused and keeps going
+     recognizer       paused       0 bytes   stopped
+     model            paused       0 bytes   stopped
+     transcript       paused       0 bytes   stopped
+     evaluation copy  paused       0 bytes   stopped
+     recording        paused   4,000 bytes   said paused; still receiving
+     then: the path stays shut, and the agent says: "I can't take a card on
+           this call right now. I can text you a secure link to pay, or the
+           payments team can call you back within the hour."
+     the payment: link texted at 20:15; paid through it at 20:19: token
+                  tok-5108-8907, approved; the case closes paid
+     and: an incident for the compliance lead; card payments on calls stay off
+          until the recording passes the marker test again
+
+3. redaction before the transcript is written
+   what the recognizer wrote               holds                 digits left
+                                                         naive   luhn  spans
+   my card is 4111 1111 1111 1111          card              0      0      0
+   4 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1         card              0      0      0
+   four one one one one one one one on...  card             16      0      0
+   forty-one eleven, eleven eleven, el...  card             16      0      0
+   four double one double one double o...  card             16      0      0
+   my card is 4111 1111 1111 1112          misheard          0     16      0
+   my card is 4111 1111                    first half        8      8      0
+   1111 1111                               second half       8      8      0
+   the code on the back is one two three   code              3      0      0
+   digits of a card or code left in the trace               67     32      0
+   my account is 2231 and my number is...  neither        kept   kept   kept
+   my order number is 4111111111111111     neither      masked masked masked
+
+4. security signals from one evening (190 checks, 45 silent calls; stand-ins)
+   signal                         limit        seen                  first
+   accounts tried from one number 3 in 10 min  555 0188: 4 accounts  21:05
+     response: no more checks by voice from that number today; its attempts go
+               to the fraud review
+   failed checks on one account   3 in 30 min  4012: 4 numbers       21:22
+     response: voice checks locked on the account; the next change needs the
+               app, and the holder is told by text
+   silent calls a minute          10           18                    22:01
+     response: spike mode, and the carrier asked to filter; callers already
+               talking are not touched
+   15 ordinary failed checks, one per caller, stayed below every limit

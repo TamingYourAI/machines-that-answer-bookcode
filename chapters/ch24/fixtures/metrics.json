@@ -1,0 +1,431 @@
+{
+ "calls": [
+  {
+   "id": "r1",
+   "task": "a visit",
+   "lang": "first",
+   "seat": "phone",
+   "turns": [
+    {
+     "said": "my meter's display has gone blank",
+     "heard": "my meter's display has gone blank",
+     "entities": [],
+     "server": 520,
+     "caller": 700,
+     "cut_off": false,
+     "interrupted": false
+    },
+    {
+     "said": "two two three one",
+     "heard": "two two three one",
+     "entities": [
+      [
+       "account",
+       "2231",
+       "2231"
+      ]
+     ],
+     "server": 480,
+     "caller": 660,
+     "cut_off": false,
+     "interrupted": false
+    },
+    {
+     "said": "yes that's right",
+     "heard": "yes that's right",
+     "entities": [
+      [
+       "yes",
+       "yes",
+       "yes"
+      ]
+     ],
+     "server": 410,
+     "caller": 590,
+     "cut_off": false,
+     "interrupted": false
+    },
+    {
+     "said": "yes fourteen alder road",
+     "heard": "yes fourteen alder road",
+     "entities": [
+      [
+       "address",
+       "14 Alder Road",
+       "14 Alder Road"
+      ]
+     ],
+     "server": 560,
+     "caller": 750,
+     "cut_off": false,
+     "interrupted": false
+    },
+    {
+     "said": "the lights are on",
+     "heard": "the light are on",
+     "entities": [],
+     "server": 470,
+     "caller": 650,
+     "cut_off": false,
+     "interrupted": false
+    },
+    {
+     "said": "tuesday at nine is fine",
+     "heard": "tuesday at nine is fine",
+     "entities": [
+      [
+       "slot",
+       "Tuesday 9:00",
+       "Tuesday 9:00"
+      ]
+     ],
+     "server": 540,
+     "caller": 720,
+     "cut_off": false,
+     "interrupted": false
+    },
+    {
+     "said": "yes go ahead",
+     "heard": "yes go ahead",
+     "entities": [
+      [
+       "yes",
+       "yes",
+       "yes"
+      ]
+     ],
+     "server": 650,
+     "caller": 840,
+     "cut_off": false,
+     "interrupted": false
+    },
+    {
+     "said": "no that's all thanks",
+     "heard": "no that's all thanks",
+     "entities": [],
+     "server": 450,
+     "caller": 630,
+     "cut_off": false,
+     "interrupted": false
+    }
+   ],
+   "handed_over": false,
+   "done_by": "agent",
+   "again_days": null,
+   "agent_min": 5.3,
+   "person_min": 0.0,
+   "again_min": 0.0
+  },
+  {
+   "id": "r2",
+   "task": "a bill",
+   "lang": "first",
+   "seat": "phone",
+   "turns": [
+    {
+     "said": "why has my bill gone up",
+     "heard": "why has my bill gone up",
+     "entities": [],
+     "server": 560,
+     "caller": 740,
+     "cut_off": false,
+     "interrupted": false
+    },
+    {
+     "said": "six one five two",
+     "heard": "six one five two",
+     "entities": [
+      [
+       "account",
+       "6152",
+       "6152"
+      ]
+     ],
+     "server": 500,
+     "caller": 690,
+     "cut_off": false,
+     "interrupted": false
+    },
+    {
+     "said": "it went up by fifty dollars",
+     "heard": "it went up by fifteen dollars",
+     "entities": [
+      [
+       "amount",
+       "50",
+       "15"
+      ]
+     ],
+     "server": 610,
+     "caller": 800,
+     "cut_off": false,
+     "interrupted": false
+    },
+    {
+     "said": "oh okay",
+     "heard": "oh okay",
+     "entities": [],
+     "server": 380,
+     "caller": 560,
+     "cut_off": false,
+     "interrupted": true
+    },
+    {
+     "said": "and that's the estimated reading",
+     "heard": "and that's the estimated reading",
+     "entities": [],
+     "server": 700,
+     "caller": 890,
+     "cut_off": false,
+     "interrupted": false
+    },
+    {
+     "said": "fine",
+     "heard": "fine",
+     "entities": [],
+     "server": 420,
+     "caller": 600,
+     "cut_off": false,
+     "interrupted": false
+    }
+   ],
+   "handed_over": false,
+   "done_by": "agent",
+   "again_days": 4,
+   "agent_min": 4.1,
+   "person_min": 0.0,
+   "again_min": 7.4
+  },
+  {
+   "id": "r3",
+   "task": "a person",
+   "lang": "first",
+   "seat": "phone",
+   "turns": [
+    {
+     "said": "a person please",
+     "heard": "a person please",
+     "entities": [],
+     "server": 450,
+     "caller": 630,
+     "cut_off": false,
+     "interrupted": false
+    },
+    {
+     "said": "it's about my bill it's six one",
+     "heard": "it's about my bill it's six one",
+     "entities": [],
+     "server": 300,
+     "caller": 480,
+     "cut_off": true,
+     "interrupted": false
+    },
+    {
+     "said": "six one seven seven",
+     "heard": "six one seven seven",
+     "entities": [
+      [
+       "account",
+       "6177",
+       "6177"
+      ]
+     ],
+     "server": 530,
+     "caller": 710,
+     "cut_off": false,
+     "interrupted": false
+    },
+    {
+     "said": "yes please",
+     "heard": "yes please",
+     "entities": [
+      [
+       "yes",
+       "yes",
+       "yes"
+      ]
+     ],
+     "server": 480,
+     "caller": 660,
+     "cut_off": false,
+     "interrupted": false
+    }
+   ],
+   "handed_over": true,
+   "done_by": "a person",
+   "again_days": null,
+   "agent_min": 1.6,
+   "person_min": 7.2,
+   "again_min": 0.0
+  }
+ ],
+ "week_4": [
+  [
+   "first",
+   "under 65",
+   "phone",
+   1560,
+   560,
+   124,
+   330,
+   546,
+   51,
+   22
+  ],
+  [
+   "first",
+   "under 65",
+   "app",
+   380,
+   168,
+   26,
+   60,
+   126,
+   15,
+   14
+  ],
+  [
+   "first",
+   "65 and over",
+   "phone",
+   440,
+   118,
+   30,
+   118,
+   174,
+   11,
+   3
+  ],
+  [
+   "first",
+   "65 and over",
+   "app",
+   60,
+   24,
+   4,
+   12,
+   20,
+   2,
+   1
+  ],
+  [
+   "second",
+   "under 65",
+   "phone",
+   270,
+   64,
+   17,
+   78,
+   111,
+   6,
+   2
+  ],
+  [
+   "second",
+   "under 65",
+   "app",
+   60,
+   22,
+   5,
+   11,
+   22,
+   2,
+   1
+  ],
+  [
+   "second",
+   "65 and over",
+   "phone",
+   90,
+   20,
+   8,
+   30,
+   32,
+   2,
+   0
+  ],
+  [
+   "second",
+   "65 and over",
+   "app",
+   10,
+   3,
+   1,
+   4,
+   2,
+   0,
+   0
+  ]
+ ],
+ "machine_calls": 14,
+ "flows": {
+  "week 5": {
+   "billing": [
+    1700,
+    1224
+   ],
+   "visits": [
+    1200,
+    648
+   ]
+  },
+  "week 6": {
+   "billing": [
+    2500,
+    1750
+   ],
+   "visits": [
+    800,
+    416
+   ]
+  }
+ },
+ "case": {
+  "resolution that lasts": [
+   45.0,
+   30.0,
+   "below"
+  ],
+  "what a repeat call costs": [
+   6.0,
+   9.0,
+   "above"
+  ],
+  "agent cost per call": [
+   0.9,
+   1.5,
+   "above"
+  ],
+  "cost per resolved case": [
+   4.2,
+   null,
+   null
+  ]
+ },
+ "week_8": {
+  "calls": 2900,
+  "lasted": 1102,
+  "came back": 174,
+  "unfinished": 754,
+  "handed over": 870,
+  "back within 7 days": 734,
+  "handovers resolved": 870,
+  "repeats resolved": 734,
+  "agent invoices": 3248.0,
+  "minutes per handed-over call": 6.6,
+  "minutes before the pilot": 6.0,
+  "minutes per repeat call": 6.2,
+  "review and tuning hours": 16,
+  "rate per hour": 60.0,
+  "groups": {
+   "language: second": [
+    450,
+    140
+   ],
+   "age band: 65 and over": [
+    610,
+    206
+   ]
+  }
+ }
+}

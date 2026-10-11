@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Knowledge Line</title>
+<meta name="description" content="The Knowledge Line: talk to the book's voice agents, River Plumbing's booking line first, and an insurance claims line.">
+<meta name="theme-color" content="#1E2A32">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/static/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<div id="kill-banner" class="banner" hidden>The automated line is paused. Calls go to a person.</div>
+<header class="top">
+  <div class="brand">
+    <svg class="mark" viewBox="0 0 512 512" aria-hidden="true">
+      <rect width="512" height="512" rx="112" fill="#1E2A32"/>
+      <g fill="#E2582B"><rect x="118" y="214" width="28" height="84" rx="14"/><rect x="170" y="170" width="28" height="172" rx="14"/><rect x="222" y="126" width="28" height="260" rx="14"/><rect x="274" y="186" width="28" height="140" rx="14"/><rect x="326" y="150" width="28" height="212" rx="14"/><rect x="378" y="222" width="28" height="68" rx="14"/></g>
+    </svg>
+    <span id="brand-name">Knowledge Line</span>
+  </div>
+  <select id="pack" aria-label="Business"></select>
+  <a class="admin-link" href="/admin">Console</a>
+</header>
+
+<div class="layout">
+<main>
+  <section id="intro" class="intro">
+    <div class="eyebrow" id="intro-eyebrow">Voice agent</div>
+    <h1 id="intro-title">Loading</h1>
+    <p class="sub" id="intro-sub"></p>
+
+    <div class="panel" id="who-panel">
+      <div class="eyebrow">Who is calling</div>
+      <div class="chips" id="who"></div>
+      <p class="note" id="who-note"></p>
+    </div>
+
+    <div class="panel">
+      <div class="eyebrow">How to talk</div>
+      <div class="chips" id="modes">
+        <button class="chip" data-mode="browser">Browser voice</button>
+        <button class="chip" data-mode="webrtc">Server voice (WebRTC)</button>
+        <button class="chip" data-mode="text">Type</button>
+      </div>
+      <p class="note" id="mode-note"></p>
+    </div>
+
+    <div class="panel wash">
+      <div class="eyebrow">Try saying</div>
+      <ul class="try" id="try"></ul>
+      <details class="cheats" id="cheats">
+        <summary>Demo policyholders, for when the agent asks who you are</summary>
+        <table class="demo"><thead><tr><th>Name</th><th>Policy</th><th>Date of birth</th></tr></thead>
+          <tbody>
+            <tr><td>Alex Rivera (auto)</td><td class="mono">QM-481273</td><td>March 4, 1985</td></tr>
+            <tr><td>Sam Okafor (home)</td><td class="mono">QM-730914</td><td>November 19, 1992</td></tr>
+            <tr><td>Priya Nair (auto)</td><td class="mono">QM-552806</td><td>July 22, 1978</td></tr>
+          </tbody></table>
+        <p class="note">Everything here is invented: the insurer, the people, the claims. Texts and emails go to the panel on this page unless the server has a provider set up.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="convo" class="convo" aria-live="polite"></section>
+</main>
+
+<aside id="phone" class="phone" aria-label="Texts and email sent during the call">
+  <div class="eyebrow">The caller's phone</div>
+  <h2>Texts and email the agent sent</h2>
+  <p class="note">A message is an action: the agent says it, then sends it.</p>
+  <div id="msgs"><p class="note" id="no-msgs">Nothing yet.</p></div>
+</aside>
+</div>
+
+<footer class="dock">
+  <div class="dock-inner">
+    <form class="typebox" id="typebox" autocomplete="off">
+      <input id="typed" placeholder="Type to the agent" aria-label="Type to the agent">
+      <button type="submit">Send</button>
+    </form>
+    <div class="controls">
+      <button class="round" id="camera" title="Add photos to your claim" aria-label="Add photos" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>
+      </button>
+      <button class="talk" id="talk" aria-label="Start the call">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="talk-icon"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+      </button>
+      <button class="round" id="phone-btn" title="Texts and email" aria-label="Texts and email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 18.5h4"/></svg>
+        <span class="badge" id="msg-badge" hidden>0</span>
+      </button>
+    </div>
+    <div class="status" id="status">Press the button to start a call.</div>
+  </div>
+</footer>
+<input type="file" id="file" accept="image/*" capture="environment" multiple hidden>
+<script type="module" src="/static/app.js"></script>
+</body>
+</html>

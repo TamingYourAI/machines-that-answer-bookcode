@@ -1,0 +1,37 @@
+{
+  "id": "tt-17",
+  "title": "A no, a pause, then the day she wants",
+  "line": "service line",
+  "source": {
+    "kind": "failure",
+    "ref": "trace 4f19a2e7 (Chapter 26)"
+  },
+  "layer": "turn-taking",
+  "flow": "visit",
+  "language": "first",
+  "caller": {
+    "goal": "move the visit to Wednesday",
+    "persona": "stops to check her calendar, then speaks over the agent",
+    "lines": [
+      ["not tuesday", 620, 700],
+      ["wednesday if you can", 1100, 0]
+    ]
+  },
+  "conditions": {
+    "noise": "quiet",
+    "surface": "phone"
+  },
+  "before": {
+    "offer": "Tuesday at nine is the first opening. Shall I book it?"
+  },
+  "faults": [],
+  "expect": {
+    "cut_off": false,
+    "slot": "wednesday"
+  },
+  "runs": {
+    "n": 20,
+    "pass": "all"
+  },
+  "runners": ["text", "audio", "phone"]
+}

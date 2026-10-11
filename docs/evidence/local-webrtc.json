@@ -1,0 +1,22 @@
+{
+  "evidence_class": "live laboratory",
+  "passed": true,
+  "boundary": "Chromium fake microphone -> WebRTC -> Whisper -> core -> Kokoro -> RTP",
+  "physical_microphone": false,
+  "human_listening": false,
+  "caller": [
+    "you\nMy kitchen drain is blocked."
+  ],
+  "agent": [
+    "agent\nRiver Plumbing, this is the automated booking assistant. How can I help?",
+    "agent\nAre you still there?",
+    "agent\nWhat's the address for the visit?"
+  ],
+  "inbound_audio": [
+    {
+      "packetsReceived": 855,
+      "bytesReceived": 61295
+    }
+  ],
+  "page_errors": []
+}

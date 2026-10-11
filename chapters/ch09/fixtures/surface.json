@@ -1,0 +1,100 @@
+{
+ "user": {
+  "account": "5108"
+ },
+ "now": 1000000,
+ "bundles": {
+  "prototype": {
+   "config/speech.json": "{\"provider\": \"realtime\", \"api_key\": \"sk-live-8f2c1d9e7a6b5c4d3e2f\"}",
+   "js/app.js": "connect(provider, config.api_key)"
+  },
+  "release": {
+   "config/speech.json": "{\"session_url\": \"/voice/token\"}",
+   "js/app.js": "connect(edge, await fetchToken())"
+  }
+ },
+ "events": [
+  {
+   "kind": "caller speaking"
+  },
+  {
+   "kind": "end of turn"
+  },
+  {
+   "kind": "tool started",
+   "card": "reading your bill"
+  },
+  {
+   "kind": "line played",
+   "says": "Your September bill is $184.20. August was $91.60. September includes an estimated reading from your new meter.",
+   "card": "Sep $184.20, Aug $91.60, estimated"
+  },
+  {
+   "kind": "connection lost"
+  },
+  {
+   "kind": "connection back"
+  },
+  {
+   "kind": "offer",
+   "says": "A technician can check the meter on Tuesday at 9:00. There's a $40 call-out fee. Shall I book it?",
+   "card": "Tuesday 9:00, fee $40"
+  },
+  {
+   "kind": "confirmed",
+   "card": "booking"
+  },
+  {
+   "kind": "committed",
+   "says": "Booked for Tuesday at 9:00.",
+   "card": "booked: Tuesday 9:00"
+  }
+ ],
+ "clients": [
+  {
+   "version": "3.4",
+   "contract": 3
+  },
+  {
+   "version": "3.1",
+   "contract": 2
+  },
+  {
+   "version": "2.9",
+   "contract": 1
+  }
+ ],
+ "devices": [
+  {
+   "name": "laptop, Wi-Fi, built-in speakers",
+   "network": 60,
+   "jitter buffer": 40,
+   "device audio": 30
+  },
+  {
+   "name": "phone, mobile network, earpiece",
+   "network": 120,
+   "jitter buffer": 40,
+   "device audio": 20
+  },
+  {
+   "name": "phone, mobile, Bluetooth (call)",
+   "network": 120,
+   "jitter buffer": 40,
+   "device audio": 60
+  },
+  {
+   "name": "phone, mobile, Bluetooth (media)",
+   "network": 120,
+   "jitter buffer": 40,
+   "device audio": 170
+  }
+ ],
+ "offer": {
+  "id": "offer-7",
+  "account": "5108",
+  "slot": "tue-0900",
+  "version": 2
+ },
+ "question": "Why is my bill so high?"
+}

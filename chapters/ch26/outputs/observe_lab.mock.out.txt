@@ -1,0 +1,53 @@
+observe lab, mode=mock; evidence class: simulated
+
+1. the bad call's trace (call c-8124-1; turn-taking rules v2.3)
+       ms  event (from the end of the offer)
+        0  offer ends: "Tuesday at nine is the first opening. Shall I book
+                       it?"
+      620  caller stops: "not tuesday"
+      820  turn ended: the words answer the question, waited 200 ms
+     1320  caller resumes: "wednesday if you can"
+     1470  agent's first audio starts over her
+           then: the agent stopped when she spoke over it, then offered
+                 Tuesday at one
+           then: she said "Wednesday" again and was cut off after "Wed"
+           then: she asked for a person; handed over at 01:52
+
+2. name the layer: the taxonomy, first match wins
+   transport          no audio, or one-way, for over 2 s
+   hearing            a word said was written as another
+   turn-taking        the turn ended while the caller spoke       <- named
+   thinking           a proposal contradicts the state or rules
+   systems of record  a tool failed, or answered stale
+   speaking           what played differs from what was made
+   orchestration      a gap between spans that no layer owns
+
+3. promote it to the suite: the scenario written from the call
+   id tt-17, from trace 4f19a2e7, layer turn-taking
+   caller says "not tuesday" (620 ms), then 700 ms of silence
+   caller says "wednesday if you can" (1100 ms), then stops
+   expect: no cut-off; the booking asks about wednesday
+   left out: the call id (it carries the account), the caller's number
+
+4. the suite catches it: every turn-taking scenario, both rule sets
+   scenario  v2.3              v2.4              wait v2.3 / v2.4
+   tt-01     pass              pass               200 / 200 ms
+   tt-02     pass              pass               200 / 200 ms
+   tt-05     pass              pass              1200 / 1200 ms
+   tt-08     pass              pass               200 / 200 ms
+   tt-11     pass              pass              1200 / 1200 ms
+   tt-14     pass              pass               200 / 1000 ms
+   tt-17     FAIL: cut off     pass               200 / 200 ms
+   v2.3 fails 1, v2.4 fails 0; the plain answers still end at 200 ms, and only
+   a refused slot with nothing after it waits longer
+
+5. the week's review: flagged calls by the layer they named
+   layer               calls  median days  longest  over a week
+   transport               1            2        2            0
+   hearing                 8            2        6            0
+   turn-taking             5            2        3            0
+   thinking                3            4        5            0
+   systems of record       2          5.5        9            1
+   speaking                1            1        1            0
+   20 flagged calls, each now a scenario; 1 took longer than a week, and goes
+   on the review's agenda

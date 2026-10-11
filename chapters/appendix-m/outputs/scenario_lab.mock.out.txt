@@ -1,0 +1,42 @@
+scenario lab, mode=mock; evidence class: none (a format)
+
+1. the format: 14 fields, every one required
+   id          str   the layer's prefix and a number: tt-17
+   title       str   what the scenario tests, in a line
+   line        str   the business and its line
+   source      dict  where it came from, and its reference
+   layer       str   the layer whose failure it catches
+   flow        str   the flow it runs in
+   language    str   the language it runs in
+   caller      dict  goal, persona, and lines: words, ms, pause ms
+   conditions  dict  noise, and the surface
+   before      dict  the systems' state before the call
+   faults      list  what breaks on purpose, if anything
+   expect      dict  assertions on the state and tools after
+   runs        dict  how many runs, and how many must pass
+   runners     list  text, audio, phone: every one that runs it
+
+2. the starter catalogue: 21 scenarios, and the 4 of Appendix Q
+   business           tr  he  tt  th  sr  sp  or  total
+   river plumbing      0   1   0   5   0   0   0      6
+   service line        2   2   4   3   2   1   1     15
+   disruption desk     0   1   0   2   1   0   0      4
+   every scenario valid: yes; ids unique within each business
+
+3. the validator: five broken scenarios, and what it says
+   no assertions               expect: at least one assertion
+   a call id as its source     source: a call id carries the account; cite the
+                               trace
+   the wrong prefix            id: he-17 does not match its layer
+   a line with no timing       caller: line 1 needs words, ms, pause
+   the phone runner on an app  runners: the phone runner needs the phone
+                               surface
+
+4. the acceptance scenarios: every release candidate passes all four
+   id    scenario                       layer              guarded by
+   aq-1  an interrupted confirmation    orchestration      heard state
+   aq-2  an unknown transaction outcome systems of record  reconciliation
+   aq-3  denied data access             systems of record  the statement check
+   aq-4  failed media isolation         transport          the marker test
+   Interlude B's lab runs all four on the Service Line's slice, with each
+   guarding piece removed in turn

@@ -1,0 +1,361 @@
+[
+  {
+    "id": "ch01",
+    "title": "1. A call is a system, not a chat with a microphone",
+    "entrypoint": "call_budget_lab.py",
+    "mode_env": "CALL_LAB_MODE",
+    "source": "manuscript/builders/ch01-a-call-is-a-system.md",
+    "integrated_files": [
+      "ova/voice.py",
+      "ova/runtime.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch02",
+    "title": "2. Where the agent sits: contact centers, service desks, and the systems that were there first",
+    "entrypoint": "seat_lab.py",
+    "mode_env": "SEAT_LAB_MODE",
+    "source": "manuscript/builders/ch02-where-the-agent-sits.md",
+    "integrated_files": [
+      "ova/runtime.py",
+      "ova/transports/twilio.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch03",
+    "title": "3. Voice design",
+    "entrypoint": "voice_lab.py",
+    "mode_env": "VOICE_LAB_MODE",
+    "source": "manuscript/builders/ch03-voice-design.md",
+    "integrated_files": [
+      "ova/runtime.py",
+      "ova/speech.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch04",
+    "title": "4. Conversation design",
+    "entrypoint": "dialogue_lab.py",
+    "mode_env": "DIALOGUE_LAB_MODE",
+    "source": "manuscript/builders/ch04-conversation-design.md",
+    "integrated_files": [
+      "ova/dialogue.py",
+      "ova/agent.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch05",
+    "title": "5. Which calls first, then SOP to spoken flow",
+    "entrypoint": "sop_lab.py",
+    "mode_env": "SOP_LAB_MODE",
+    "source": "manuscript/builders/ch05-which-calls-first.md",
+    "integrated_files": [
+      "ova/dialogue.py",
+      "ova_apps/river_plumbing/pack.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch06",
+    "title": "6. The stack: reference architecture and the first fork",
+    "entrypoint": "stack_lab.py",
+    "mode_env": "STACK_LAB_MODE",
+    "source": "manuscript/builders/ch06-the-stack.md",
+    "integrated_files": [
+      "ova/providers/__init__.py",
+      "ova/voice.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch07",
+    "title": "7. Transport and telephony",
+    "entrypoint": "telephony_lab.py",
+    "mode_env": "TELEPHONY_LAB_MODE",
+    "source": "manuscript/builders/ch07-transport-and-telephony.md",
+    "integrated_files": [
+      "ova/audio.py",
+      "ova/transports/twilio.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch08",
+    "title": "8. Connecting to the business: every way in",
+    "entrypoint": "entry_lab.py",
+    "mode_env": "ENTRY_LAB_MODE",
+    "source": "manuscript/builders/ch08-connecting-to-the-business.md",
+    "integrated_files": [
+      "ova/transports/twilio.py",
+      "ova/transports/webrtc.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch09",
+    "title": "9. Where the voice lives: web, mobile, workplace apps, and devices",
+    "entrypoint": "surface_lab.py",
+    "mode_env": "SURFACE_LAB_MODE",
+    "source": "manuscript/builders/ch09-where-the-voice-lives.md",
+    "integrated_files": [
+      "ova_server/web/static/voice.js",
+      "ova_server/app.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch10",
+    "title": "10. Hearing",
+    "entrypoint": "hearing_lab.py",
+    "mode_env": "HEARING_LAB_MODE",
+    "source": "manuscript/builders/ch10-hearing.md",
+    "integrated_files": [
+      "ova/providers/stt.py",
+      "ova/nlu.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch11",
+    "title": "11. Turn-taking",
+    "entrypoint": "turn_lab.py",
+    "mode_env": "TURN_LAB_MODE",
+    "source": "manuscript/builders/ch11-turn-taking.md",
+    "integrated_files": [
+      "ova/turn.py",
+      "ova/voice.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch12",
+    "title": "12. Speaking",
+    "entrypoint": "speaking_lab.py",
+    "mode_env": "SPEAKING_LAB_MODE",
+    "source": "manuscript/builders/ch12-speaking.md",
+    "integrated_files": [
+      "ova/providers/tts.py",
+      "ova/speech.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch13",
+    "title": "13. Speech-to-speech, in depth",
+    "entrypoint": "s2s_lab.py",
+    "mode_env": "S2S_LAB_MODE",
+    "source": "manuscript/builders/ch13-speech-to-speech.md",
+    "integrated_files": [],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch14",
+    "title": "14. Agent architecture: the turn loop, control, state, and policy",
+    "entrypoint": "core_lab.py",
+    "mode_env": "CORE_LAB_MODE",
+    "source": "manuscript/builders/ch14-agent-architecture.md",
+    "integrated_files": [
+      "ova/agent.py",
+      "ova/runtime.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch15",
+    "title": "15. Choosing and running the model",
+    "entrypoint": "model_lab.py",
+    "mode_env": "MODEL_LAB_MODE",
+    "source": "manuscript/builders/ch15-choosing-the-model.md",
+    "integrated_files": [
+      "ova/providers/llm.py",
+      "ova/brain.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch16",
+    "title": "16. Instructions and knowledge: what the agent is told and what it knows",
+    "entrypoint": "knowledge_lab.py",
+    "mode_env": "KNOWLEDGE_LAB_MODE",
+    "source": "manuscript/builders/ch16-instructions-and-knowledge.md",
+    "integrated_files": [
+      "ova/knowledge.py",
+      "ova/brain.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch17",
+    "title": "17. Tools and actions",
+    "entrypoint": "tools_lab.py",
+    "mode_env": "TOOLS_LAB_MODE",
+    "source": "manuscript/builders/ch17-tools-and-actions.md",
+    "integrated_files": [
+      "ova/operations.py",
+      "ova/store.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch18",
+    "title": "18. Guardrails and agent reliability",
+    "entrypoint": "guard_lab.py",
+    "mode_env": "GUARD_LAB_MODE",
+    "source": "manuscript/builders/ch18-guardrails-and-reliability.md",
+    "integrated_files": [
+      "ova/policy.py",
+      "ova/operations.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch19",
+    "title": "19. Orchestration, and the swap",
+    "entrypoint": "orch_lab.py",
+    "mode_env": "ORCH_LAB_MODE",
+    "source": "manuscript/builders/ch19-orchestration-and-the-swap.md",
+    "integrated_files": [
+      "ova/voice.py",
+      "ova/transports/webrtc.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch20",
+    "title": "20. Systems of record, identity, and memory",
+    "entrypoint": "identity_lab.py",
+    "mode_env": "IDENTITY_LAB_MODE",
+    "source": "manuscript/builders/ch20-systems-of-record-identity-and-memory.md",
+    "integrated_files": [
+      "ova/links.py",
+      "ova_apps/claims/domain.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch21",
+    "title": "21. Handoff to people: contact-center queues, the service desk, and on-call staff",
+    "entrypoint": "handoff_lab.py",
+    "mode_env": "HANDOFF_LAB_MODE",
+    "source": "manuscript/builders/ch21-handoff-to-people.md",
+    "integrated_files": [
+      "ova/agent.py",
+      "ova/operations.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch22",
+    "title": "22. Agents on the line: machine callers, delegation, and agent protocols",
+    "entrypoint": "agents_lab.py",
+    "mode_env": "AGENTS_LAB_MODE",
+    "source": "manuscript/builders/ch22-agents-on-the-line.md",
+    "integrated_files": [],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch23",
+    "title": "23. Trust on the live call: disclosure, card numbers, and threats",
+    "entrypoint": "trust_lab.py",
+    "mode_env": "TRUST_LAB_MODE",
+    "source": "manuscript/builders/ch23-trust-on-the-live-call.md",
+    "integrated_files": [
+      "ova/agent.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch24",
+    "title": "24. Metrics the business will accept: two families, one record, and numbers that last",
+    "entrypoint": "metrics_lab.py",
+    "mode_env": "METRICS_LAB_MODE",
+    "source": "manuscript/builders/ch24-metrics-the-business-will-accept.md",
+    "integrated_files": [],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch25",
+    "title": "25. Testing voice agents: the pyramid, simulated callers, and rates you can trust",
+    "entrypoint": "testing_lab.py",
+    "mode_env": "TESTING_LAB_MODE",
+    "source": "manuscript/builders/ch25-testing-voice-agents.md",
+    "integrated_files": [],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch26",
+    "title": "26. Observability, and the week you improve: traces, the failure taxonomy, and the review",
+    "entrypoint": "observe_lab.py",
+    "mode_env": "OBSERVE_LAB_MODE",
+    "source": "manuscript/builders/ch26-observability-and-the-week-you-improve.md",
+    "integrated_files": [
+      "ova/store.py",
+      "ova_server/app.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch27",
+    "title": "27. Deploy it: environments, the control plane, and release",
+    "entrypoint": "deploy_lab.py",
+    "mode_env": "DEPLOY_LAB_MODE",
+    "source": "manuscript/builders/ch27-deploy-it.md",
+    "integrated_files": [
+      "ova/runtime.py",
+      "ova_server/app.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch28",
+    "title": "28. Keep it up: capacity, failure, and recovery",
+    "entrypoint": "resilience_lab.py",
+    "mode_env": "RESILIENCE_LAB_MODE",
+    "source": "manuscript/builders/ch28-keep-it-up.md",
+    "integrated_files": [],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "ch29",
+    "title": "29. Keeping it good: maintenance over the years",
+    "entrypoint": "care_lab.py",
+    "mode_env": "CARE_LAB_MODE",
+    "source": "manuscript/builders/ch29-keeping-it-good.md",
+    "integrated_files": [],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "interlude-a",
+    "title": "Interlude A. Run it first: the Appointment Line",
+    "entrypoint": "appointment_line.py",
+    "mode_env": "APPT_LAB_MODE",
+    "source": "manuscript/builders/interlude-a-run-it-first.md",
+    "integrated_files": [
+      "ova_apps/river_plumbing/pack.py",
+      "ova/agent.py"
+    ],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "interlude-b",
+    "title": "Interlude B. Assemble the Service Line slice",
+    "entrypoint": "service_slice.py",
+    "mode_env": "SLICE_LAB_MODE",
+    "source": "manuscript/builders/interlude-b-assemble-the-service-line-slice.md",
+    "integrated_files": [],
+    "evidence_class": "simulated"
+  },
+  {
+    "id": "appendix-m",
+    "title": "Appendix M. The scenario format, and a starter catalogue",
+    "entrypoint": "scenario_lab.py",
+    "mode_env": "SCENARIO_LAB_MODE",
+    "source": "manuscript/builders/appendix-m-scenario-format.md",
+    "integrated_files": [],
+    "evidence_class": "simulated"
+  }
+]

@@ -1,0 +1,222 @@
+[
+ {
+  "call": "c01",
+  "handled": "agent",
+  "verified": true,
+  "spoken_done": true,
+  "repeat_7d": false,
+  "survey": 5,
+  "turns": 9,
+  "false_cutoffs": 0,
+  "longest_silence_ms": 900
+ },
+ {
+  "call": "c02",
+  "handled": "agent",
+  "verified": true,
+  "spoken_done": true,
+  "repeat_7d": false,
+  "survey": null,
+  "turns": 11,
+  "false_cutoffs": 0,
+  "longest_silence_ms": 900
+ },
+ {
+  "call": "c03",
+  "handled": "agent",
+  "verified": true,
+  "spoken_done": true,
+  "repeat_7d": false,
+  "survey": 4,
+  "turns": 8,
+  "false_cutoffs": 0,
+  "longest_silence_ms": 900
+ },
+ {
+  "call": "c04",
+  "handled": "agent",
+  "verified": true,
+  "spoken_done": true,
+  "repeat_7d": false,
+  "survey": null,
+  "turns": 12,
+  "false_cutoffs": 0,
+  "longest_silence_ms": 900
+ },
+ {
+  "call": "c05",
+  "handled": "agent",
+  "verified": true,
+  "spoken_done": true,
+  "repeat_7d": false,
+  "survey": 5,
+  "turns": 10,
+  "false_cutoffs": 0,
+  "longest_silence_ms": 900
+ },
+ {
+  "call": "c06",
+  "handled": "agent",
+  "verified": true,
+  "spoken_done": true,
+  "repeat_7d": false,
+  "survey": null,
+  "turns": 9,
+  "false_cutoffs": 0,
+  "longest_silence_ms": 900
+ },
+ {
+  "call": "c07",
+  "handled": "agent",
+  "verified": true,
+  "spoken_done": true,
+  "repeat_7d": false,
+  "survey": 4,
+  "turns": 14,
+  "false_cutoffs": 0,
+  "longest_silence_ms": 900
+ },
+ {
+  "call": "c08",
+  "handled": "agent",
+  "verified": true,
+  "spoken_done": true,
+  "repeat_7d": false,
+  "survey": null,
+  "turns": 10,
+  "false_cutoffs": 0,
+  "longest_silence_ms": 900
+ },
+ {
+  "call": "c09",
+  "handled": "agent",
+  "verified": true,
+  "spoken_done": true,
+  "repeat_7d": false,
+  "survey": 5,
+  "turns": 7,
+  "false_cutoffs": 0,
+  "longest_silence_ms": 900
+ },
+ {
+  "call": "c10",
+  "handled": "agent",
+  "verified": true,
+  "spoken_done": true,
+  "repeat_7d": true,
+  "survey": null,
+  "turns": 13,
+  "false_cutoffs": 1,
+  "longest_silence_ms": 1100
+ },
+ {
+  "call": "c11",
+  "handled": "agent",
+  "verified": false,
+  "spoken_done": false,
+  "repeat_7d": true,
+  "survey": null,
+  "turns": 17,
+  "false_cutoffs": 3,
+  "longest_silence_ms": 2600
+ },
+ {
+  "call": "c12",
+  "handled": "agent",
+  "verified": false,
+  "spoken_done": false,
+  "repeat_7d": true,
+  "survey": null,
+  "turns": 15,
+  "false_cutoffs": 2,
+  "longest_silence_ms": 2200
+ },
+ {
+  "call": "c13",
+  "handled": "agent",
+  "verified": false,
+  "spoken_done": false,
+  "repeat_7d": false,
+  "survey": null,
+  "turns": 12,
+  "false_cutoffs": 1,
+  "longest_silence_ms": 1900
+ },
+ {
+  "call": "c14",
+  "handled": "agent",
+  "verified": false,
+  "spoken_done": true,
+  "repeat_7d": true,
+  "survey": null,
+  "turns": 10,
+  "false_cutoffs": 0,
+  "longest_silence_ms": 1400
+ },
+ {
+  "call": "c15",
+  "handled": "person",
+  "verified": true,
+  "spoken_done": false,
+  "repeat_7d": false,
+  "survey": 4,
+  "turns": 9,
+  "false_cutoffs": 1,
+  "longest_silence_ms": 1200
+ },
+ {
+  "call": "c16",
+  "handled": "person",
+  "verified": true,
+  "spoken_done": false,
+  "repeat_7d": false,
+  "survey": null,
+  "turns": 9,
+  "false_cutoffs": 1,
+  "longest_silence_ms": 1200
+ },
+ {
+  "call": "c17",
+  "handled": "person",
+  "verified": true,
+  "spoken_done": false,
+  "repeat_7d": false,
+  "survey": 5,
+  "turns": 9,
+  "false_cutoffs": 1,
+  "longest_silence_ms": 1200
+ },
+ {
+  "call": "c18",
+  "handled": "person",
+  "verified": true,
+  "spoken_done": false,
+  "repeat_7d": false,
+  "survey": null,
+  "turns": 9,
+  "false_cutoffs": 1,
+  "longest_silence_ms": 1200
+ },
+ {
+  "call": "c19",
+  "handled": "abandoned",
+  "verified": false,
+  "spoken_done": false,
+  "repeat_7d": true,
+  "survey": null,
+  "turns": 8,
+  "false_cutoffs": 2,
+  "longest_silence_ms": 2400
+ },
+ {
+  "call": "c20",
+  "handled": "abandoned",
+  "verified": false,
+  "spoken_done": false,
+  "repeat_7d": false,
+  "survey": null,
+  "turns": 6,
+  "false_cutoffs": 0,
+  "longest_silence_ms": 1500
+ }
+]

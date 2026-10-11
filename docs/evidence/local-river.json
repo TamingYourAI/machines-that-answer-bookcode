@@ -1,0 +1,88 @@
+{
+  "evidence_class": "live laboratory",
+  "pack": "river",
+  "input": "Kokoro synthetic speech",
+  "measurement_boundary": "batch STT, core, TTS; no browser or microphone",
+  "network": "socket.connect blocked during inference",
+  "passed": true,
+  "bookings": 1,
+  "claim_count_including_three_seeds": 3,
+  "turns": [
+    {
+      "input": "My kitchen drain is blocked.",
+      "recognized": "My kitchen drain is blocked.",
+      "reply": [
+        "What's the address for the visit?"
+      ],
+      "batch_seconds": 2.792
+    },
+    {
+      "input": "12 Maple Street.",
+      "recognized": "12 Maple Street.",
+      "reply": [
+        "And your name?"
+      ],
+      "batch_seconds": 0.959
+    },
+    {
+      "input": "Jordan.",
+      "recognized": "Jordan. //",
+      "reply": [
+        "Which day suits you? We visit Monday to Saturday."
+      ],
+      "batch_seconds": 1.3
+    },
+    {
+      "input": "Wednesday.",
+      "recognized": "Wednesday.",
+      "reply": [
+        "The first opening is Wednesday the thirtieth of September at nine in the morning. There's a sixty-dollar call-out charge, taken off the bill if the job goes ahead. Shall I book it for twelve Maple Street?"
+      ],
+      "batch_seconds": 3.198
+    },
+    {
+      "input": "Yes.",
+      "recognized": "Yes.",
+      "reply": [
+        "You're booked for Wednesday the thirtieth of September at nine in the morning.",
+        "I've texted the details to the number ending zero one, four two.",
+        "Is there anything else I can help with?"
+      ],
+      "batch_seconds": 3.107
+    },
+    {
+      "input": "No.",
+      "recognized": "No.",
+      "reply": [
+        "Thanks for calling River Plumbing. Goodbye."
+      ],
+      "batch_seconds": 1.161
+    }
+  ],
+  "booking_records": [
+    {
+      "id": "2026-09-30T09:00-van1",
+      "date": "2026-09-30",
+      "time": "09:00",
+      "van": "van 1",
+      "state": "booked",
+      "hold_call": "call-bbcfd35d0928",
+      "hold_until": 1791122643.5363982,
+      "booking": {
+        "op": "op-4c85e5dc20ff4c42a56a8b075e241fa9",
+        "name": "Jordan",
+        "phone": "+13125550142",
+        "address": "12 Maple Street",
+        "issue": "My kitchen drain is blocked.",
+        "fee": 60
+      }
+    }
+  ],
+  "providers": {
+    "stt": "whisper-local",
+    "tts": "kokoro-local",
+    "llm": null,
+    "vision": null,
+    "notes": []
+  }
+}

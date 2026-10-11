@@ -1,0 +1,16 @@
+# docker compose up, then open http://localhost:8080
+services:
+  ova:
+    build: .
+    ports:
+      - "127.0.0.1:8080:8080"
+      # WebRTC media: aiortc picks UDP ports from the host's range; on a laptop, host
+      # networking (network_mode: host) is the simplest way to let the browser reach them.
+    env_file:
+      - path: .env
+        required: false
+    volumes:
+      - ova-data:/data
+    restart: unless-stopped
+volumes:
+  ova-data:

@@ -1,0 +1,291 @@
+{
+ "bill": "Your September bill is $184.20, and August's was $91.60. September includes an estimated reading from the new meter.",
+ "line_ms": 3200,
+ "rebooking": [
+  [
+   "time",
+   "19:40"
+  ],
+  [
+   "date",
+   "2026-09-30"
+  ],
+  [
+   "money",
+   "EUR 84.50"
+  ]
+ ],
+ "lexicon": {
+  "Alder": {
+   "respell": "AL-der",
+   "x-sampa": "\"{l.d@`"
+  },
+  "Kestrel": {
+   "respell": "KES-trel",
+   "x-sampa": "\"kEs.tr\\@l"
+  },
+  "Ashby": {
+   "respell": "ASH-bee",
+   "x-sampa": "\"{S.bi"
+  }
+ },
+ "test_lines": [
+  "Is the visit at fourteen Alder Road?",
+  "Is there an outage in Ashby?",
+  "The visit is at twelve sixty Kestrel Way."
+ ],
+ "model_text": "Here are the openings:\n1. **Tuesday** at 9:00 AM\n2. **Tuesday** at 1:00 PM\n3. **Wednesday** at 9:00 AM\n4. **Saturday** at 9:00 AM\nThe call-out charge is $60.00. See https://example.com/book for the full calendar.",
+ "prompts": [
+  "the fee line",
+  "the balance",
+  "a date",
+  "an address",
+  "a repair turn",
+  "bad news"
+ ],
+ "number_prompts": [
+  0,
+  1,
+  2,
+  3
+ ],
+ "panel": {
+  "voice B, pinned": {
+   "scores": [
+    [
+     4,
+     4,
+     4,
+     4,
+     3,
+     4
+    ],
+    [
+     5,
+     4,
+     4,
+     5,
+     4,
+     4
+    ],
+    [
+     4,
+     4,
+     5,
+     4,
+     3,
+     4
+    ],
+    [
+     4,
+     5,
+     4,
+     4,
+     4,
+     5
+    ],
+    [
+     4,
+     4,
+     4,
+     4,
+     3,
+     4
+    ],
+    [
+     5,
+     4,
+     4,
+     4,
+     4,
+     4
+    ],
+    [
+     4,
+     4,
+     4,
+     5,
+     3,
+     4
+    ],
+    [
+     4,
+     4,
+     5,
+     4,
+     4,
+     5
+    ]
+   ],
+   "heard": [
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ]
+   ]
+  },
+  "voice B, updated": {
+   "scores": [
+    [
+     5,
+     4,
+     4,
+     5,
+     3,
+     4
+    ],
+    [
+     5,
+     5,
+     4,
+     5,
+     4,
+     5
+    ],
+    [
+     4,
+     4,
+     5,
+     4,
+     4,
+     4
+    ],
+    [
+     5,
+     5,
+     4,
+     4,
+     4,
+     5
+    ],
+    [
+     4,
+     4,
+     5,
+     4,
+     3,
+     4
+    ],
+    [
+     5,
+     5,
+     4,
+     4,
+     4,
+     4
+    ],
+    [
+     4,
+     4,
+     4,
+     5,
+     4,
+     5
+    ],
+    [
+     5,
+     4,
+     5,
+     4,
+     4,
+     5
+    ]
+   ],
+   "heard": [
+    [
+     0,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     0,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     0,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ],
+    [
+     1,
+     1,
+     1,
+     1
+    ]
+   ]
+  }
+ },
+ "line": 0.95
+}

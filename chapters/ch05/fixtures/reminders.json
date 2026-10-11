@@ -1,0 +1,38 @@
+[
+ {
+  "to": "555 0142",
+  "consent": "booking call",
+  "opted_out": false,
+  "local": "18:05"
+ },
+ {
+  "to": "555 0177",
+  "consent": "booking call",
+  "opted_out": false,
+  "local": "18:12"
+ },
+ {
+  "to": "555 0118",
+  "consent": "web form",
+  "opted_out": false,
+  "local": "21:05"
+ },
+ {
+  "to": "555 0134",
+  "consent": null,
+  "opted_out": false,
+  "local": "18:20"
+ },
+ {
+  "to": "555 0156",
+  "consent": "booking call",
+  "opted_out": true,
+  "local": "18:26"
+ },
+ {
+  "to": "555 0171",
+  "consent": "booking call",
+  "opted_out": false,
+  "local": "07:40"
+ }
+]

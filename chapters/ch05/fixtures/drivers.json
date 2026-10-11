@@ -1,0 +1,73 @@
+[
+ {
+  "reason": "outage status",
+  "calls": 40000,
+  "fit": 0.2,
+  "risk": "low",
+  "served": "menu message",
+  "spike": true
+ },
+ {
+  "reason": "payment",
+  "calls": 35000,
+  "fit": 0.7,
+  "risk": "high",
+  "served": "desk"
+ },
+ {
+  "reason": "billing question",
+  "calls": 30000,
+  "fit": 0.6,
+  "risk": "medium",
+  "served": "desk"
+ },
+ {
+  "reason": "moving home",
+  "calls": 25000,
+  "fit": 0.4,
+  "risk": "medium",
+  "served": "desk"
+ },
+ {
+  "reason": "technician visit",
+  "calls": 20000,
+  "fit": 0.7,
+  "risk": "medium",
+  "served": "desk"
+ },
+ {
+  "reason": "meter reading",
+  "calls": 15000,
+  "fit": 0.8,
+  "risk": "low",
+  "served": "desk"
+ },
+ {
+  "reason": "complaint",
+  "calls": 8000,
+  "fit": 0.0,
+  "risk": "never",
+  "served": "desk"
+ },
+ {
+  "reason": "bill dispute",
+  "calls": 6000,
+  "fit": 0.0,
+  "risk": "never",
+  "served": "desk"
+ },
+ {
+  "reason": "bereavement",
+  "calls": 1500,
+  "fit": 0.0,
+  "risk": "never",
+  "served": "desk"
+ },
+ {
+  "reason": "other",
+  "calls": 19500,
+  "fit": 0.0,
+  "risk": "unknown",
+  "served": "desk"
+ }
+]

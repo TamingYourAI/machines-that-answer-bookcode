@@ -1,0 +1,6 @@
+2026-10-04, release 0.3.1: / opens River Plumbing as the Knowledge Line; claims at /?pack=claims
+agent said: ['River Plumbing, this is the automated booking assistant. How can I help?\ncut in after 14 characters', "What's the address for the visit?"]
+caller: ['you\nmy kitchen drain is blocked']
+latency: wait for end of turn 600 ms | hear 0 ms | think 2 ms | first audio 1 ms | voice to voice (server) 619 ms
+browser voice: lines spoken 15 | caller turns 13
+errors: []

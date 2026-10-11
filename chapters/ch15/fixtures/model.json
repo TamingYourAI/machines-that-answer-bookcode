@@ -1,0 +1,207 @@
+{
+ "models": {
+  "small": {
+   "base_ms": 150,
+   "prefill_tps": 40000,
+   "sigma": 0.2,
+   "out_tps": 180,
+   "queue_ms": {
+    "quiet": 0,
+    "evening": 40,
+    "storm": 110
+   }
+  },
+  "large": {
+   "base_ms": 380,
+   "prefill_tps": 12000,
+   "sigma": 0.25,
+   "out_tps": 70,
+   "queue_ms": {
+    "quiet": 0,
+    "evening": 260,
+    "storm": 700
+   }
+  }
+ },
+ "prompt": {
+  "static": 3000,
+  "dynamic": 400
+ },
+ "loads": [
+  "quiet",
+  "evening",
+  "storm"
+ ],
+ "requests": 400,
+ "scenarios": [
+  {
+   "name": "book on a yes that covers the terms",
+   "small": 0.99,
+   "large": 1.0,
+   "caught": "the policy layer"
+  },
+  {
+   "name": "no booking before the read-back",
+   "small": 0.99,
+   "large": 1.0,
+   "caught": "the policy layer"
+  },
+  {
+   "name": "read the bill after verifying",
+   "small": 0.99,
+   "large": 1.0,
+   "caught": "the policy layer"
+  },
+  {
+   "name": "a relative date, \"next Tuesday\"",
+   "small": 0.9,
+   "large": 0.97,
+   "caught": "the read-back"
+  },
+  {
+   "name": "two requests in one breath",
+   "small": 0.93,
+   "large": 0.96,
+   "caught": "reaches the caller"
+  },
+  {
+   "name": "an account read in two halves",
+   "small": 0.96,
+   "large": 0.99,
+   "caught": "the read-back"
+  },
+  {
+   "name": "the storm waiver, in the area",
+   "small": 0.99,
+   "large": 1.0,
+   "caught": "the policy layer"
+  },
+  {
+   "name": "the storm waiver, outside it",
+   "small": 0.99,
+   "large": 1.0,
+   "caught": "the policy layer"
+  },
+  {
+   "name": "an address change needs the code",
+   "small": 0.99,
+   "large": 1.0,
+   "caught": "the policy layer"
+  },
+  {
+   "name": "a change of mind after the yes",
+   "small": 0.95,
+   "large": 0.99,
+   "caught": "the policy layer"
+  },
+  {
+   "name": "an outage question first",
+   "small": 0.99,
+   "large": 1.0,
+   "caught": "reaches the caller"
+  },
+  {
+   "name": "a meter reading given unasked",
+   "small": 0.97,
+   "large": 0.99,
+   "caught": "the read-back"
+  },
+  {
+   "name": "\"agent\" said twice",
+   "small": 0.99,
+   "large": 1.0,
+   "caught": "the policy layer"
+  },
+  {
+   "name": "a fee question during booking",
+   "small": 0.97,
+   "large": 0.99,
+   "caught": "reaches the caller"
+  },
+  {
+   "name": "a slot that is no longer open",
+   "small": 0.99,
+   "large": 1.0,
+   "caught": "the policy layer"
+  },
+  {
+   "name": "a payment request",
+   "small": 0.99,
+   "large": 1.0,
+   "caught": "the policy layer"
+  },
+  {
+   "name": "a caller on the medical list",
+   "small": 0.99,
+   "large": 1.0,
+   "caught": "the policy layer"
+  },
+  {
+   "name": "Tuesday at one, not nine",
+   "small": 0.96,
+   "large": 0.99,
+   "caught": "the read-back"
+  },
+  {
+   "name": "a second-language caller",
+   "small": 0.94,
+   "large": 0.97,
+   "caught": "the read-back"
+  },
+  {
+   "name": "a caller who hangs up mid-booking",
+   "small": 0.99,
+   "large": 1.0,
+   "caught": "the policy layer"
+  }
+ ],
+ "quality": {
+  "small": {
+   "right": {
+    "first": 0.91,
+    "second": 0.84
+   },
+   "refused": 0.002
+  },
+  "large": {
+   "right": {
+    "first": 0.96,
+    "second": 0.93
+   },
+   "refused": 0.001
+  }
+ },
+ "gates": {
+  "ttft95_ms": 400
+ },
+ "ladder": {
+  "turns": 6000,
+  "rate_limited_min": 6,
+  "hold_ms": 700,
+  "fallback_ms": 400,
+  "person_ms": 2000,
+  "refusal_rate": 0.002
+ },
+ "prices": {
+  "small": {
+   "in": 0.4,
+   "out": 1.6
+  },
+  "large": {
+   "in": 3.0,
+   "out": 12.0
+  }
+ },
+ "call": {
+  "turns": 6,
+  "history_per_turn": 120,
+  "out_per_turn": 60,
+  "write_factor": 1.25,
+  "read_factor": 0.1
+ },
+ "summary": {
+  "in": 2400,
+  "out": 250
+ },
+ "case_per_call": 0.9
+}

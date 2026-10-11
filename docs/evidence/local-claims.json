@@ -1,0 +1,105 @@
+{
+  "evidence_class": "live laboratory",
+  "pack": "claims",
+  "input": "Kokoro synthetic speech",
+  "measurement_boundary": "batch STT, core, TTS; no browser or microphone",
+  "network": "socket.connect blocked during inference",
+  "passed": true,
+  "bookings": 0,
+  "claim_count_including_three_seeds": 4,
+  "turns": [
+    {
+      "input": "My windshield cracked this morning.",
+      "recognized": "My windshield cracked this morning.",
+      "reply": [
+        "First I need to confirm who I'm speaking with. What's your policy number? A claim number works too."
+      ],
+      "batch_seconds": 3.56
+    },
+    {
+      "input": "Four eight one two seven three.",
+      "recognized": "481273.",
+      "reply": [
+        "That's four eight one, two seven three. Is that right?"
+      ],
+      "batch_seconds": 1.526
+    },
+    {
+      "input": "Yes.",
+      "recognized": "Yes.",
+      "reply": [
+        "And your date of birth?"
+      ],
+      "batch_seconds": 0.919
+    },
+    {
+      "input": "March fourth nineteen eighty five.",
+      "recognized": "March 4th, 1985.",
+      "reply": [
+        "Thanks, Alex.",
+        "I'm sorry that happened. I'll take the details; it takes about three minutes.",
+        "First, is anyone hurt?"
+      ],
+      "batch_seconds": 2.572
+    },
+    {
+      "input": "No.",
+      "recognized": "No.",
+      "reply": [
+        "About what time?"
+      ],
+      "batch_seconds": 0.88
+    },
+    {
+      "input": "Around eight in the morning.",
+      "recognized": "around eight in the morning.",
+      "reply": [
+        "Where did it happen? A street and city, or the nearest business, is fine."
+      ],
+      "batch_seconds": 1.711
+    },
+    {
+      "input": "On Lake Shore Drive.",
+      "recognized": "On Lakeshore Drive.",
+      "reply": [
+        "In a sentence or two, what happened?"
+      ],
+      "batch_seconds": 1.24
+    },
+    {
+      "input": "A stone hit the windshield.",
+      "recognized": "A stone hit the windshield.",
+      "reply": [
+        "Photos help your adjuster. Can I text you a link to upload them? It goes to the mobile ending zero one, four two."
+      ],
+      "batch_seconds": 2.288
+    },
+    {
+      "input": "Yes.",
+      "recognized": "Yes.",
+      "reply": [
+        "Here's what I have: glass damage today, at about eight in the morning, at Lakeshore Drive. Shall I file the claim?"
+      ],
+      "batch_seconds": 1.99
+    },
+    {
+      "input": "Yes.",
+      "recognized": "Yes.",
+      "reply": [
+        "Your claim is filed. The claim number is C L, seven zero five, zero five three.",
+        "I've texted the link to the mobile ending zero one, four two.",
+        "Chris Patel is your adjuster and will call you by tomorrow.",
+        "Is there anything else I can help with?"
+      ],
+      "batch_seconds": 4.049
+    }
+  ],
+  "booking_records": [],
+  "providers": {
+    "stt": "whisper-local",
+    "tts": "kokoro-local",
+    "llm": null,
+    "vision": null,
+    "notes": []
+  }
+}

@@ -1,0 +1,58 @@
+turn lab, mode=mock; evidence class: simulated
+
+1. the sweep: 200 stand-in turns, 26 with a pause inside
+   one silence timer (ms)      300    500    700    900   1100   1300
+   cut off, per 100 turns     12.5    8.5    5.0    0.5    0.0    0.0
+   wait, p50 (ms)              320    520    720    920   1120   1320
+   two thresholds (200 ms when the words are complete, 1200 when not)
+   cut off, per 100 turns      2.0
+   wait (ms)                   220 p50   220 p95  1220 max
+     cut off: a yes, then more (2)
+     cut off: two sentences (2)
+     waited 1200 ms: 7 turns that sound unfinished and were not
+   voice to voice, adding the rest of Chapter 6's turn (390 ms):
+     one timer at 900 ms, the first to cut off as few: 1310 ms
+     two thresholds: 610 ms at p50, 610 at p95 (wall 800)
+
+2. one turn: "my account number is two two" [700 ms] "three one"
+   one timer, 300 ms (ms on the call clock)
+      1900  stops after "...two two": waits 300
+      2220  end of turn: the agent answers
+      2600  the caller goes on: cut off
+   two thresholds (ms on the call clock)
+      1900  stops after "...two two": not complete, waits 1200
+      2600  the caller goes on; the wait is cancelled
+      3200  stops after "...three one": complete, waits 200
+      3420  end of turn: the agent answers
+
+3. sounds while the agent speaks: 3 policies
+   sound                  stop on voice   stop on words  pause on voice
+   "mm-hm"                        stops        talks on      300 ms gap
+   "right"                        stops        talks on      300 ms gap
+   a dog barks                    stops        talks on      500 ms gap
+   own voice, echoed              stops        talks on      300 ms gap
+   "yes, book it"         stops, 100 ms   stops, 400 ms   stops, 100 ms
+   "no, Thursday"         stops, 100 ms   stops, 400 ms   stops, 100 ms
+   keypad 2                stops, 40 ms    stops, 40 ms    stops, 40 ms
+   a television                   stops           stops           stops
+   stopped for nothing                5               1               1
+   talked over (ms)                 100             400             100
+
+4. what the caller heard: a barge-in 3300 ms into the fee line
+   generated: The first opening is Tuesday at nine. There's a
+              forty-dollar call-out fee. Shall I book it?
+   heard:     The first opening is Tuesday at nine. There's
+              (46 of 91 characters)
+   the history the model reads next:
+     agent   The first opening is Tuesday at nine. There's [cut off]
+     caller  Yes, book it.
+   the fee is not in the history: the agent says it before booking
+
+5. silence after a question: the fee line plays for 6.4 s
+   (seconds from the start of the line)
+   timers from when the line was sent: the check fires at 5.2 s,
+   while the question is still playing
+   timers from the end of play-out     check  text offer     end
+     most callers                     11.4 s      16.4 s  21.4 s
+     a relay caller                   36.4 s      66.4 s   never
+   after "hang on": check in at 30, 60, 90, 120 s

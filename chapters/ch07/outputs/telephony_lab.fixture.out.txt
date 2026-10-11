@@ -1,0 +1,43 @@
+telephony lab, mode=fixture; evidence class: simulated (synthetic signals)
+
+1. the invite (a fixture) and the answer
+   caller +13125550142, attestation A (the carrier vouches for the number)
+   offered: PCMU/8000, PCMA/8000, telephone-event/8000; packets every 20 ms
+   answer: PCMU/8000, touch-tones as events (RFC 4733)
+   warning: audio address 10.20.30.40 is private; without the border
+   controller rewriting it, the caller hears nothing (one-way audio)
+
+2. narrowband: one syllable, a vowel then an "s"
+   energy above 4 kHz: wideband 51%, after the phone path 0.2%
+   signal to noise against the band-limited voice: one pass 24.3 dB,
+   converted twice 21.6 dB
+
+3. the jitter buffer (5000 packets, base delay 40 ms)
+     buffer   added delay   late, lost
+      20 ms         20 ms        20.9%
+      40 ms         40 ms         5.0%
+      60 ms         60 ms         1.8%
+      80 ms         80 ms         1.1%
+     120 ms        120 ms         0.4%
+
+4. touch-tones: 2231# (60 ms tone, 60 ms gap)
+   in the audio, clean line          2231#
+   in the audio, after G.711         2231#
+   in the audio, a 60 ms burst lost  231#
+   as events, the same packets lost  2231#
+
+5. the outbound gate: calls on the trunk
+   owner, a transfer   allowed
+   customer callback   allowed
+   a caller's request  refused: emergency numbers are never dialed
+   premium number      refused: premium rate
+   international       refused: outside the allowed countries
+   late callback       held: outside 8:00 to 21:00 for the called party
+   a stolen credential 30 of 40 placed, then refused: hourly limit
+
+6. texts from your numbers
+   confirmation 10DLC     sent
+   confirmation 10DLC     filtered by carriers: unregistered 10DLC number
+   confirmation toll-free filtered by carriers: unregistered toll-free number
+   confirmation 10DLC     refused: no consent to text
+   reminder     10DLC     refused: the recipient replied STOP

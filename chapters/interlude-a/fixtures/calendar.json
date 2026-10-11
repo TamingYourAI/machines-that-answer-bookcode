@@ -1,0 +1,30 @@
+{
+ "tue-0900": {
+  "say": "Tuesday at nine",
+  "van": 1,
+  "held": null,
+  "booked": null,
+  "version": 1
+ },
+ "tue-1300": {
+  "say": "Tuesday at one",
+  "van": 2,
+  "held": null,
+  "booked": null,
+  "version": 1
+ },
+ "wed-0900": {
+  "say": "Wednesday at nine",
+  "van": 1,
+  "held": null,
+  "booked": null,
+  "version": 1
+ },
+ "sat-0900": {
+  "say": "Saturday at nine",
+  "van": 1,
+  "held": null,
+  "booked": null,
+  "version": 1
+ }
+}

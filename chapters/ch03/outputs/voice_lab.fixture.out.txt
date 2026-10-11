@@ -1,0 +1,33 @@
+voice lab, mode=fixture; evidence class: simulated (stand-in panel)
+
+1. the brief: version 1.3, owner head of customer operations
+   9 test lines, 4 never-say phrases, 3 lexicon entries
+   completeness check: 0 problems
+
+2. the ear check (at most 20 words and one number a sentence)
+   the memo, as written                        4 problems
+     - 38 words in one sentence (limit 20)
+     - 4 numbers in one sentence
+     - brackets: the ear cannot hear them
+     - abbreviation: 'max.'
+   the same facts, for the ear                 0 problems
+
+3. saying numbers, names, addresses, and codes
+   kind      written           said
+   digits    4417              four four, one seven
+   digits    2125550142        two one two, five five five, zero one four two
+   money     12                twelve dollars
+   money     124.50            one hundred twenty-four dollars and fifty cents
+   time      09:00             nine in the morning
+   time      20:10             eight ten in the evening
+   date      2026-09-29        Tuesday the twenty-ninth of September
+   address   14 Alder Rd       fourteen Alder Road
+   address   1260 Kestrel Way  twelve sixty Kestrel Way
+   code      K7B               K for kilo, seven, B for bravo
+
+4. the listening test: 6 listeners, nine lines, phone bandwidth
+           numbers heard  fits brief  natural  verdict
+   voice A       80 % of 30      4.09     4.44  fail
+     - numbers heard correctly 80 % (needs 95 %)
+   voice B       97 % of 30      4.22     3.91  pass
+   pass: numbers heard 95 %, fits 4.0, no line under 3.5; natural not scored

@@ -1,0 +1,121 @@
+{
+ "invite": {
+  "from": "+13125550142",
+  "to": "+13125550100",
+  "call": "CA-0142"
+ },
+ "ws_start": {
+  "streamSid": "MZ-0142",
+  "callSid": "CA-0142",
+  "customParameters": {
+   "line": "service"
+  }
+ },
+ "session": {
+  "user": "signed in",
+  "account": "5108"
+ },
+ "digit": "2",
+ "fields": {
+  "account": "5108",
+  "verified": "PIN",
+  "intent": "billing question",
+  "ticket": "T-88213",
+  "last two turns": "Caller: My bill doubled this month. I want to talk to a person. Agent: I'll put you through to billing now. I'm sending them your account and what you've told me."
+ },
+ "lost": [
+  81,
+  124,
+  179,
+  348,
+  366,
+  517,
+  560,
+  787,
+  791,
+  857,
+  928,
+  959,
+  1013,
+  1092,
+  1517,
+  1537,
+  1599,
+  1641,
+  1649,
+  1856,
+  1880,
+  1986,
+  1996,
+  2027,
+  2074,
+  2130,
+  2347,
+  2629,
+  2871,
+  2886
+ ],
+ "barge_in_ms": 3300,
+ "cases": {
+  "CA-0142": "c-5108"
+ },
+ "claims": {
+  "SIP": [
+   "G.711 8k",
+   "events",
+   "stop RTP",
+   "REFER",
+   "attached",
+   "attached"
+  ],
+  "WebSocket": [
+   "mu-law 8k",
+   "messages",
+   "clear",
+   "API call",
+   "parameters",
+   "API call"
+  ],
+  "WebRTC": [
+   "Opus 48k",
+   "keypad msg",
+   "stop track",
+   "bridge",
+   "sign-in",
+   "case"
+  ],
+  "bot channel": [
+   "text only",
+   "platform",
+   "none",
+   "platform",
+   "fields",
+   "fields"
+  ],
+  "agent-agent": [
+   "none",
+   "none",
+   "n/a",
+   "hand back",
+   "task",
+   "result"
+  ]
+ },
+ "deliveries": [
+  {
+   "id": "d-501",
+   "body": "{\"call\": \"CA-0142\", \"disposition\": \"resolved, bill explained\", \"after_hangup_s\": 160}",
+   "signature": "da211a73e79261e8aa2de1b4e0580007c410048483215cc53fe4d25fe0140403"
+  },
+  {
+   "id": "d-501",
+   "body": "{\"call\": \"CA-0142\", \"disposition\": \"resolved, bill explained\", \"after_hangup_s\": 160}",
+   "signature": "da211a73e79261e8aa2de1b4e0580007c410048483215cc53fe4d25fe0140403"
+  },
+  {
+   "id": "d-502",
+   "body": "{\"call\": \"CA-0142\", \"disposition\": \"refund due, bill explained\", \"after_hangup_s\": 160}",
+   "signature": "da211a73e79261e8aa2de1b4e0580007c410048483215cc53fe4d25fe0140403"
+  }
+ ]
+}

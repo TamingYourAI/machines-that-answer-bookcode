@@ -1,0 +1,268 @@
+{
+ "parts": [
+  [
+   "instructions (core)",
+   "1.4",
+   "1.4"
+  ],
+  [
+   "voice brief",
+   "1.3",
+   "1.3"
+  ],
+  [
+   "billing procedure",
+   "2.1",
+   "2.2"
+  ],
+  [
+   "visit procedure",
+   "1.7",
+   "1.7"
+  ],
+  [
+   "fixed lines",
+   "3.0",
+   "3.1"
+  ],
+  [
+   "knowledge",
+   "k-118",
+   "k-123"
+  ],
+  [
+   "policy rules",
+   "p-44",
+   "p-44"
+  ],
+  [
+   "turn-taking rules",
+   "v2.4",
+   "v2.4"
+  ],
+  [
+   "model",
+   "m-12",
+   "m-12"
+  ],
+  [
+   "recognizer",
+   "r-2.8",
+   "r-2.8"
+  ],
+  [
+   "voice",
+   "B 4.1",
+   "B 4.1"
+  ],
+  [
+   "tools",
+   "t-19",
+   "t-19"
+  ]
+ ],
+ "settings": {
+  "holding line after": "700 ms",
+  "barge-in pause on voice": "100 ms",
+  "voice speaking rate": "1.0"
+ },
+ "environments": {
+  "staging": {
+   "voice speaking rate": "1.0",
+   "endpoint": "stg",
+   "key reference": "vault:stg/speech",
+   "region": "east"
+  },
+  "production": {
+   "voice speaking rate": "1.1",
+   "endpoint": "prod",
+   "key reference": "vault:prod/speech",
+   "region": "east"
+  }
+ },
+ "shadow": {
+  "calls": 612,
+  "proposed": {
+   "lookup_account": 598,
+   "outage_status": 141,
+   "find_visit_slots": 92,
+   "book_visit": 63,
+   "cancel_visit": 9,
+   "change_address": 4,
+   "send_receipt": 72
+  },
+  "live_writes": {
+   "book_visit": 61,
+   "cancel_visit": 9,
+   "change_address": 4,
+   "send_receipt": 70
+  },
+  "to_review": 2
+ },
+ "evidence": [
+  [
+   "text: 200 scenarios",
+   32,
+   0,
+   "200 of 200",
+   true
+  ],
+  [
+   "audio: 5 runs of each",
+   32,
+   1,
+   "996 of 1,000",
+   true
+  ],
+  [
+   "phone: 40 test calls",
+   31,
+   6,
+   "40 of 40",
+   true
+  ],
+  [
+   "cross-chapter scenarios",
+   32,
+   0,
+   "4 of 4",
+   true
+  ],
+  [
+   "replay: 500 recorded calls",
+   32,
+   1,
+   "0 regressions",
+   true
+  ],
+  [
+   "shadow: 612 live calls",
+   32,
+   2,
+   "0 writes out",
+   true
+  ],
+  [
+   "sign-off: product owner",
+   32,
+   0,
+   "signed",
+   true
+  ]
+ ],
+ "canary": {
+  "share": 5,
+  "wait_p95": [
+   736,
+   742
+  ],
+  "false_commitments": [
+   0,
+   0
+  ],
+  "groups": [
+   [
+    "first language",
+    [
+     122,
+     2700
+    ],
+    [
+     4,
+     150
+    ]
+   ],
+   [
+    "second language",
+    [
+     43,
+     710
+    ],
+    [
+     7,
+     30
+    ]
+   ]
+  ],
+  "in_progress_on_32": 2
+ },
+ "in_progress": [
+  35,
+  70,
+  95,
+  120,
+  160,
+  200,
+  240,
+  290,
+  330,
+  380,
+  420,
+  510,
+  600,
+  680
+ ],
+ "stop": {
+  "release": 34,
+  "back_to": 33,
+  "share": 25,
+  "tool": "book_visit",
+  "at": 58800,
+  "calls": [
+   [
+    420,
+    40,
+    false,
+    null
+   ],
+   [
+    300,
+    95,
+    false,
+    null
+   ],
+   [
+    600,
+    210,
+    false,
+    null
+   ],
+   [
+    240,
+    180,
+    false,
+    null
+   ],
+   [
+    180,
+    -1,
+    false,
+    null
+   ],
+   [
+    90,
+    -1,
+    true,
+    true
+   ],
+   [
+    510,
+    -1,
+    false,
+    null
+   ],
+   [
+    360,
+    -1,
+    true,
+    false
+   ],
+   [
+    150,
+    -1,
+    false,
+    null
+   ]
+  ]
+ }
+}

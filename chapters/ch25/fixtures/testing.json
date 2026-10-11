@@ -1,0 +1,354 @@
+{
+ "unit_cases": [
+  [
+   "a booking with every term heard",
+   {
+    "tool": "book_visit",
+    "flow": "visit",
+    "proof": "pin",
+    "heard": [
+     "slot",
+     "address",
+     "fee"
+    ]
+   },
+   "allowed"
+  ],
+  [
+   "a booking in the billing flow",
+   {
+    "tool": "book_visit",
+    "flow": "billing",
+    "proof": "pin",
+    "heard": [
+     "slot",
+     "address",
+     "fee"
+    ]
+   },
+   "refused: not in this flow"
+  ],
+  [
+   "a booking before the PIN",
+   {
+    "tool": "book_visit",
+    "flow": "visit",
+    "proof": "none",
+    "heard": [
+     "slot",
+     "address",
+     "fee"
+    ]
+   },
+   "refused: needs pin"
+  ],
+  [
+   "a yes that never heard the fee",
+   {
+    "tool": "book_visit",
+    "flow": "visit",
+    "proof": "pin",
+    "heard": [
+     "slot",
+     "address"
+    ]
+   },
+   "refused: fee not heard"
+  ],
+  [
+   "a fee waiver, meter 425 days old",
+   {
+    "tool": "waive_callout",
+    "flow": "visit",
+    "proof": "pin",
+    "meter_days": 425
+   },
+   "refused: meter not new (5a)"
+  ],
+  [
+   "a fee waiver, meter 12 days old",
+   {
+    "tool": "waive_callout",
+    "flow": "visit",
+    "proof": "pin",
+    "meter_days": 12
+   },
+   "wait: a person decides"
+  ],
+  [
+   "an address change on a PIN alone",
+   {
+    "tool": "change_address",
+    "flow": "address",
+    "proof": "pin",
+    "heard": [
+     "address"
+    ]
+   },
+   "refused: needs pin and code"
+  ],
+  [
+   "reading a bill after the PIN",
+   {
+    "tool": "read_bill",
+    "flow": "billing",
+    "proof": "pin"
+   },
+   "allowed"
+  ]
+ ],
+ "calls": {
+  "polite": [
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   }
+  ],
+  "realistic": [
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three two"
+   },
+   {
+    "habit": "restart",
+    "said": "two two, um, two two three one",
+    "heard": "two two um two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two three three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "halves",
+    "said": "two two, three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "corrected",
+    "said": "two three, sorry, two two three one",
+    "heard": "two three sorry two two three one"
+   },
+   {
+    "habit": "halves",
+    "said": "two two, three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "halves",
+    "said": "two two, three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "halves",
+    "said": "two two, three one",
+    "heard": "two three three one"
+   },
+   {
+    "habit": "plain",
+    "said": "two two three one",
+    "heard": "two two three one"
+   },
+   {
+    "habit": "restart",
+    "said": "two two, um, two two three one",
+    "heard": "two two um two two three one"
+   },
+   {
+    "habit": "halves",
+    "said": "two two, three one",
+    "heard": "two two three one"
+   }
+  ]
+ },
+ "layers": [
+  [
+   "unit: tools, policy, formatters",
+   180,
+   1,
+   0.0,
+   0.0,
+   "every change"
+  ],
+  [
+   "conversations in text",
+   200,
+   3,
+   0.5,
+   0.01,
+   "every change"
+  ],
+  [
+   "simulated callers in audio",
+   200,
+   5,
+   3.0,
+   0.06,
+   "nightly"
+  ],
+  [
+   "real phone lines",
+   40,
+   1,
+   4.0,
+   0.08,
+   "weekly"
+  ],
+  [
+   "load and failure",
+   1,
+   1,
+   24000.0,
+   0.006,
+   "monthly"
+  ]
+ ],
+ "workers": {
+  "conversations in text": 20,
+  "simulated callers in audio": 50,
+  "real phone lines": 4,
+  "load and failure": 400
+ }
+}

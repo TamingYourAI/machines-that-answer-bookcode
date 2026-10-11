@@ -1,0 +1,64 @@
+knowledge lab, mode=mock; evidence class: simulated
+
+1. the meter-fault procedure, compiled into steps (Chapter 5)
+   step  block     the policy layer checks   tools
+   1     greet     -                         -
+   2     identify  -                         find_account
+   2a    verify    account found             outage_status
+   3     capture   no outage                 open_ticket
+   4     escalate  -                         transfer
+   5     collect   ticket open               find_slot
+   5a    escalate  ticket open               request_approval
+   6     act       verified, a yes           book_visit
+   7     confirm   committed                 send_text
+   8     close     -                         set_disposition
+   10 steps; 6 with preconditions in code, not in the prompt
+   step 2a, as the model receives it:
+     "Step 2a (verify). Before anything else, check the area for an outage. If
+     there is one, give its status and do not book. Tools: outage_status. The
+     policy layer checks first: account found."
+
+2. evidence for one question, 24 September (acct-6042, verified by PIN)
+   "Will I be charged late fees for September because of the storm?"
+   found, best match first rank  may it be spoken?
+   web-storm-page          4     yes
+   memo-114                1     yes
+   acct-6042               -     yes, by lookup
+   acct-7719               -     no: not this caller
+   without filters or precedence, the best match speaks:
+     "Customers affected by the storm will not be charged late fees for
+     September."
+   with them, memo-114 (rank 1) outranks web-storm-page (rank 4); the conflict
+   goes to the owners of both
+
+3. the answer, settled and then rendered for the ear
+   the memo as written: 38 words in one sentence
+   its speakable answer, before the account is known:
+     "Yes: if your bill was due during the storm, we can remove the
+     twelve-dollar late fee once. Shall I check your account?"
+   for acct-6042, with two fees in the storm:
+     "The storm waiver takes off one twelve-dollar late fee, so one of your
+     two fees can come off. Shall I do that now?"
+   2 sentences; the longest 18 words; the exception kept: yes
+   the trace keeps the evidence: memo-114, acct-6042
+
+4. the same question on 1 October
+   web-storm-page    not spoken: its source, memo-114, ended 30 September
+   memo-114          not spoken: ended 30 September
+   the agent:
+     "The storm waiver ended on 30 September, so the late fees stand. I can
+     set up a payment plan if that helps."
+   the owner was asked to renew, change, or let it lapse a week before
+
+5. answer or abstain (the evidence must cover 40% of the question)
+   answer   price-list    "What is the call-out fee for a technician visit?"
+   answer   billing-guide "Why is my bill based on an estimated reading?"
+   abstain                "Will rates go up next year because of the storm?"
+   abstain                "Can I get a smart meter fitted?"
+   an abstention says so, and offers a text or a person
+
+6. a long call: history at turn 40 (130 tokens a turn)
+   the whole history                   5,200 tokens
+   the last 2 turns and a summary           440 tokens
+   the facts that decide the call (verified, the offer, the yes, the
+   operations) live in the state object, not in the history

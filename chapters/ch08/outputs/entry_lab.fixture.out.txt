@@ -1,0 +1,48 @@
+entry lab, mode=fixture; evidence class: simulated
+
+1. one call, three entry points, one contract
+   entry point         on the wire                  kbit/s  frames  keys
+   SIP from the suite  RTP, G.711 mu-law, 8 kHz       80.0     100     1
+   WebSocket stream    JSON, base64 mu-law, 8 kHz    162.8     100     1
+   WebRTC in the app   SRTP, Opus at 32 kbit/s        52.0     100     1
+   the same contract from all three: yes (20 ms frames of 640 bytes,
+   start, one touch-tone, stop)
+
+2. the adapter matrix (* claimed, not yet tested)
+                 SIP         WebSocket   WebRTC      bot channel agent-agent
+   audio in      G.711 8k    mu-law 8k   Opus 48k    text only*  none*
+   touch-tones   events      messages    keypad msg  platform*   none*
+   barge-in stop stop RTP    clear       stop track  none*       n/a*
+   transfer      REFER       API call    bridge*     platform*   hand back*
+   context in    attached    parameters  sign-in     fields*     task*
+   context out   attached    API call    case        fields*     result*
+   tested        6 of 6      6 of 6      5 of 6      0 of 6      0 of 6
+
+3. the same loss on two transports (1% of 3000 packets, one way 40 ms,
+   a 60 ms jitter buffer)
+   transport              never arrive  too late  worst delay
+   RTP over UDP                   1.0%      0.0%        40 ms
+   WebSocket over TCP             0.0%      4.0%       180 ms
+   to play every TCP frame, the buffer must grow to 140 ms
+
+4. barge-in 3,300 ms into the fee line (91 characters, 6,400 ms)
+   path                               plays on  recorded as heard
+   SIP, paced by the agent               40 ms  46 of 91, own clock
+   WebSocket, clear and marks            40 ms  45 of 91, from marks
+   WebSocket, no clear                3,100 ms  91 of 91: sent, not heard
+   bot channel, platform plays        3,100 ms  the platform's transcript
+
+5. context across two transfers (agent to billing, then payments)
+   carried in                  to billing      to payments
+   a SIP header (User-to-User) 4 of 5 fields   0 of 5 fields
+   attached data               5 of 5 fields   5 of 5 fields
+   the header holds 128 octets; the last two turns alone need 178
+
+6. after the transfer
+   the agent in the audio path (6 min wait, 8 min with a person):
+     bridged   14 minutes, $2.52 a transfer at $0.18 a minute
+     released   0 minutes, REFER: the agent leaves the call
+   the desk's disposition, 160 s after the caller hung up:
+     d-501  applied to case c-5108: resolved, bill explained
+     d-501  a retry: ignored, already applied
+     d-502  refused: the signature does not match

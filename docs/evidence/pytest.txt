@@ -1,0 +1,2 @@
+2026-10-04, macOS arm64, Python 3.12.7, release 0.3.1
+89 passed, 1 warning (Starlette TestClient: deprecated httpx path)

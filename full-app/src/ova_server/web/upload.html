@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Add photos to your claim</title>
+<meta name="theme-color" content="#1E2A32">
+<link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<div class="page">
+  <div class="eyebrow">Quillmere Mutual · demonstration</div>
+  <h1 id="title">Add photos to your claim</h1>
+  <p id="lead" class="note">Checking your link...</p>
+
+  <section id="form" hidden>
+    <div class="panel wash">
+      <div class="eyebrow">What helps your adjuster</div>
+      <ul class="try">
+        <li>The whole damaged area, from a few steps back.</li>
+        <li>Close-ups of each damaged part.</li>
+        <li>For a car: the license plate and the odometer. For a home: the room, and where any water came from.</li>
+      </ul>
+    </div>
+    <div class="drop">
+      <input type="file" id="files" accept="image/*" capture="environment" multiple hidden>
+      <button class="btn signal big" id="pick">Take or choose photos</button>
+      <p class="note" id="limit"></p>
+      <div class="thumbs" id="thumbs"></div>
+    </div>
+    <button class="btn big" id="send" disabled>Send photos</button>
+    <p class="note" id="msg"></p>
+  </section>
+
+  <section id="done" hidden>
+    <div class="card signal">
+      <h3 id="done-title">Photos received</h3>
+      <div id="done-text"></div>
+    </div>
+    <p><a id="status-link" href="#">See the claim's status</a></p>
+  </section>
+</div>
+<script type="module">
+const token = location.pathname.split("/").pop();
+const $ = (s) => document.querySelector(s);
+let chosen = [];
+async function load() {
+  const r = await fetch(`/api/links/${token}`);
+  if (!r.ok) { $("#lead").textContent = "This link has expired or is not valid. Ask the claims line for a new one."; return; }
+  const j = await r.json();
+  const c = j.claim;
+  $("#title").textContent = `Add photos to claim ${c.number}`;
+  $("#lead").textContent = c.status_text;
+  $("#limit").textContent = `Up to ${j.max_photos} photos per claim; this claim has ${c.photos}. JPEG, PNG, WebP, or HEIC, up to 10 MB each.`;
+  $("#form").hidden = false;
+  $("#status-link").href = location.pathname.replace("/u/", "/s/");
+}
+$("#pick").onclick = () => $("#files").click();
+$("#files").onchange = () => {
+  chosen = chosen.concat([...$("#files").files]);
+  $("#thumbs").innerHTML = "";
+  for (const f of chosen) {
+    const img = document.createElement("img");
+    img.src = URL.createObjectURL(f);
+    img.alt = f.name;
+    $("#thumbs").appendChild(img);
+  }
+  $("#send").disabled = chosen.length === 0;
+};
+$("#send").onclick = async () => {
+  $("#send").disabled = true;
+  $("#msg").textContent = "Sending...";
+  const fd = new FormData();
+  chosen.forEach((f) => fd.append("files", f, f.name));
+  const r = await fetch(`/api/links/${token}/photos`, { method: "POST", body: fd });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) { $("#msg").textContent = j.detail || "That didn't work. Please try again."; $("#send").disabled = false; return; }
+  $("#form").hidden = true;
+  $("#done").hidden = false;
+  $("#done-title").textContent = `${j.count} photo${j.count === 1 ? "" : "s"} received`;
+  $("#done-text").textContent = j.claim.status_text;
+};
+load();
+</script>
+</body>
+</html>

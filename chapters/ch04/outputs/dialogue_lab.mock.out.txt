@@ -1,0 +1,41 @@
+dialogue lab, mode=mock; evidence class: simulated (scripted callers)
+
+1. the dialogue object: book a technician visit
+   slot     risk        asks
+   intent   low         How can I help?
+   account  identifier  What's your account number?
+   address  high        Is the visit for fourteen Alder Road?
+   issue    low         What's happening with the meter?
+   time     commitment  Shall I book it, with the forty-dollar call-out fee?
+   after 2 failures of one kind: keypad, text, or a person
+
+2. confirmation by risk
+   identifier  read back in groups, then a yes
+               "That's two two, three one. Is that right?"
+   high        the question is the read-back; a yes
+               "Is the visit for fourteen Alder Road?"
+   low         none: move to the next question
+               "What's happening with the meter?"
+   commitment  the terms in the question; the yes binds one operation
+               "The first opening is Tuesday at nine. Shall I book it, with
+               the forty-dollar call-out fee?"
+
+3. two designs, five calls (agent turns in brackets)
+   call               v1: one repair line       v2: the catalog
+   happy path         booked (7)                booked (7)
+   misheard number    hung up in a loop (4)     booked (9)
+   asks for a person  hung up (3)               handed over with context (3)
+   silence            hung up in a loop (4)     text sent, call ended (5)
+   out of scope       hung up (3)               handed over with context (3)
+   agent lines repeated word for word: v1 4, v2 0
+
+4. the read-aloud test: the happy path, as the agent says it
+   1. This is the utility's automated assistant. How can I help?
+   2. What's your account number?
+   3. That's two two, three one. Is that right?
+   4. Is the visit for fourteen Alder Road?
+   5. What's happening with the meter?
+   6. The first opening is Tuesday at nine. Shall I book it, with the
+      forty-dollar call-out fee?
+   7. You're booked for Tuesday at nine. I've sent a text with the details.
+   problems: 0 (at most two sentences, 20 words each)

@@ -1,0 +1,35 @@
+{
+ "name": "book a technician visit",
+ "slots": [
+  {
+   "name": "intent",
+   "risk": "low",
+   "ask": "This is the utility's automated assistant. How can I help?"
+  },
+  {
+   "name": "account",
+   "risk": "identifier",
+   "keypad": true,
+   "ask": "What's your account number?"
+  },
+  {
+   "name": "address",
+   "risk": "high",
+   "ask": "Is the visit for fourteen Alder Road?"
+  },
+  {
+   "name": "issue",
+   "risk": "low",
+   "ask": "What's happening with the meter?"
+  },
+  {
+   "name": "time",
+   "risk": "commitment",
+   "ask": "The first opening is Tuesday at nine. Shall I book it, with the forty-dollar call-out fee?"
+  }
+ ],
+ "done": "You're booked for Tuesday at nine. I've sent a text with the details.",
+ "handover": "Putting you through now, with what you've told me.",
+ "max_failures": 2,
+ "person_wait_min": 6
+}

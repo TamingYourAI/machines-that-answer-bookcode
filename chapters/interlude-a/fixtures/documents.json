@@ -1,0 +1,14 @@
+{
+ "hours": "The office answers Monday to Friday, eight to five. Visits run Monday to Saturday, and emergencies reach the owner at any hour.",
+ "saturday": "The office is closed on Saturday, but visits run Saturday mornings.",
+ "call_out": "sixty-dollar call-out charge, taken off the bill if the job goes ahead",
+ "services": [
+  "leaks",
+  "boilers",
+  "heating",
+  "drains",
+  "taps",
+  "toilets"
+ ],
+ "gas": "If you smell gas, leave the house now and call the gas emergency line from outside."
+}

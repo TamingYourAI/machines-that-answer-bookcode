@@ -1,0 +1,54 @@
+appointment line lab, mode=mock; evidence class: simulated
+
+1. the reference-system manifest
+   transport      scripted calls                    lab 1.0
+   hearing        stand-in recognizer               lab 1.0
+   turn-taking    fixed 250 ms end-of-turn wait     lab 1.0
+   thinking       rules; no language model          lab 1.0
+   speaking       stand-in synthesizer, 150 wpm     lab 1.0
+   systems        calendar, text outbox, owner      lab 1.0
+   orchestration  run_call loop                     lab 1.0
+   observability  in-memory trace                   lab 1.0
+
+2. one call, end to end: the booking (ms from the call's arrival)
+        0  transport    call arrives from 555 0142
+       90  speaking     first audio: "River Plumbing, this is the ..."
+     4970  transport    caller speaks for 3.2 s
+     8420  turn-taking  end of turn
+     8480  hearing      final: "I've got a leak under the kitchen sink."
+     8660  thinking     decide: find slots
+     8780  systems      find_slots: 4 open
+     8870  speaking     first audio: "I can do Tuesday at nine or ..."
+    14150  transport    caller speaks for 2.0 s
+    16400  turn-taking  end of turn
+    16460  hearing      final: "Tuesday at nine is fine."
+    16640  thinking     decide: offer tue-0900
+    16700  systems      hold tue-0900 for 2 minutes
+    16790  speaking     first audio: "Tuesday at nine, with a ..."
+    25270  transport    caller speaks for 1.2 s
+    26720  turn-taking  end of turn
+    26780  hearing      final: "Yes, go ahead."
+    26960  thinking     decide: book tue-0900
+    27200  systems      book tue-0900 as op-0001: booked
+    27350  systems      confirmation text accepted
+    27440  speaking     first audio: "You're booked for Tuesday at ..."
+   voice-to-voice at the caller, turn by turn: 740, 680, 1,010 ms
+
+3. four calls
+   hours    2 caller turns   18.2 s  answered
+   booking  3 caller turns   32.7 s  booked
+   change   4 caller turns   37.3 s  booked
+   person   2 caller turns   20.8 s  transferred with a whisper
+   calendar: tue-0900 by 555 0142, wed-0900 by 555 0177
+   texts accepted: 2; transfers: 1; holds left: 0
+
+4. failure checks
+   recognizer fails mid-call:  fallback: text and callback promise
+   last slot twice:  A holds sat-0900: True
+   last slot twice:  B holds sat-0900: False
+   last slot twice:  A books sat-0900: booked
+   last slot twice:  B books with its stale view: refused
+   last slot twice:  A's booking retried after a timeout: booked (same record)
+   outside the documents:      out of scope: message taken
+   kill switch on:             kill switch: transferred, 4.6 s
+   promises open: 2; duplicate bookings: 0

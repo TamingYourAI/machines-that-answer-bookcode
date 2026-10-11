@@ -1,0 +1,59 @@
+seat lab, mode=fixture; a design check: no measurement, no evidence class
+
+1. the four seats
+   seat              number    recorder  barge-in  audio  context  desk
+   front of the ACD  platform  platform  full      yes    yes      platform
+   inside the IVR    platform  platform  limited   yes    yes      platform
+   CPaaS-native      you       you       full      yes    no       yours
+   overlay           platform  platform  none      no     yes      platform
+
+2. the Service Line's requirements, seat by seat
+   front of the ACD  meets all six
+   inside the IVR    fails 1 of 6:
+     - controls interruptions
+   CPaaS-native      fails 4 of 6:
+     - keeps the published number
+     - keeps the one recorder
+     - carries context into a transfer
+     - hands off to the existing desk
+   overlay           fails 2 of 6:
+     - controls interruptions
+     - hears the caller's own audio
+
+3. the design checker
+   Service Line, front of the ACD: 0 problems
+   Service Line, mixed seat: 6 problems
+     - a second number: callers and reports split in two
+     - a second recording: two copies of sensitive audio
+     - screen-pop fields missing (4 of 5):
+       account, verified level, last two turns, ticket id
+     - no disposition comes back from the desk
+     - after-hours routing not written down
+     - number porting lead time unknown
+
+contracts the chosen seat creates, relied on in later chapters:
+   one number and one recorder                         Ch. 7, 23
+   five screen-pop fields on every transfer            Ch. 21
+   a disposition back from the desk                    Ch. 21, 26
+   after-hours routing, written down                   Ch. 21
+   the number porting lead time, known before launch   Ch. 7
+
+4. one call, end to end: the recurring caller, as the business sees it
+   time        where     what happens (* kept by the seat, Part I)
+   20:10:00  * carrier   she dials the published service number
+   20:10:00  * platform  the ACD gives the agent the call, before any queue
+   20:10:01  * platform  the one recorder starts, and its notice plays
+   20:10:01  * agent     her number finds account 2231: a lookup, not proof
+   20:10:06    agent     "This is the utility's automated assistant. How can I
+                         help?"
+   20:11:40  * systems   her record is read, and a fault ticket opened
+   20:12:10    systems   a photo link goes by text; the photo lands at 20:13
+   20:14:42    systems   the visit is booked for Tuesday at nine
+   20:15:00    systems   the confirmation text goes
+   20:15:20  * platform  the call ends; the agent's disposition, "visit booked
+                         by the agent," counts as a completed call in the
+                         platform's reports
+             * desk      had she asked for a person: back into the queue, with
+                         five fields and a whisper
+   Service Line, front of the ACD: keeps 7 of the 7 starred steps
+   Service Line, mixed seat: keeps 2 of the 7 starred steps

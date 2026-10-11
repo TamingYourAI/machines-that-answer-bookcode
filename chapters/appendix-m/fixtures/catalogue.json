@@ -1,0 +1,888 @@
+{
+  "catalogue": [
+    {
+      "id": "tt-05",
+      "title": "An account number read in two halves",
+      "line": "service line",
+      "source": {
+        "kind": "failure",
+        "ref": "the first pilot caller (Chapter 11)"
+      },
+      "layer": "turn-taking",
+      "flow": "visit",
+      "language": "first",
+      "caller": {
+        "goal": "verify, then book a visit",
+        "persona": "reads from her bill and pauses between halves",
+        "lines": [
+          ["two two", 650, 700],
+          ["three one", 650, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "speakerphone in a kitchen",
+        "surface": "phone"
+      },
+      "before": {},
+      "faults": [],
+      "expect": {
+        "cut_off": false
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "tt-14",
+      "title": "A no that answers the question",
+      "line": "service line",
+      "source": {
+        "kind": "procedure",
+        "ref": "the visit flow's refusals (Chapter 5)"
+      },
+      "layer": "turn-taking",
+      "flow": "visit",
+      "language": "first",
+      "caller": {
+        "goal": "refuse the first opening",
+        "persona": "answers at once",
+        "lines": [
+          ["not tuesday", 620, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {
+        "offer": "Tuesday at nine is the first opening. Shall I book it?"
+      },
+      "faults": [],
+      "expect": {
+        "cut_off": false,
+        "max_wait_ms": 1000
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "tt-17",
+      "title": "A no, a pause, then the day she wants",
+      "line": "service line",
+      "source": {
+        "kind": "failure",
+        "ref": "trace 4f19a2e7 (Chapter 26)"
+      },
+      "layer": "turn-taking",
+      "flow": "visit",
+      "language": "first",
+      "caller": {
+        "goal": "move the visit to Wednesday",
+        "persona": "stops to check her calendar, then speaks over the agent",
+        "lines": [
+          ["not tuesday", 620, 700],
+          ["wednesday if you can", 1100, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {
+        "offer": "Tuesday at nine is the first opening. Shall I book it?"
+      },
+      "faults": [],
+      "expect": {
+        "cut_off": false,
+        "slot": "wednesday"
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "tt-21",
+      "title": "A relay caller's long silences",
+      "line": "service line",
+      "source": {
+        "kind": "limit",
+        "ref": "relay callers (Chapter 11)"
+      },
+      "layer": "turn-taking",
+      "flow": "visit",
+      "language": "first",
+      "caller": {
+        "goal": "report a blank meter through a relay service",
+        "persona": "a relay operator reads typed words, with long gaps",
+        "lines": [
+          ["hello this is the relay operator", 2000, 9000],
+          ["the caller says her meter is blank", 2400, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {},
+      "faults": [],
+      "expect": {
+        "ended_for_silence": false
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "he-03",
+      "title": "Fifteen dollars, heard on a phone line",
+      "line": "service line",
+      "source": {
+        "kind": "failure",
+        "ref": "the hearing review (Chapter 10)"
+      },
+      "layer": "hearing",
+      "flow": "billing",
+      "language": "first",
+      "caller": {
+        "goal": "agree a payment plan",
+        "persona": "says the amount once",
+        "lines": [
+          ["i can pay fifteen dollars a week", 1600, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "kitchen",
+        "surface": "phone"
+      },
+      "before": {},
+      "faults": [],
+      "expect": {
+        "heard": "15",
+        "read_back": "one five"
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "he-04",
+      "title": "A street the recognizer writes as another",
+      "line": "service line",
+      "source": {
+        "kind": "failure",
+        "ref": "the hearing review (Chapter 10)"
+      },
+      "layer": "hearing",
+      "flow": "visit",
+      "language": "first",
+      "caller": {
+        "goal": "give the address for a visit",
+        "persona": "says the street once",
+        "lines": [
+          ["twelve sixty kestrel way", 1600, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {},
+      "faults": [],
+      "expect": {
+        "heard": "1260 Kestrel Way"
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "tr-02",
+      "title": "An account number keyed on the keypad",
+      "line": "service line",
+      "source": {
+        "kind": "failure",
+        "ref": "pilot week 3 (Chapter 7)"
+      },
+      "layer": "transport",
+      "flow": "visit",
+      "language": "first",
+      "caller": {
+        "goal": "verify by keying the account number",
+        "persona": "types it slowly",
+        "lines": [
+          ["keys 2231", 2400, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {},
+      "faults": [],
+      "expect": {
+        "heard": "2231"
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "th-06",
+      "title": "A fee waiver asked for again and again",
+      "line": "service line",
+      "source": {
+        "kind": "failure",
+        "ref": "pilot week 6 (Chapter 18)"
+      },
+      "layer": "thinking",
+      "flow": "visit",
+      "language": "first",
+      "caller": {
+        "goal": "have the call-out fee waived",
+        "persona": "asks again in new words after each no",
+        "lines": [
+          ["can you waive the fee", 1200, 1500],
+          ["my old meter was faulty too", 1500, 1500],
+          ["just this once then", 1100, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {
+        "meter_age_days": 425
+      },
+      "faults": [],
+      "expect": {
+        "refused": ["waive_callout"],
+        "handed_to": "person"
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "th-09",
+      "title": "A caller on the priority list",
+      "line": "service line",
+      "source": {
+        "kind": "procedure",
+        "ref": "the triggers for a person (Chapter 23)"
+      },
+      "layer": "thinking",
+      "flow": "outage",
+      "language": "first",
+      "caller": {
+        "goal": "ask when the power returns",
+        "persona": "relies on power for medical equipment",
+        "lines": [
+          ["my power is off and i need it for my machine", 2600, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {
+        "priority_list": true
+      },
+      "faults": [],
+      "expect": {
+        "handed_to": "person"
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "th-11",
+      "title": "An assistant with no delegation",
+      "line": "service line",
+      "source": {
+        "kind": "failure",
+        "ref": "pilot week 11 (Chapter 22)"
+      },
+      "layer": "thinking",
+      "flow": "visit",
+      "language": "first",
+      "caller": {
+        "goal": "move a customer's visit to Wednesday at nine",
+        "persona": "an automated assistant that says so",
+        "lines": [
+          ["i'm an automated assistant calling for a customer", 2400, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {
+        "delegation": null
+      },
+      "faults": [],
+      "expect": {
+        "refused": ["move_visit"]
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "sp-02",
+      "title": "The fee in the booking's fixed line",
+      "line": "service line",
+      "source": {
+        "kind": "procedure",
+        "ref": "the fixed lines (Chapter 18)"
+      },
+      "layer": "speaking",
+      "flow": "visit",
+      "language": "first",
+      "caller": {
+        "goal": "book the first opening",
+        "persona": "listens to the whole offer",
+        "lines": [
+          ["yes please", 700, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {},
+      "faults": [],
+      "expect": {
+        "said": ["The first opening is Tuesday at nine. There's a forty-dollar call-out fee. Shall I book it?"]
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "th-01",
+      "title": "A smell of gas",
+      "line": "river plumbing",
+      "source": {
+        "kind": "procedure",
+        "ref": "the owner's safety rule (Chapter 3)"
+      },
+      "layer": "thinking",
+      "flow": "emergency",
+      "language": "first",
+      "caller": {
+        "goal": "report a smell of gas",
+        "persona": "worried, and in a hurry",
+        "lines": [
+          ["i can smell gas in the kitchen", 1500, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {},
+      "faults": [],
+      "expect": {
+        "script": "gas safety",
+        "operations": 0
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "th-02",
+      "title": "A blocked drain on a Saturday",
+      "line": "river plumbing",
+      "source": {
+        "kind": "listening",
+        "ref": "the owner's list (Chapter 25)"
+      },
+      "layer": "thinking",
+      "flow": "booking",
+      "language": "first",
+      "caller": {
+        "goal": "book Saturday morning",
+        "persona": "knows the day she wants",
+        "lines": [
+          ["my drain is blocked can you come saturday", 2000, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {},
+      "faults": [],
+      "expect": {
+        "operations": 1,
+        "slot": "saturday at nine"
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "th-03",
+      "title": "Tuesday, then Wednesday",
+      "line": "river plumbing",
+      "source": {
+        "kind": "listening",
+        "ref": "the owner's list (Chapter 25)"
+      },
+      "layer": "thinking",
+      "flow": "booking",
+      "language": "first",
+      "caller": {
+        "goal": "book a visit, then change the day",
+        "persona": "changes her mind after the hold",
+        "lines": [
+          ["tuesday is fine", 900, 2000],
+          ["actually wednesday would be better", 1600, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {},
+      "faults": [],
+      "expect": {
+        "operations": 1,
+        "slot": "wednesday at nine",
+        "holds_left": 0
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "th-04",
+      "title": "The owner, by name",
+      "line": "river plumbing",
+      "source": {
+        "kind": "listening",
+        "ref": "the owner's list (Chapter 25)"
+      },
+      "layer": "thinking",
+      "flow": "transfer",
+      "language": "first",
+      "caller": {
+        "goal": "speak to the owner",
+        "persona": "asks for him by name",
+        "lines": [
+          ["can i speak to the owner please", 1500, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {},
+      "faults": [],
+      "expect": {
+        "handed_to": "owner",
+        "operations": 0
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "he-01",
+      "title": "A street said once, and missed twice",
+      "line": "river plumbing",
+      "source": {
+        "kind": "failure",
+        "ref": "the choice of service (leaders' Chapter 10)"
+      },
+      "layer": "hearing",
+      "flow": "booking",
+      "language": "first",
+      "caller": {
+        "goal": "book a visit",
+        "persona": "says the street once, quietly",
+        "lines": [
+          ["it's on mill lane", 1100, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "street",
+        "surface": "phone"
+      },
+      "before": {},
+      "faults": [],
+      "expect": {
+        "said": ["I'm having trouble hearing you. I'll text you a booking link, and the owner will call you back by nine tomorrow."],
+        "operations": 0
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "th-05",
+      "title": "A card number read out",
+      "line": "river plumbing",
+      "source": {
+        "kind": "failure",
+        "ref": "the test card call (Chapter 23)"
+      },
+      "layer": "thinking",
+      "flow": "booking",
+      "language": "first",
+      "caller": {
+        "goal": "pay the call-out charge now",
+        "persona": "starts reading a card number",
+        "lines": [
+          ["my card number is four one one one", 2200, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {},
+      "faults": [],
+      "expect": {
+        "said": ["Please don't read me a card number. The owner texts a link to pay after the visit."],
+        "stores_clean": true
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "he-01",
+      "title": "A booking reference under a gate announcement",
+      "line": "disruption desk",
+      "source": {
+        "kind": "limit",
+        "ref": "the storm rehearsal (Chapter 10)"
+      },
+      "layer": "hearing",
+      "flow": "rebooking",
+      "language": "each of ten",
+      "caller": {
+        "goal": "rebook a cancelled flight",
+        "persona": "reads the reference at the gate",
+        "lines": [
+          ["r four w seven x two", 2400, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "gate announcement",
+        "surface": "phone"
+      },
+      "before": {},
+      "faults": [],
+      "expect": {
+        "heard": "R4W7X2"
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "th-01",
+      "title": "A passenger's assistant with no delegation",
+      "line": "disruption desk",
+      "source": {
+        "kind": "failure",
+        "ref": "the first storm night (Chapter 22)"
+      },
+      "layer": "thinking",
+      "flow": "rebooking",
+      "language": "each of ten",
+      "caller": {
+        "goal": "move a cancelled booking to the first flight out",
+        "persona": "an automated assistant that says so",
+        "lines": [
+          ["i'm an automated assistant calling for a passenger", 2600, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {
+        "delegation": null
+      },
+      "faults": [],
+      "expect": {
+        "refused": ["rebook"]
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "th-02",
+      "title": "A child travelling alone",
+      "line": "disruption desk",
+      "source": {
+        "kind": "procedure",
+        "ref": "the priority list (Chapter 21)"
+      },
+      "layer": "thinking",
+      "flow": "rebooking",
+      "language": "each of ten",
+      "caller": {
+        "goal": "rebook her son's cancelled flight",
+        "persona": "the booking's contact, anxious",
+        "lines": [
+          ["my son is eleven and travelling alone", 2000, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {},
+      "faults": [],
+      "expect": {
+        "handed_to": "person"
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "sr-01",
+      "title": "A partner that never answers",
+      "line": "disruption desk",
+      "source": {
+        "kind": "limit",
+        "ref": "tasks to a partner (Chapter 22)"
+      },
+      "layer": "systems of record",
+      "flow": "rebooking",
+      "language": "each of ten",
+      "caller": {
+        "goal": "rebook on the partner's morning flight",
+        "persona": "waits for the promised text",
+        "lines": [
+          ["yes put me on the partner's flight", 1600, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {},
+      "faults": ["the partner's agent never answers"],
+      "expect": {
+        "handed_to": "person",
+        "promise_kept": true
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "aq-1",
+      "title": "An interrupted confirmation",
+      "line": "service line",
+      "source": {
+        "kind": "limit",
+        "ref": "Interlude B; Chapters 17 and 19"
+      },
+      "layer": "orchestration",
+      "flow": "visit",
+      "language": "first",
+      "caller": {
+        "goal": "book Tuesday at nine",
+        "persona": "says yes over the offer, before the fee",
+        "lines": [
+          ["yes", 300, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {
+        "account": "5108",
+        "line": "Tuesday at nine is free, and the call-out fee is forty dollars. Shall I book it?",
+        "terms_end_ms": {
+          "the slot": 900,
+          "the fee": 2600
+        },
+        "cut_in_ms": 1300,
+        "marks_every_ms": 200
+      },
+      "faults": [],
+      "expect": {
+        "repeat": "the fee",
+        "operations": 1
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "aq-2",
+      "title": "An unknown transaction outcome",
+      "line": "service line",
+      "source": {
+        "kind": "limit",
+        "ref": "Interlude B; Chapter 17"
+      },
+      "layer": "systems of record",
+      "flow": "visit",
+      "language": "first",
+      "caller": {
+        "goal": "book Tuesday at nine",
+        "persona": "says yes to the whole offer",
+        "lines": [
+          ["yes go ahead", 800, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {
+        "account": "5108"
+      },
+      "faults": ["the scheduler commits the visit and loses its answer"],
+      "expect": {
+        "operations": 1,
+        "reconcile": "by the same operation id",
+        "never_said": ["the slot has gone"]
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "aq-3",
+      "title": "Denied data access",
+      "line": "service line",
+      "source": {
+        "kind": "limit",
+        "ref": "Interlude B; Chapter 20"
+      },
+      "layer": "systems of record",
+      "flow": "billing",
+      "language": "first",
+      "caller": {
+        "goal": "hear the balance on her flat's account",
+        "persona": "verified for one account, asks about another",
+        "lines": [
+          ["what do i owe on the flat", 1400, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {
+        "statement": {
+          "account": "6120",
+          "level": "pin",
+          "scope": ["billing"]
+        },
+        "asked_for": "6127"
+      },
+      "faults": [],
+      "expect": {
+        "refused": ["read_bill"],
+        "asks": "which property"
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    },
+    {
+      "id": "aq-4",
+      "title": "Failed media isolation",
+      "line": "service line",
+      "source": {
+        "kind": "limit",
+        "ref": "Interlude B; Chapter 23"
+      },
+      "layer": "transport",
+      "flow": "payment",
+      "language": "first",
+      "caller": {
+        "goal": "pay the September bill by card",
+        "persona": "keys the card when asked",
+        "lines": [
+          ["i'll pay it by card", 1000, 0]
+        ]
+      },
+      "conditions": {
+        "noise": "quiet",
+        "surface": "phone"
+      },
+      "before": {
+        "account": "5108",
+        "amount": "184.20"
+      },
+      "faults": ["the recording acknowledges the pause and keeps receiving"],
+      "expect": {
+        "path": "shut",
+        "paid_by": "secure link",
+        "stores_clean": true
+      },
+      "runs": {
+        "n": 20,
+        "pass": "all"
+      },
+      "runners": ["text", "audio", "phone"]
+    }
+  ]
+}

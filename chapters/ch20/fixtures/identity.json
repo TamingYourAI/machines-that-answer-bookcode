@@ -1,0 +1,153 @@
+{
+ "records": {
+  "2231": {
+   "premises": "14 Alder Road",
+   "phones": [
+    "555 0131"
+   ]
+  },
+  "4012": {
+   "premises": "22 Alder Road",
+   "phones": [
+    "555 0107"
+   ]
+  },
+  "6120": {
+   "premises": "9 Ashby Close",
+   "phones": [
+    "555 0158"
+   ]
+  },
+  "6127": {
+   "premises": "Flat 2, 1260 Kestrel Way",
+   "phones": [
+    "555 0158"
+   ]
+  },
+  "6133": {
+   "premises": "Flat 5, 1260 Kestrel Way",
+   "phones": [
+    "555 0158"
+   ]
+  }
+ },
+ "calls": [
+  [
+   "555 0131",
+   "A"
+  ],
+  [
+   "555 0158",
+   "A"
+  ],
+  [
+   "555 0107",
+   "B"
+  ],
+  [
+   "555 0199",
+   "none"
+  ]
+ ],
+ "step_up": {
+  "account": "2231",
+  "code_seconds": 45
+ },
+ "requests": [
+  [
+   1206,
+   "billing",
+   "read_bill",
+   "6120",
+   "plain"
+  ],
+  [
+   1206,
+   "billing",
+   "read_bill",
+   "6127",
+   "plain"
+  ],
+  [
+   1207,
+   "billing",
+   "change_address",
+   "6120",
+   "plain"
+  ],
+  [
+   1208,
+   "scheduling",
+   "book_visit",
+   "6120",
+   "plain"
+  ],
+  [
+   1208,
+   "payments",
+   "read_bill",
+   "6120",
+   "plain"
+  ],
+  [
+   1209,
+   "billing",
+   "change_address",
+   "6120",
+   "edited"
+  ],
+  [
+   1221,
+   "billing",
+   "read_bill",
+   "6120",
+   "plain"
+  ]
+ ],
+ "memory": {
+  "today": 640,
+  "household": [
+   {
+    "slot": "visit",
+    "until": 700,
+    "text": "Your visit is Tuesday at nine."
+   }
+  ],
+  "stale": [
+   {
+    "slot": "contact time",
+    "until": 580,
+    "text": "call after six",
+    "said": 215
+   }
+  ],
+  "corrected": [
+   {
+    "slot": "mobile",
+    "until": 1000,
+    "text": "555 0131"
+   },
+   {
+    "slot": "mobile",
+    "until": 1000,
+    "text": "555 0132"
+   }
+  ],
+  "preferences": [
+   {
+    "slot": "contact",
+    "until": 1000,
+    "text": "a text, not a call"
+   },
+   {
+    "slot": "language",
+    "until": 1000,
+    "text": "the second language"
+   }
+  ],
+  "summaries": [
+   "Prefers a text, not a call; asked twice about fees.",
+   "Visit booked for Tuesday at nine."
+  ]
+ }
+}

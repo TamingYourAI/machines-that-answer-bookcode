@@ -1,0 +1,57 @@
+hearing lab, mode=mock; evidence class: simulated
+
+1. word error rate, and what it hides (11 utterances)
+   condition                word errors   entities right
+   app, wideband                   1.6%          7 of 7
+   phone                           6.5%          4 of 7
+   phone, kitchen noise           11.3%          3 of 7
+   speakerphone                   29.0%          2 of 7
+   heard "i can pay fifty dollars week"
+   for   "i can pay fifteen dollars a week":
+   1 substituted, 1 deleted, 0 inserted; the amount is wrong
+
+2. partials for one account number (phone)
+       ms  partial                                 stable up to
+      200  my
+      400  my account
+      600  my account number                       my
+      800  my account number is to                 account
+     1000  my account number is to two             number
+     1200  my account number is two two three      is
+     1400  my account number is two two three one  is
+     1600  my account number is two two three one  three
+     1900  my account number is two two three one  one
+   acting on the partial at 1000 ms reads account 2; the final reads 2231
+
+3. boosting the service area's names (phone)
+     boost   names heard right   names heard, not said
+       0.0             0 of 2                 0
+       0.2             1 of 2                 0
+       0.4             2 of 2                 0
+       0.6             2 of 2                 1
+       0.8             2 of 2                 2
+
+4. numbers: normalized, checked, read back
+   account "two two three one"       2231: read back as two two three one
+   account "double two three one"    2231: read back as two two three one
+   account "twenty two thirty one"   2231: read back as two two three one
+   account "to two three one"        231: 3 digits; ask again, offer keypad
+   account "four four one seven"     4417: read back as four four one seven
+   amount "fifteen"                  15: sounds like 50; confirm "one five"
+   amount "fifty"                    50: sounds like 15; confirm "five zero"
+   amount "twenty five"              25: confirm
+
+5. entity accuracy by cohort (line 90%, 95% interval)
+   cohort                       n   right        interval  verdict
+   all callers                400   93.0%    90.1 to 95.1%  meets
+   65 and over                 60   80.0%    68.2 to 88.2%  below
+   second-language speakers    45   86.7%    73.8 to 93.7%  unknown
+   on a speakerphone           12   83.3%    55.2 to 95.3%  unknown
+
+6. what is kept
+   heard: my account number is 2231
+   kept:  my account number is [account]
+   heard: my email is dana.moran@example.com
+   kept:  my email is [email]
+   heard: my card number is 4111 1111 1111 1111
+   kept:  nothing: a card number reached the recognizer; incident

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Your document</title>
+<meta name="theme-color" content="#1E2A32">
+<link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<div class="page">
+  <div class="eyebrow">Quillmere Mutual · demonstration</div>
+  <h1 id="title">Your document</h1>
+  <p id="lead">Checking your link...</p>
+  <div id="card" class="idcard" hidden>
+    <div class="eyebrow" style="color:#E6E1D8">Proof of insurance</div>
+    <div style="font-size:18px;font-weight:600;margin-top:6px" id="name"></div>
+    <div class="row"><span>Policy</span><span class="mono" id="policy"></span></div>
+    <div class="row"><span>Covers</span><span id="covers"></span></div>
+    <div class="row"><span>Effective</span><span id="dates"></span></div>
+    <div class="watermark">DEMONSTRATION ONLY. NOT A REAL INSURANCE DOCUMENT.</div>
+  </div>
+</div>
+<script type="module">
+const token = location.pathname.split("/").pop();
+const $ = (s) => document.querySelector(s);
+const r = await fetch(`/api/links/${token}`);
+if (!r.ok) {
+  $("#lead").textContent = "This link has expired or is not valid.";
+} else {
+  const d = await r.json();
+  $("#title").textContent = d.doc === "policy" ? "Your policy documents" : "Your proof of insurance";
+  $("#lead").textContent = "Quillmere Mutual is an invented insurer; this card is part of the Open Voice Agents demonstration.";
+  $("#name").textContent = d.name;
+  $("#policy").textContent = d.policy;
+  $("#covers").textContent = d.vehicle || d.property || d.kind;
+  $("#dates").textContent = `${d.effective} to ${d.expires}`;
+  $("#card").hidden = false;
+}
+</script>
+</body>
+</html>

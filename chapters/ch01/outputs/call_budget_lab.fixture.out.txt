@@ -1,0 +1,51 @@
+call budget lab, mode=fixture; evidence class of every number: simulated
+
+1. the voice-to-voice budget (1,000 turns per loop; stand-in stage timings)
+   loop              measured at       mean    p50    p95   over 800 ms
+   demo loop         the dashboard      273    256    435         0.0 %
+                     the server         534    517    760         3.1 %
+                     the caller         575    559    793         4.8 %
+   call-shaped loop  the dashboard      634    488   1529        20.9 %
+                     the server        1064    938   1967        74.6 %
+                     the caller        1201   1072   2117        92.0 %
+   tuned call loop   the dashboard      253    235    425         0.1 %
+                     the server         465    449    662         0.9 %
+                     the caller         558    542    760         3.2 %
+   all times in ms; target 500, wall 800, trouble at about 1000
+
+   where the time goes: call-shaped loop, median of each stage (ms)
+   network and carrier, in                           50
+   waiting to be sure the turn ended                320
+   final transcript after the turn ends              90
+   model, to its first token                        300
+   a tool on the path (on 1 turn in 5)              700
+   synthesizer, to its first audio                  130
+   network, carrier, and jitter buffer, out          80
+
+   levers in the tuned loop (assumed, not measured)
+   end of turn   semantic end-of-turn detection                Ch. 11
+   model         a fast model on the turn, prompt caching      Ch. 15
+   model         generation started before the turn is sure    Ch. 19
+   tool          one short line while a tool runs              Ch. 17
+   network       compute placed near the carrier               Ch. 19
+
+2. the ruler: twenty stand-in calls to the Service Line
+   voice family (how it sounds)
+   turns                                          207
+   false cut-offs per 100 turns                   6.3
+   calls with a silence over 2 s                    3
+   business family (what it achieves)
+   containment                                 70.0 %
+   task completion by the agent                50.0 %
+   resolution that lasts                       45.0 %
+   contained, task not done                    20.0 %
+   said done, not done                         1 call
+   survey response rate                        35.0 %
+   survey mean (1 to 5)                           4.6
+   surveys from unresolved calls              0 calls
+
+invariants (must hold on every run):
+   dashboard <= server <= caller, every turn         PASS
+   containment >= task completion by the agent       PASS
+regression band: invariants hold; other numbers identical to the frozen
+output in fixture mode

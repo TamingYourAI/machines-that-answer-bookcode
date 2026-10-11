@@ -1,0 +1,81 @@
+service slice, mode=fixture; evidence class: simulated
+
+1. one call through the slice: account 5108, the doubled bill
+   20:10:09  identity    555 0176 finds one account, 5108; the PIN is asked
+   20:10:31  identity    PIN correct; statement v-5108-1: level pin, for
+                         billing, scheduling, payments; until 20:25:31
+   20:10:40  billing     read_bill 5108 allowed: $184.20, September; $91.60,
+                         August
+   20:12:04  scheduling  the whole line played, fee included; the yes covers
+                         it (turn 7, 2 s old); op-746f journaled, then
+                         committed at offer version 0
+   20:13:10  payments    marker test: 5 forks silent; keys to the processor;
+                         tok-5108-8841, approved, $184.20
+   20:14:02  transfer    REFER to billing; the record's fields all present; a
+                         whisper of 12 words; the desk accepts the PIN (3 min
+                         old)
+
+2. acceptance: the four cross-chapter scenarios (Appendix Q)
+   scenario                      slice   guarded by             without it
+   interrupted confirmation      passes  heard state            fails
+   unknown transaction outcome   passes  reconciliation         fails
+   denied data access            passes  the statement check    fails
+   failed media isolation        passes  the marker test        fails
+   the slice passes 4 of 4; each piece removed fails the scenario it guards
+
+3. one id per confirmed yes, against an id built from the account and slot
+   case                                  built id            one id per yes
+   a later Tuesday at nine, a new yes    false "booked"      booked
+   cancel, then the same slot again      false "booked"      booked
+   an old id replayed with other terms   false "booked"      refused
+   a restart while the outcome is open   read back           read back
+   the same visit asked for again        the old visit back  already booked
+   false bookings said: 3 with the built id, none with one id per yes
+
+4. one call, end to end: the recurring caller, Part V's pieces marked *
+   20:10:00 * silent    555 0131 finds one account, 2231; nothing is said
+   20:10:06   she hears "This is the utility's automated assistant. How can I
+                        help?"
+   20:10:09   she says  her meter's display has gone blank
+   20:10:12 * she hears "To check it's you, please key your PIN."
+   20:10:19 * keys      four keys reach the verification service as events;
+                        the transcript holds none
+   20:10:20 * silent    statement v-2231-1: level pin, for billing and
+                        scheduling; her note "text me; don't call" recalled
+   20:10:24   she hears "Is the visit for fourteen Alder Road?"
+   20:10:29   silent    no outage at fourteen Alder Road
+   20:10:31   silent    her first sentence goes on a fault ticket
+   20:10:46   she hears "I've texted a link to the number you're calling from,
+                        for a photo of the meter."
+   20:11:38   text      the photo lands on the fault ticket
+   20:11:44   she hears "Thanks, that's come through. Is the power on in the
+                        rest of the house?"
+   20:12:56   she says  she checks the lights: the power is on
+   20:13:06   she hears "The first opening is Tuesday at nine. There's a
+                        forty-dollar call-out fee. Shall I book it?"
+   20:13:16 * silent    "Yes, go ahead." Scheduling checks the statement:
+                        allowed, logged with caller 2231 and the agent
+   20:13:18   she hears "You're booked for Tuesday at nine."
+   20:13:36 * text      the confirmation text; the day-before reminder set to
+                        a text, as she asked
+   20:13:56   silent    the disposition: visit booked by the agent
+   6 pieces from Part V; the call takes 3 min 56 s against 5 min 20 s in Part
+   II, because the PIN replaced the search for her bill
+
+5. what each scenario saw
+   interrupted confirmation
+     with the slice: the fee said again; the second yes books it once
+     without heard state: booked on a yes that never heard the fee
+   unknown transaction outcome
+     with the slice: read back by the same id: committed, one visit
+     without reconciliation: told the slot has gone; her own first booking
+                             holds it
+   denied data access
+     with the slice: billing refused: the statement is for 6120; the agent
+                     asks which property
+     without the statement check: 6127's balance said aloud (read with the
+                                  agent's own service account)
+   failed media isolation
+     with the slice: recording still receiving; path shut; paid by link,
+                     tok-5108-8907
+     without the marker test: the card number in the recording

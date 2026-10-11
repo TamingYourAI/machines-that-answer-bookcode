@@ -1,0 +1,15 @@
+{
+  "name": "Knowledge Line",
+  "short_name": "Knowledge Line",
+  "description": "Talk to the book's voice agents: River Plumbing's Appointment Line and the Quillmere Mutual Claims Line.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#1E2A32",
+  "icons": [
+    {"src": "/static/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "/static/icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "/static/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any"}
+  ]
+}

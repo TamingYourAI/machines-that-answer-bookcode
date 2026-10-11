@@ -1,0 +1,49 @@
+testing lab, mode=mock; evidence class: simulated
+
+1. unit tests on the policy layer (no model, no audio, no network)
+   case                                expected                       result
+   a booking with every term heard     allowed                        pass
+   a booking in the billing flow       refused: not in this flow      pass
+   a booking before the PIN            refused: needs pin             pass
+   a yes that never heard the fee      refused: fee not heard         pass
+   a fee waiver, meter 425 days old    refused: meter not new (5a)    pass
+   a fee waiver, meter 12 days old     wait: a person decides         pass
+   an address change on a PIN alone    refused: needs pin and code    pass
+   reading a bill after the PIN        allowed                        pass
+   8 of 8 passed; run on every change
+
+2. one booking in text, asserted two ways
+   version                          wording    state and tools
+   B, the fee, then the question    pass       pass
+   B2, the same, reworded           fail       pass
+   C, the question, then the fee    pass       fail: no booking, said "booked"
+
+3. simulated callers: the same 20 calls for each version (account 2231)
+   caller     habits in the 20 calls                      A: first  B: last
+   polite     plain 20                                    20 of 20  20 of 20
+   realistic  plain 12, halves 5, corrected 1, restart 2  17 of 20  20 of 20
+   A's 3 failures: asked the caller to repeat a number she had said right.
+   Misheard digits that a read-back repaired: 3 of 20 for B, counted as
+   hearing.
+
+4. what twenty runs can prove (95 percent)
+   result                                 pass rate            interval
+   A, realistic caller, 17 of 20             85.0 %       64.0 to  94.8
+   B, realistic caller, 20 of 20            100.0 %       83.9 to 100.0
+   with no failure in 20 runs, the failure rate can still be up to 13.9
+   percent
+   clean runs needed to show a failure rate under 5 percent: 59
+   clean runs needed to show a failure rate under 1 percent: 299
+
+5. what runs when (the Service Line's suite; stand-in rates)
+   layer                            tests runs     time    cost  when
+   unit: tools, policy, formatters    180    1      4 s      $0  every change
+   conversations in text              200    3   15 min      $3  every change
+   simulated callers in audio         200    5   60 min    $180  nightly
+   real phone lines                    40    1   40 min     $13  weekly
+   load and failure                     1    1   60 min    $144  monthly
+   people trying to break it                     2 days   staff  quarterly
+   every release candidate also runs on the phone lines; load and failure, and
+   the red team, run again before a release that changes what they test
+   every scenario 20 times in audio, every night: 12,000 minutes and $720 a
+   night, the kind of bill that stops a suite from running

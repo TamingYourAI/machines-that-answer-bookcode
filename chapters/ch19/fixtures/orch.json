@@ -1,0 +1,129 @@
+{
+ "fee": {
+  "line": "The first opening is Tuesday at nine. There's a forty-dollar call-out fee. Shall I book it?",
+  "term": "forty-dollar",
+  "wpm": 150,
+  "ahead_ms": 1000,
+  "one_way_ms": 40,
+  "barge_in": 3300
+ },
+ "queued_ms": 1000,
+ "runs": 500,
+ "spec": {
+  "turns": 200,
+  "goes_on": 26,
+  "stable_ms": 60,
+  "eot_ms": 220,
+  "final_ms": 40,
+  "first_token_ms": 170,
+  "first_audio_ms": 85,
+  "send_ms": 10,
+  "carrier_in_ms": 40,
+  "carrier_out_ms": 45,
+  "ms_per_token": 10
+ },
+ "turn": {
+  "in": 40,
+  "eot": 220,
+  "final": 40,
+  "first_token": 170,
+  "first_audio": 85,
+  "send": 10,
+  "out": 45
+ },
+ "hold_ms": 200,
+ "playbook": {
+  "turn_ms": 610,
+  "rtt_far_ms": 140,
+  "rtt_near_ms": 15,
+  "handshake_rtts": 2,
+  "sentence_hold_ms": 200,
+  "speculation_ms": 170
+ },
+ "events": [
+  [
+   0,
+   "transport",
+   "\"Yes, go ahead.\" leaves the caller",
+   false
+  ],
+  [
+   40,
+   "transport",
+   "her audio reaches the agent",
+   false
+  ],
+  [
+   240,
+   "turn-taking",
+   "end of turn: the words answer the question",
+   false
+  ],
+  [
+   280,
+   "hearing",
+   "final transcript: \"yes, go ahead\"",
+   false
+  ],
+  [
+   281,
+   "thinking",
+   "state loaded; the read-back was played in full, by marks: 91 of 91",
+   true
+  ],
+  [
+   283,
+   "thinking",
+   "policy layer: book_visit allowed; the yes covers slot, address, fee",
+   true
+  ],
+  [
+   284,
+   "thinking",
+   "op 7f3a journaled and the state saved, before the request leaves",
+   true
+  ],
+  [
+   285,
+   "systems",
+   "book_visit sent to the scheduler",
+   false
+  ],
+  [
+   295,
+   "speaking",
+   "\"Booking that now.\" from the line cache; checked: commits nothing",
+   true
+  ],
+  [
+   350,
+   "transport",
+   "the caller hears the filler",
+   false
+  ],
+  [
+   1685,
+   "systems",
+   "the scheduler commits op 7f3a; the state is saved",
+   true
+  ],
+  [
+   1690,
+   "speaking",
+   "\"You're booked for Tuesday at nine.\" rendered from the state; checked: op 7f3a committed",
+   true
+  ],
+  [
+   1745,
+   "transport",
+   "the caller hears it; marks prove it played",
+   true
+  ],
+  [
+   1746,
+   "thinking",
+   "the explanation record for the turn is written",
+   true
+  ]
+ ]
+}

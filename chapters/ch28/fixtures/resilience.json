@@ -1,0 +1,242 @@
+{
+ "peak": {
+  "calls_per_min": 30.0,
+  "agent_minutes": 4.5,
+  "turns_per_min": 4.0,
+  "tool_calls_per_call": 3.0,
+  "asks_for_person_per_min": 6.5,
+  "desk_answers_per_min": 5.0
+ },
+ "limits": [
+  [
+   "carrier",
+   "concurrent calls on the trunk",
+   400,
+   "calls"
+  ],
+  [
+   "platform",
+   "concurrent agent sessions",
+   300,
+   "calls"
+  ],
+  [
+   "recognizer",
+   "concurrent streams",
+   250,
+   "calls"
+  ],
+  [
+   "model",
+   "requests a minute",
+   1200,
+   "per min"
+  ],
+  [
+   "tools",
+   "billing requests a minute",
+   240,
+   "per min"
+  ],
+  [
+   "desk",
+   "calls answered a minute",
+   5.0,
+   "per min"
+  ]
+ ],
+ "call": [
+  [
+   "my meter's display has gone blank",
+   2.4
+  ],
+  [
+   "two two, three one",
+   2.0
+  ],
+  [
+   "yes, that's the address",
+   1.6
+  ],
+  [
+   "tuesday doesn't work for me",
+   1.8
+  ],
+  [
+   "wednesday at nine is fine",
+   1.7
+  ],
+  [
+   "yes, book it",
+   0.9
+  ]
+ ],
+ "classes": [
+  {
+   "name": "a provider swapped for the next call",
+   "dead_air": 0.0,
+   "lost": "nothing for new calls; calls in progress keep the old one",
+   "survives": true
+  },
+  {
+   "name": "a worker restarted mid-call",
+   "dead_air": 1.8,
+   "lost": "nothing, if the state was saved before the turn",
+   "survives": true
+  },
+  {
+   "name": "a speech session rebuilt mid-call",
+   "dead_air": 2.5,
+   "lost": "the audio context: the caller repeats the last answer",
+   "survives": true
+  },
+  {
+   "name": "a carrier or a region lost",
+   "dead_air": null,
+   "lost": "the call itself; a verified callback follows, with the operations in flight reconciled first",
+   "survives": false
+  }
+ ],
+ "takeover": {
+  "copy_behind_s": 4,
+  "rebookings": [
+   "committed",
+   "committed",
+   "committed",
+   "committed",
+   "committed",
+   "committed",
+   "committed",
+   "lost",
+   "lost"
+  ],
+  "changed_flight": 1
+ },
+ "designs": [
+  [
+   "copies",
+   "behind",
+   false,
+   false
+  ],
+  [
+   "journal",
+   "in both",
+   true,
+   false
+  ],
+  [
+   "journal in",
+   "both, fenced",
+   true,
+   true
+  ]
+ ],
+ "drill": {
+  "start": "10:00",
+  "new_calls_per_min": 12,
+  "in_progress": 54,
+  "signals": [
+   [
+    0.4,
+    0.1,
+    96.0
+   ],
+   [
+    0.4,
+    0.2,
+    97.0
+   ],
+   [
+    0.5,
+    0.1,
+    97.0
+   ],
+   [
+    0.4,
+    0.1,
+    96.0
+   ],
+   [
+    0.4,
+    0.1,
+    97.0
+   ]
+  ],
+  "baseline_empty": 3.0,
+  "error_alarm": 2.0,
+  "empty_alarm": 20.0,
+  "human_minutes": 26
+ },
+ "ladder": [
+  [
+   0,
+   "the full agent",
+   "normal"
+  ],
+  [
+   1,
+   "the fallback model; money on fixed lines",
+   "model p95 over 1 s for 5 minutes"
+  ],
+  [
+   2,
+   "spike mode: outage status first, callbacks in place of a queue",
+   "desk wait over 10 minutes"
+  ],
+  [
+   3,
+   "status lines only; everything else a callback",
+   "model rate-limited in both regions"
+  ],
+  [
+   4,
+   "the kill switch: the old menu and the queues",
+   "empty transcripts over 20 percent, or a release-blocking failure"
+  ]
+ ],
+ "evening": [
+  [
+   "18:00",
+   720,
+   4,
+   false,
+   3
+  ],
+  [
+   "18:30",
+   1150,
+   7,
+   false,
+   3
+  ],
+  [
+   "19:00",
+   1180,
+   12,
+   false,
+   4
+  ],
+  [
+   "19:30",
+   1300,
+   16,
+   true,
+   4
+  ],
+  [
+   "20:00",
+   900,
+   13,
+   false,
+   3
+  ],
+  [
+   "20:30",
+   760,
+   8,
+   false,
+   3
+  ]
+ ]
+}

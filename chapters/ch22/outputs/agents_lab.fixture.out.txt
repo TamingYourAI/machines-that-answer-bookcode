@@ -1,0 +1,60 @@
+agents lab, mode=fixture; evidence class: simulated (step 3)
+
+1. who is calling, and what the policy lets each one do
+   a caller about a blank meter
+     treated as a person: anything the proof ladder allows
+   a caller who speaks through a text-to-speech device
+     treated as a person: anything the proof ladder allows
+   a search assistant asking about an outage
+     treated as an assistant, no delegation: outage status and office details
+     only
+   a customer's assistant moving a visit
+     treated as an assistant with a delegation: what the delegation's scope
+     allows
+   a partner airline's agent
+     treated as a partner's agent: the structured door: tasks, not calls
+   an unannounced machine reading out prices
+     treated as a person: anything the proof ladder allows
+
+2. delegated authority: a customer's assistant and one delegation
+   delegation d-7305-1: customer 7305 to assistant.example, scope read_visit
+   and move_visit, until 19:00; approved by the customer in the app at 18:02
+   18:40  read_visit 7305 by assistant.example
+          allowed, bound to delegation d-7305-1
+   18:41  move_visit 7305 by assistant.example
+          allowed, bound to delegation d-7305-1
+   18:42  pay 7305 by assistant.example
+          refused: pay is never done for an assistant
+   18:43  move_visit 7306 by assistant.example
+          refused: the delegation is for 7305
+   18:44  move_visit 7305 by other-assistant.example
+          refused: issued to assistant.example, not other-assistant.example
+   19:05  move_visit 7305 by assistant.example
+          refused: it ended at 19:00
+   18:50  move_visit 7305, after the customer revoked it in the app
+          refused: the customer revoked it
+
+3. holds per principal: a home-services marketplace, 12 customers
+   (3 hold requests a minute for 30 minutes; 4 open slots; holds of 2 minutes;
+   stand-in requests)
+   limits on holds                        minutes all held  refused
+   one hold per call                              29 of 30        0
+   one per customer, two per platform              0 of 30       60
+
+4. a task to a partner: each rebooking tracked as a promise
+   (the promise to each passenger: "I'll text you by 21:00 with the partner's
+   answer.")
+   a passenger rebooked on the partner's 07:10
+     20:12  submitted      proposed
+     20:13  working        pending
+     20:19  input-required pending: the passenger's yes is needed; the partner
+                           offers seat 14C
+     20:20  working        pending; the passenger said yes
+     20:31  completed      committed; seat 14C confirmed
+     20:31                 promise kept: the text says what the partner
+                           confirmed, and only that
+   a passenger whose rebooking the partner never answers
+     20:12  submitted      proposed
+     20:13  working        pending
+     20:45                 no answer from the partner: a person calls the
+                           passenger, before 21:00 as promised

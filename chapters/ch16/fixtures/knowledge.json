@@ -1,0 +1,203 @@
+{
+ "steps": [
+  {
+   "id": "1",
+   "block": "greet",
+   "say": "Say the disclosure and ask how you can help.",
+   "needs": [],
+   "tools": []
+  },
+  {
+   "id": "2",
+   "block": "identify",
+   "say": "Ask for the account number and read it back in pairs.",
+   "needs": [],
+   "tools": [
+    "find_account"
+   ]
+  },
+  {
+   "id": "2a",
+   "block": "verify",
+   "say": "Before anything else, check the area for an outage. If there is one, give its status and do not book.",
+   "needs": [
+    "account found"
+   ],
+   "tools": [
+    "outage_status"
+   ]
+  },
+  {
+   "id": "3",
+   "block": "capture",
+   "say": "Ask what the meter shows, in the caller's words.",
+   "needs": [
+    "no outage"
+   ],
+   "tools": [
+    "open_ticket"
+   ]
+  },
+  {
+   "id": "4",
+   "block": "escalate",
+   "say": "If the caller smells gas, say the safety script word for word, then transfer.",
+   "needs": [],
+   "tools": [
+    "transfer"
+   ]
+  },
+  {
+   "id": "5",
+   "block": "collect",
+   "say": "Offer the first opening with the call-out fee in the same breath.",
+   "needs": [
+    "ticket open"
+   ],
+   "tools": [
+    "find_slot"
+   ]
+  },
+  {
+   "id": "5a",
+   "block": "escalate",
+   "say": "If the meter is new and the caller asks about the fee, a supervisor decides.",
+   "needs": [
+    "ticket open"
+   ],
+   "tools": [
+    "request_approval"
+   ]
+  },
+  {
+   "id": "6",
+   "block": "act",
+   "say": "Book only on a yes to the read-back.",
+   "needs": [
+    "verified",
+    "a yes"
+   ],
+   "tools": [
+    "book_visit"
+   ]
+  },
+  {
+   "id": "7",
+   "block": "confirm",
+   "say": "Say it is booked and that you are texting the details.",
+   "needs": [
+    "committed"
+   ],
+   "tools": [
+    "send_text"
+   ]
+  },
+  {
+   "id": "8",
+   "block": "close",
+   "say": "Ask if there is anything else, then close.",
+   "needs": [],
+   "tools": [
+    "set_disposition"
+   ]
+  }
+ ],
+ "items": [
+  {
+   "id": "web-storm-page",
+   "kind": "web page",
+   "rank": 4,
+   "topic": "late",
+   "owner": "communications lead",
+   "audience": "public",
+   "from": "2026-09-12",
+   "to": null,
+   "source": "memo-114",
+   "text": "Customers affected by the storm will not be charged late fees for September."
+  },
+  {
+   "id": "memo-114",
+   "kind": "policy memo",
+   "rank": 1,
+   "topic": "late",
+   "owner": "billing policy lead",
+   "audience": "public",
+   "from": "2026-09-12",
+   "to": "2026-09-30",
+   "text": "Per Policy Memo 114, customers in the designated storm area who incurred late payment charges on statements issued between 1 and 30 September are eligible for a one-time waiver (max. $12) of late fees, subject to account verification.",
+   "spoken": "Yes: if your bill was due during the storm, we can remove the twelve-dollar late fee once. Shall I check your account?",
+   "terms": {
+    "fees": 1
+   }
+  },
+  {
+   "id": "price-list",
+   "kind": "price list",
+   "rank": 2,
+   "topic": "fee",
+   "owner": "field operations manager",
+   "audience": "public",
+   "from": "2026-07-01",
+   "to": "2026-12-31",
+   "text": "A technician visit carries a forty-dollar call-out fee.",
+   "spoken": "A technician visit carries a forty-dollar call-out fee."
+  },
+  {
+   "id": "billing-guide",
+   "kind": "guide",
+   "rank": 3,
+   "topic": "bill",
+   "owner": "billing policy lead",
+   "audience": "public",
+   "from": "2026-01-01",
+   "to": "2026-12-31",
+   "text": "An estimated reading is used when the meter could not be read; the next actual reading corrects the bill.",
+   "spoken": "When the meter can't be read, the bill uses an estimate, and the next reading corrects it."
+  },
+  {
+   "id": "acct-6042",
+   "kind": "account record",
+   "rank": 0,
+   "topic": null,
+   "owner": "the billing system",
+   "audience": "acct-6042",
+   "from": null,
+   "to": null,
+   "late_fees_in_storm": 2,
+   "text": "Account 6042: electricity and gas bills due in September, both paid late; two late fees; storm area; no waiver in twelve months."
+  },
+  {
+   "id": "acct-7719",
+   "kind": "account record",
+   "rank": 0,
+   "topic": null,
+   "owner": "the billing system",
+   "audience": "acct-7719",
+   "from": null,
+   "to": null,
+   "late_fees_in_storm": 1,
+   "text": "Account 7719: late fee removed under the storm waiver on 20 September; storm area."
+  }
+ ],
+ "question": "Will I be charged late fees for September because of the storm?",
+ "caller": "acct-6042",
+ "asked_on": "2026-09-24",
+ "day_after": "2026-10-01",
+ "terms": [
+  "one twelve-dollar late fee",
+  "one of your two"
+ ],
+ "others": [
+  "What is the call-out fee for a technician visit?",
+  "Why is my bill based on an estimated reading?",
+  "Will rates go up next year because of the storm?",
+  "Can I get a smart meter fitted?"
+ ],
+ "floor": 0.4,
+ "long_call": {
+  "turns": 40,
+  "per_turn": 130,
+  "keep": 2,
+  "summary": 180
+ }
+}

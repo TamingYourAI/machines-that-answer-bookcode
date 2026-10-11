@@ -1,0 +1,65 @@
+speaking lab, mode=fixture; evidence class: simulated
+
+1. streaming: first audio after the model's first token
+   (one token every 25 ms; 85 ms from a chunk to its first audio)
+   reply  Your September bill is $184.20, and August's was $91.60.
+          September includes an estimated reading from the new meter.
+   chunking               first audio  chunks
+   whole reply                 735 ms       1
+   by sentence                 485 ms       2
+   by clause                   285 ms       3
+   streamed                     85 ms      18
+   a chunker that ends a clause at every point splits the amount:
+     sends "Your September bill is $184."
+       and the voice says "...bill is one hundred eighty-four dollars."
+     then sends "20," and the voice says "twenty,"
+
+2. the buffer: a 3.2 s line; synthesis at 0.3x real time, or at 1.6x
+   for the first 900 ms under load
+   start buffer         first audio  underruns   silence heard
+   normal load
+     0 ms                     85 ms          0            0 ms
+     200 ms                  145 ms          0            0 ms
+   under load
+     0 ms                     85 ms          3          360 ms
+     200 ms                  405 ms          1           40 ms
+     400 ms                  725 ms          0            0 ms
+
+3. one rebooking, three locales (the Disruption Desk)
+   written: departs 19:40 on 2026-09-30; fare difference EUR 84.50
+   en-US   at seven forty in the evening; on Wednesday, September
+           thirtieth; eighty-four euros and fifty cents
+   en-GB   at nineteen forty; on Wednesday the thirtieth of September;
+           eighty-four euros fifty
+   de-DE   um neunzehn Uhr vierzig; am Mittwoch, dem dreißigsten
+           September; vierundachtzig Euro fünfzig
+
+4. the lexicon (brief 1.3), compiled for three kinds of synthesizer
+   Alder: the brief says AL-der; in X-SAMPA "{l.d@`
+   loads a lexicon file
+     <lexeme><grapheme>Alder</grapheme><phoneme>"{l.d@`</phoneme></lexeme>
+   takes phoneme tags
+     <phoneme alphabet="x-sampa" ph='"{l.d@`'>Alder</phoneme>
+   takes plain text only
+     AL-der
+   coverage: 3 of 3 service-area names in the test lines have an entry
+
+5. what the model wrote, and what the agent may say
+   wrote: Here are the openings: 1. **Tuesday** at 9:00 AM ...
+   found: markdown
+          4 options (at most 3 are spoken)
+          a link (never read aloud; sent by text)
+          money and times in digits
+          3 sentences in one turn (a design finding)
+   said:  Here are the openings: Tuesday at nine in the morning, Tuesday
+          at one in the afternoon, or Wednesday at nine in the morning.
+          The call-out charge is sixty dollars. I'll text you the full
+          list.
+
+6. the panel: 8 listeners, 6 prompts, telephone bandwidth
+   version                MOS   95% interval  numbers heard  verdict
+   voice B, pinned       4.10     3.96 to 4.25      31 of 32     pass
+   voice B, updated      4.33     4.18 to 4.49      29 of 32     fail
+   lowest prompt, voice B, pinned: a repair turn (3.50)
+   lowest prompt, voice B, updated: a repair turn (3.75)
+   pass: numbers heard 95% or more; MOS is reported, not decisive

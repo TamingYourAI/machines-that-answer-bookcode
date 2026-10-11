@@ -1,0 +1,389 @@
+{
+ "calendar": [
+  [
+   "dashboards, alerts, and failure triage",
+   "daily",
+   "engineer on call",
+   0
+  ],
+  [
+   "the weekly review; failures into the suite",
+   "weekly",
+   "product owner",
+   6
+  ],
+  [
+   "knowledge updates",
+   "weekly",
+   "product owner",
+   3
+  ],
+  [
+   "turn-taking check on recorded calls",
+   "monthly",
+   "engineering lead",
+   12
+  ],
+  [
+   "lexicon review",
+   "monthly",
+   "head of customer operations",
+   40
+  ],
+  [
+   "provider benchmark on the held-out set",
+   "monthly",
+   "engineering lead",
+   20
+  ],
+  [
+   "cost review, split by who billed it",
+   "monthly",
+   "product owner",
+   31
+  ],
+  [
+   "failover drill",
+   "monthly",
+   "engineering lead",
+   47
+  ],
+  [
+   "full suite on the live release",
+   "quarterly",
+   "product owner",
+   60
+  ],
+  [
+   "fairness audit by language and age band",
+   "quarterly",
+   "product owner",
+   95
+  ],
+  [
+   "security review",
+   "quarterly",
+   "compliance lead",
+   80
+  ],
+  [
+   "re-read the voice brief",
+   "quarterly",
+   "head of customer operations",
+   30
+  ],
+  [
+   "architecture review: is the first fork still right?",
+   "yearly",
+   "engineering lead",
+   200
+  ],
+  [
+   "contract renewal, priced on the busiest month",
+   "yearly",
+   "procurement",
+   330
+  ],
+  [
+   "restore from backup, end to end",
+   "yearly",
+   "engineering lead",
+   370
+  ]
+ ],
+ "old": {
+  "instructions (core)": "1.4",
+  "voice brief": "1.3",
+  "billing procedure": "2.2",
+  "fixed lines": "3.2",
+  "knowledge": "k-123",
+  "turn-taking rules": "v2.4",
+  "model": "m-12",
+  "recognizer": "r-2.8",
+  "voice": "B 4.1",
+  "tools": "t-19"
+ },
+ "new": {
+  "instructions (core)": "1.4",
+  "voice brief": "1.3",
+  "billing procedure": "2.2",
+  "fixed lines": "3.2",
+  "knowledge": "k-124",
+  "turn-taking rules": "v2.4",
+  "model": "m-12",
+  "recognizer": "r-2.9",
+  "voice": "B 4.1",
+  "tools": "t-19"
+ },
+ "results": {
+  "entity scenarios": [
+   48,
+   44,
+   48
+  ],
+  "audio suite (5 runs of each)": [
+   996,
+   991,
+   1000
+  ],
+  "40 calls on test numbers": [
+   40,
+   39,
+   40
+  ],
+  "knowledge scenarios": [
+   62,
+   62,
+   62
+  ],
+  "cross-chapter scenarios": [
+   4,
+   4,
+   4
+  ]
+ },
+ "expiring": [
+  [
+   "knowledge: storm late-fee waiver, memo 114",
+   "billing policy lead",
+   -1
+  ],
+  [
+   "knowledge: Saturday walk-in hours",
+   "head of customer operations",
+   3
+  ],
+  [
+   "knowledge: outage map link text",
+   "communications lead",
+   5
+  ],
+  [
+   "knowledge: winter reconnection rules",
+   "billing policy lead",
+   40
+  ],
+  [
+   "certificate: the webhook endpoint",
+   "engineering lead",
+   21
+  ],
+  [
+   "contract: the service number with the carrier",
+   "procurement",
+   60
+  ],
+  [
+   "knowledge: the $40 call-out fee",
+   "field operations manager",
+   200
+  ]
+ ],
+ "month": {
+  "entity errors, account numbers (%)": [
+   1.9,
+   2.05,
+   1.95,
+   2.0,
+   2.08,
+   1.92,
+   2.1,
+   1.9,
+   2.05,
+   1.95,
+   2.0,
+   2.08,
+   1.92,
+   2.1,
+   1.9,
+   2.05,
+   1.95,
+   5.8,
+   5.88,
+   1.92,
+   2.1,
+   1.9,
+   2.05,
+   1.95,
+   2.0,
+   2.08,
+   1.92,
+   2.1,
+   1.9,
+   2.05
+  ],
+  "transfers after a repair (%)": [
+   4.7,
+   4.85,
+   4.75,
+   4.8,
+   4.88,
+   4.72,
+   4.9,
+   4.7,
+   4.85,
+   4.75,
+   4.8,
+   4.88,
+   4.72,
+   4.9,
+   4.7,
+   4.85,
+   4.75,
+   6.9,
+   6.98,
+   4.72,
+   4.9,
+   4.7,
+   4.85,
+   4.75,
+   4.8,
+   4.88,
+   4.72,
+   4.9,
+   4.7,
+   4.85
+  ],
+  "resolution that lasts (%)": [
+   37.7,
+   38.15,
+   37.85,
+   38.0,
+   38.24,
+   37.76,
+   38.3,
+   37.7,
+   38.15,
+   37.85,
+   38.0,
+   38.24,
+   37.76,
+   38.3,
+   37.7,
+   38.15,
+   37.85,
+   38.0,
+   38.24,
+   37.76,
+   38.3,
+   37.7,
+   38.15,
+   37.85,
+   35.6,
+   35.84,
+   37.76,
+   38.3,
+   37.7,
+   38.15
+  ],
+  "billing share of calls (%)": [
+   57.0,
+   58.5,
+   57.5,
+   58.0,
+   58.8,
+   57.2,
+   59.0,
+   57.0,
+   58.5,
+   57.5,
+   58.0,
+   58.8,
+   57.2,
+   59.0,
+   57.0,
+   58.5,
+   57.5,
+   58.0,
+   58.8,
+   57.2,
+   59.0,
+   57.0,
+   58.5,
+   73.5,
+   74.0,
+   74.8,
+   57.2,
+   59.0,
+   57.0,
+   58.5
+  ],
+  "voice to voice p95 (ms)": [
+   730,
+   748,
+   742,
+   750,
+   762,
+   750,
+   771,
+   754,
+   773,
+   766,
+   775,
+   786,
+   774,
+   796,
+   779,
+   798,
+   791,
+   800,
+   811,
+   798,
+   820,
+   804,
+   822,
+   816,
+   824,
+   836,
+   823,
+   844,
+   828,
+   846
+  ]
+ },
+ "known": [
+  [
+   "billing share of calls (%)",
+   24,
+   26,
+   "the bill run"
+  ]
+ ],
+ "fixed": {
+  "voice to voice p95 (ms)": [
+   "over",
+   800
+  ],
+  "resolution that lasts (%)": [
+   "under",
+   30.0
+  ]
+ },
+ "cost": {
+  "telephony": [
+   0.14,
+   0.14,
+   0.14
+  ],
+  "platform minutes": [
+   0.38,
+   0.41,
+   0.45
+  ],
+  "speech": [
+   0.27,
+   0.27,
+   0.28
+  ],
+  "model": [
+   0.21,
+   0.24,
+   0.27
+  ],
+  "tools and storage": [
+   0.12,
+   0.12,
+   0.12
+  ]
+ }
+}

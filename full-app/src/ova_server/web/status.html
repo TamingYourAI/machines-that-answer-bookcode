@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Claim status</title>
+<meta name="theme-color" content="#1E2A32">
+<link rel="icon" href="/static/icon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<div class="page">
+  <div class="eyebrow">Quillmere Mutual · demonstration</div>
+  <h1 id="title">Claim status</h1>
+  <p id="lead">Checking your link...</p>
+  <div id="body" hidden>
+    <div class="card">
+      <dl id="facts"></dl>
+    </div>
+    <h2 class="eyebrow" style="margin-top:18px">What has happened</h2>
+    <ul class="timeline" id="history"></ul>
+    <div class="thumbs" id="thumbs"></div>
+    <p class="note">Questions? Call the claims line; it can put you through to your adjuster.</p>
+  </div>
+</div>
+<script type="module">
+const token = location.pathname.split("/").pop();
+const $ = (s) => document.querySelector(s);
+const r = await fetch(`/api/links/${token}`);
+if (!r.ok) {
+  $("#lead").textContent = "This link has expired or is not valid.";
+} else {
+  const { claim: c } = await r.json();
+  const day = (iso) => new Date(iso + "T12:00:00").toLocaleDateString("en-US", { weekday: "short", day: "numeric", month: "short" });
+  const cap = (x) => (x || "").charAt(0).toUpperCase() + (x || "").slice(1);
+  $("#title").textContent = `Claim ${c.number}`;
+  $("#lead").textContent = c.status_text;
+  const row = (a, b) => { const dt = document.createElement("dt"); dt.textContent = a; const dd = document.createElement("dd"); dd.textContent = b; $("#facts").append(dt, dd); };
+  row("Type", cap(c.loss_type));
+  row("Date of loss", day(c.loss_date));
+  if (c.adjuster) row("Adjuster", c.adjuster);
+  if (c.next && c.next.date) row("Next", `${cap(c.next.what)} by ${day(c.next.date)}`);
+  row("Photos", String(c.photos));
+  for (const h of c.history) {
+    const li = document.createElement("li");
+    li.textContent = `${day(h.date)}: ${h.note}`;
+    $("#history").appendChild(li);
+  }
+  for (const id of c.photo_ids) {
+    const img = document.createElement("img");
+    img.src = `/api/files/${id}?t=${encodeURIComponent(token)}`;
+    img.alt = "claim photo";
+    $("#thumbs").appendChild(img);
+  }
+  $("#body").hidden = false;
+}
+</script>
+</body>
+</html>

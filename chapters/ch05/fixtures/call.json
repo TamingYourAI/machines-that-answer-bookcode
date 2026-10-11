@@ -1,0 +1,110 @@
+{
+ "steps": [
+  [
+   "20:10:06",
+   "greet",
+   "\"This is the utility's automated assistant. How can I help?\"",
+   true
+  ],
+  [
+   "20:10:09",
+   "greet",
+   "she says her meter's display has gone blank",
+   false
+  ],
+  [
+   "20:10:12",
+   "identify",
+   "\"To find your account, what's the number on your bill?\"",
+   true
+  ],
+  [
+   "20:10:16",
+   "identify",
+   "she asks for a moment; the agent holds, checking in every 30 seconds",
+   true
+  ],
+  [
+   "20:11:40",
+   "identify",
+   "\"That's two two, three one. Is that right?\"",
+   true
+  ],
+  [
+   "20:11:48",
+   "identify",
+   "\"Is the visit for fourteen Alder Road?\"",
+   true
+  ],
+  [
+   "20:11:53",
+   "verify",
+   "no outage at fourteen Alder Road; nothing is said",
+   true
+  ],
+  [
+   "20:11:55",
+   "capture",
+   "her first sentence goes on a fault ticket; nothing is asked twice",
+   true
+  ],
+  [
+   "20:12:10",
+   "capture",
+   "\"I've texted a link to the number you're calling from, for a photo of the meter.\"",
+   true
+  ],
+  [
+   "20:13:02",
+   "capture",
+   "the photo lands on the fault ticket",
+   false
+  ],
+  [
+   "20:13:08",
+   "capture",
+   "\"Thanks, that's come through. Is the power on in the rest of the house?\"",
+   true
+  ],
+  [
+   "20:14:20",
+   "capture",
+   "she checks the lights: it is",
+   false
+  ],
+  [
+   "20:14:30",
+   "collect",
+   "\"The first opening is Tuesday at nine. There's a forty-dollar call-out fee. Shall I book it?\"",
+   true
+  ],
+  [
+   "20:14:40",
+   "act",
+   "\"Yes, go ahead.\" The booking is made",
+   false
+  ],
+  [
+   "20:14:42",
+   "confirm",
+   "\"You're booked for Tuesday at nine.\"",
+   true
+  ],
+  [
+   "20:15:00",
+   "confirm",
+   "the confirmation text goes",
+   false
+  ],
+  [
+   "20:15:20",
+   "close",
+   "the disposition: visit booked by the agent",
+   false
+  ]
+ ],
+ "not_reached": {
+  "4": "no gas smell",
+  "5a": "the meter is two years old"
+ }
+}

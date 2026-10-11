@@ -1,0 +1,46 @@
+[
+ {
+  "name": "Service Line, front of the ACD",
+  "seat": "front of the ACD",
+  "numbers": [
+   "the published service number"
+  ],
+  "recorders": [
+   "the platform recorder"
+  ],
+  "transfer": {
+   "method": "back into the billing and outage queues",
+   "attached": [
+    "account",
+    "intent",
+    "verified level",
+    "last two turns",
+    "ticket id"
+   ]
+  },
+  "disposition_back": true,
+  "after_hours": "agent answers; callbacks for anything that needs a person",
+  "porting_weeks": 0
+ },
+ {
+  "name": "Service Line, mixed seat",
+  "seat": "CPaaS-native",
+  "numbers": [
+   "the published service number",
+   "a new agent number"
+  ],
+  "recorders": [
+   "the platform recorder",
+   "the agent's own recorder"
+  ],
+  "transfer": {
+   "method": "a forward to the main number",
+   "attached": [
+    "intent"
+   ]
+  },
+  "disposition_back": false,
+  "after_hours": "",
+  "porting_weeks": null
+ }
+]

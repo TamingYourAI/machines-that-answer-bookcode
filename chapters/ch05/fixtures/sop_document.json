@@ -1,0 +1,10 @@
+[
+ "1. Answer the call and give your name.",
+ "2. Verify the customer with the account number and the first line of the address.",
+ "3. Ask what the meter shows and record it on a fault ticket.",
+ "4. If the customer smells gas, read the gas safety script and transfer to the emergency team.",
+ "5. Offer the first available visit and state the call-out fee.",
+ "6. Book the visit when the customer agrees.",
+ "7. Send the confirmation text.",
+ "8. Close the call and set the disposition."
+]

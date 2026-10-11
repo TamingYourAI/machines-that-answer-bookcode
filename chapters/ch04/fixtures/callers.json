@@ -1,0 +1,107 @@
+{
+ "happy path": [
+  {
+   "act": "value",
+   "said": "My meter's display has gone blank.",
+   "value": "My meter's display has gone blank."
+  },
+  {
+   "act": "value",
+   "said": "two two three one",
+   "value": "2231"
+  },
+  {
+   "act": "yes",
+   "said": "Yes."
+  },
+  {
+   "act": "yes",
+   "said": "Yes."
+  },
+  {
+   "act": "value",
+   "said": "It's just blank.",
+   "value": "It's just blank."
+  },
+  {
+   "act": "yes",
+   "said": "Yes."
+  }
+ ],
+ "misheard number": [
+  {
+   "act": "value",
+   "said": "My meter's display has gone blank.",
+   "value": "My meter's display has gone blank."
+  },
+  {
+   "act": "unclear",
+   "said": "two two ... [crosstalk]"
+  },
+  {
+   "act": "unclear",
+   "said": "two two three... one"
+  },
+  {
+   "act": "keypad",
+   "said": "[DTMF 2231]",
+   "value": "2231"
+  },
+  {
+   "act": "yes",
+   "said": "Yes."
+  },
+  {
+   "act": "yes",
+   "said": "Yes."
+  },
+  {
+   "act": "value",
+   "said": "It's blank.",
+   "value": "It's blank."
+  },
+  {
+   "act": "yes",
+   "said": "Yes."
+  }
+ ],
+ "asks for a person": [
+  {
+   "act": "person",
+   "said": "Agent."
+  },
+  {
+   "act": "person",
+   "said": "Agent, please."
+  }
+ ],
+ "silence": [
+  {
+   "act": "value",
+   "said": "My meter's display has gone blank.",
+   "value": "My meter's display has gone blank."
+  },
+  {
+   "act": "silence",
+   "said": "[silence 5 s]"
+  },
+  {
+   "act": "silence",
+   "said": "[silence 5 s]"
+  },
+  {
+   "act": "silence",
+   "said": "[silence 5 s]"
+  }
+ ],
+ "out of scope": [
+  {
+   "act": "out of scope",
+   "said": "Can you tell me about solar rebates?"
+  },
+  {
+   "act": "person",
+   "said": "OK, a person then."
+  }
+ ]
+}

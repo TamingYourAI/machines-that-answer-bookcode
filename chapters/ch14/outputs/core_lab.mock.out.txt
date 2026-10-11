@@ -1,0 +1,94 @@
+core lab, mode=mock; evidence class: simulated
+
+1. three control styles: five stand-in calls, 100 runs each
+   (the free-form model breaks a rule in its prompt at stand-in rates)
+   ended as designed               scripted   free-form    guided
+   a plain booking                      100         100       100
+   "make it Wednesday"                    0          98       100
+   two requests in one breath             0         100       100
+   "just book it, I'm late"             100          98       100
+   "they said there's no fee"             0          96       100
+   how the others ended
+     scripted    a person, after two repairs: 200
+                 the bill question lost: 100
+     free-form   fee waived by the model: 4
+                 booked with no yes to it: 2
+                 booked before verifying: 2
+     guided      none
+
+2. the policy layer: the model proposes, the policy disposes
+   the model proposes     when                     the policy decides
+   book_visit(Tue 09:00)  not yet verified         refused: verify first
+   read_bill()            in the visit flow        refused: not in this flow
+   find_slot(Tue)         not yet verified         allowed
+   book_visit(Tue 09:00)  verified, no yes yet     refused: no yes yet
+   book_visit(Tue 09:00)  a yes; fee not played    refused: fee not heard
+   book_visit(Tue 09:00)  a yes; all terms heard   allowed
+   book_visit(Wed 09:00)  the yes was for Tuesday  refused: other terms
+   waive_callout(40.00)   a two-year-old meter     refused: meter not new (5a)
+
+3. a tool result that arrives after a barge-in
+      0 ms  response 7: "Booking that now." book_visit sent as op 7f3a
+    600 ms  the caller: "Wait, can you make it Wednesday instead?" She speaks
+            until 2300 ms.
+   1400 ms  book_visit answers for response 7: committed
+   without epochs  at 1400 ms, over the caller: "You're booked for Tuesday at
+                   nine."
+   with epochs     response 7 stays canceled, and op 7f3a is committed in the
+                   state
+                   at 2520 ms: "Tuesday at nine is booked already. Shall I
+                   move it to Wednesday at nine?"
+
+4. state that outlives the worker (the recurring caller, turn 6)
+   saved every turn: 694 bytes of JSON in 13 fields; op 7f3a was saved as
+   submitted before its request left
+   worker 1 stops; the platform reconnects the stream to worker 2
+     state in worker 1's memory  op 7f3a is invisible, and Tuesday at nine
+                                 shows as taken
+                                 "This is the utility's automated assistant.
+                                 How can I help?"
+     state saved every turn      reads op 7f3a by id: committed
+                                 "Sorry about that pause. You're booked for
+                                 Tuesday at nine."
+   the caller hangs up at turn 7
+   work in flight            at hang-up    after it
+   a read (find_slot)        stopped       nothing: no one is listening
+   a write (op 7f3a)         continues     read back by id; a text says which
+   an offer with no yes      dropped       nothing was agreed
+   a person's approval       waits         a text by its deadline
+
+5. approval as a wait state (account 5108; the call-out fee, step 5a)
+   Mon 20:31  requested: waive 40.00 on the visit, op-746f
+              approver: the billing supervisor; expires Tue 17:00
+              the agent: "A supervisor decides by five tomorrow. I'll text you
+              either way."
+   Mon 20:33  the call ends; the wait lives in the store, not in a worker
+   Tue 08:05  approved; any worker resumes it: the waiver, op-0664, committed,
+              the text, op-f250, sent
+   audit: 5 entries, each with who, what, when, and the rule
+   no decision by Tue 17:00: the desk's queue, and a text to the caller
+
+6. one agent or several: model time on the caller's turn
+   (Chapter 6's turn: 440 ms of other spans; 170 ms to each first token, then
+   10 ms a token)
+   pattern                            calls on the turn  voice to voice
+   one agent (the baseline)                           1          610 ms
+   a handoff, on its first turn                       2          930 ms
+   an agent used as a tool                            3         1700 ms
+   a supervisor checking a reply                      2         1110 ms
+   a worker behind the turn                           1          610 ms
+   one handoff, as a record (the Disruption Desk; stand-in times)
+     triage to rebooking at 0 s; rebooking owns the state until 90 s; it
+     carries the case, the verified level, the flow stack, the persona
+     at 60 s: rebooking
+     at 90 s: triage, with the reason: no answer by the deadline
+     the specialist's answer at 120 s is too late and goes to the case
+
+7. a voice on the Colleague Line's text agent (stand-in: whole answers after
+   2400 ms, written for a screen, no cancel, tools run at once)
+   what breaks                wrapped as it is      with the adapter
+   first sound after a turn   2840 ms               355 ms, a cached filler
+   an answer for a screen     markdown read aloud   3 steps; the link texted
+   a barge-in at 1000 ms      the answer plays      recorded, not spoken
+   a yes to the reset         it resets at will     a yes bound, as heard
+   a retry after a timeout    2 resets              one operation id

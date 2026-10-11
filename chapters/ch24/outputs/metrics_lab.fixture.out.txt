@@ -1,0 +1,70 @@
+metrics lab, mode=fixture; evidence class: simulated
+
+1. three recorded calls, scored on both families
+                                 r1, a visit   r2, a bill    r3, a person
+   voice family
+     turns                       8             6             4
+     voice to voice, p50 (ms)    660           690           630
+     slowest turn (ms)           840           890           710
+     word error rate             3.0 %         4.2 %         0.0 %
+     critical entities wrong     0 of 5        1 of 2        0 of 2
+     false cut-offs              0             0             1
+     interruptions               0             1             0
+   business family
+     handed to a person          no            no            yes
+     done in the record by       the agent     the agent     a person
+     same task again in 7 days   no            yes, day 4    no
+     cost, with any repeat call  $0.95         $8.14         $7.49
+     containment 2 of 3; task completion by the agent 2 of 3; resolution that
+     lasts 1 of 3
+   all 18 turns, voice to voice (ms)  p50    p95   mean
+     at the caller's ear             660    890    683
+     at the server                   480    700    501
+
+2. one week counted three ways (pilot week 4, 2,870 stand-in calls)
+   the contact center dashboard: not handed to a person          64.0 %
+   a spreadsheet: resolved, no call from the number in 7 days    31.0 %
+   the metrics record: one row per call, one schema
+     containment                                                 64.0 %
+     task completion by the agent                                41.6 %
+     resolution that lasts (account and task, 7 days)            34.1 %
+     contained, not done                                         22.4 %
+   the spreadsheet's gap: 89 lasting calls were followed by a call from the
+   same number about something else. Task completion includes 43 tasks
+   finished through a texted link, credited to the call that sent it. 14
+   machine callers are reported apart.
+
+3. every number split (week 4; interval on resolution that lasts)
+   group                  calls  task done   lasts   95% interval  review
+   language: first        2,440     43.2 %  35.7 %   33.8 to 37.6
+   language: second         430     32.6 %  25.3 %   21.5 to 29.7  own item
+   seat: app                510     49.6 %  42.5 %   38.3 to 46.9
+   seat: phone            2,360     39.9 %  32.3 %   30.4 to 34.2
+   age band: 65 and over    600     34.7 %  27.5 %   24.1 to 31.2  own item
+   age band: under 65     2,270     43.4 %  35.9 %   33.9 to 37.9
+   the whole week         2,870     41.6 %  34.1 %
+
+4. Simpson's paradox: containment by flow
+                               week 5    week 6
+   billing                     72.0 %    70.0 %
+   visits                      54.0 %    52.0 %
+   every call                  64.6 %    65.6 %
+   week 6 at week 5 mix                  62.6 %
+   billing was 59 percent of calls in week 5 and 76 percent in week 6, after a
+   bill run; the agent contains billing calls more often, so the week rose
+   while both flows fell
+
+5. week 8 against the business case (2,900 stand-in calls)
+   line                         planned    the case fails   measured  holds
+   resolution that lasts         45.0 %      below 30.0 %     38.0 %    yes
+   what a repeat call costs       $6.00       above $9.00      $6.20    yes
+   agent cost per call            $0.90       above $1.50      $1.12    yes
+   cost per resolved case         $4.20        not a line      $5.36
+     agent $3,248; people on 870 handed-over calls $5,742 (6.6 minutes each,
+     6.0 before the pilot); people on 734 repeat calls $4,551; review and
+     tuning $960; 2,706 cases resolved; 194 callers gave up and are not
+     counted as resolved
+     the stand-in assumes every handover and repeat ended resolved; if 290 of
+     those 1,604 cases (18.1 %) had not, a resolved case would cost more than
+     a person's $6.00 call
+   lowest group: language: second, 31.1 % of 450 (27.0 to 35.5), own item

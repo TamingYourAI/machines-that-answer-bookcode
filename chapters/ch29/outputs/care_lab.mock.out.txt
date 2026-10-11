@@ -1,0 +1,71 @@
+care lab, mode=mock; evidence class: simulated
+
+1. the care calendar: 15 recurring tasks, each with an owner
+   overdue:
+     failover drill (engineering lead), 17 days late
+     lexicon review (head of customer operations), 10 days late
+     restore from backup, end to end (engineering lead), 5 days late
+     fairness audit by language and age band (product owner), 4 days late
+     cost review, split by who billed it (product owner), 1 day late
+   due this week:
+     dashboards, alerts, and failure triage (engineer on call), in 1 day
+     the weekly review; failures into the suite (product owner), in 1 day
+     knowledge updates (product owner), in 4 days
+   coming up:
+     provider benchmark on the held-out set (engineering lead), in 10 days
+     security review (compliance lead), in 11 days
+     turn-taking check on recorded calls (engineering lead), in 18 days
+     full suite on the live release (product owner), in 31 days
+     contract renewal, priced on the busiest month (procurement), in 35 days
+
+2. a release diff: release 35 to release 36
+   knowledge: k-123 to k-124
+   recognizer: r-2.8 to r-2.9
+   runs it triggers                    release 35    release 36
+   knowledge scenarios                   62 of 62      62 of 62
+   cross-chapter scenarios                 4 of 4        4 of 4
+   entity scenarios                      48 of 48      44 of 48
+   audio suite (5 runs of each)      996 of 1,000  991 of 1,000
+   40 calls on test numbers              40 of 40      39 of 40
+   worse on release 36: entity scenarios, audio suite (5 runs of each), 40
+   calls on test numbers. Hold r-2.9, ship k-124 on r-2.8, and send the
+   provider the failing calls
+
+3. what expires: loud against silent
+   knowledge: storm late-fee waiver, memo 114 (ended 1 day ago)
+      loud: pulled from the index; owner paged
+   knowledge: Saturday walk-in hours (3 days left)
+      loud: owner reminded
+   knowledge: outage map link text (5 days left)
+      loud: owner reminded
+   certificate: the webhook endpoint (21 days left)
+      loud: owner reminded
+   silent expiry: the storm late-fee waiver, memo 114 is still live, nobody
+   told
+
+4. drift: a month of daily numbers against a trailing 14-day median
+   metric                                alert   median   value
+   entity errors, account numbers (%)   day 19      2.0     5.9
+   transfers after a repair (%)         day 19      4.8     7.0
+   resolution that lasts (%)            day 26     37.9    35.8
+   billing share of calls (%)           day 25     58.2    74.0
+                                        expected: the bill run, days 24 to 26
+   voice to voice p95 (ms)                none
+   every version in the spans is unchanged: from day 18 the misheard calls
+   came through a carrier's new route, which compressed the audio twice, until
+   the carrier moved the line back on day 19
+   fixed limits, two days running           limit    alert
+   voice to voice p95 (ms)               over 800   day 22
+   resolution that lasts (%)             under 30     none
+   the p95 crept about 3.5 ms a day; its trailing median moved with it, so
+   only the fixed limit caught it
+
+5. cost drift: the agent's cost per call, by who billed it
+   part                  month 1  month 2  month 3  change  alarm
+   telephony                0.14     0.14     0.14      0%
+   platform minutes         0.38     0.41     0.45     18%    yes
+   speech                   0.27     0.27     0.28      4%
+   model                    0.21     0.24     0.27     29%    yes
+   tools and storage        0.12     0.12     0.12      0%
+   total                    1.12     1.18     1.26     12%
+   the alarm: any part up more than a tenth on month 1
