@@ -104,3 +104,21 @@ async def test_the_switch_stops_a_booking_whose_yes_is_still_being_understood(rt
     assert rt.store.get("rp_slot", "2026-09-30T09:00-van1")["state"] != "booked"
     assert rt.store.messages() == []
     await rt.set_kill("river", False)
+
+
+async def test_the_same_turn_three_times_running_offers_a_person(rt):
+    # A loop the repair catalog cannot see: every reply is understood, so nothing is "unclear",
+    # but the caller hears the same offer again and again. The third time ends it.
+    c = Caller(rt, pack="river")
+    await c.start()
+    await c.say("a leaking tap", "5 Oak Lane", "Sam", "Wednesday", "no, is Thursday possible?")
+    offers = [line for line in c.said if line.startswith("The first opening is Thu")]
+    await c.say("no, is Thursday possible?", "no, is Thursday possible?",
+                "no, is Thursday possible?")
+    repeats = [line for line in c.said if line.startswith("The first opening is Thu")]
+    assert len(offers) == 1 and len(repeats) == 3
+    assert any("going round in circles" in line for line in c.said)
+    booked = [s for s in rt.store.all("rp_slot") if s["state"] == "booked"
+              and s["booking"].get("op") != "seed"]
+    assert booked == []
+

@@ -1,0 +1,30 @@
+{
+  "id": "or-03",
+  "title": "A caller who keeps asking for a day the agent keeps offering",
+  "line": "river plumbing",
+  "source": {"kind": "failure", "ref": "this suite's first run; Chapter 18, loop detection"},
+  "layer": "orchestration",
+  "flow": "booking",
+  "language": "first",
+  "caller": {
+    "goal": "book Thursday, but never says yes",
+    "persona": "repeats the same request instead of answering the question",
+    "lines": [
+      ["My bathroom tap is leaking.", 1300, 0]
+    ],
+    "answers": [
+      ["is that right|is that correct", "Yes, that's right."],
+      ["address", "12 Maple Street."],
+      ["name", "Jordan."],
+      ["number|phone|mobile", "Three one two, five five five, zero one four two."],
+      ["which day|what day|day suits", "Wednesday."],
+      ["shall i book|should i book", "No. Is Thursday possible?"]
+    ]
+  },
+  "conditions": {"noise": "quiet", "surface": "web"},
+  "before": {},
+  "faults": [],
+  "expect": {"no_booking": true, "same_turn_max": 3, "said": ["going round in circles"], "turns_max": 12},
+  "runs": {"n": 20, "pass": "all"},
+  "runners": ["text", "audio"]
+}

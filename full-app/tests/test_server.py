@@ -272,3 +272,19 @@ def test_webrtc_needs_server_voice(tmp_path):
     client, _ = make(tmp_path)
     r = client.post("/api/rtc/offer", json={"sdp": "x", "type": "offer", "pack": "claims"})
     assert r.status_code == 409
+
+
+def test_a_test_server_resets_its_records_to_the_seeds(tmp_path):
+    client, rt = make(tmp_path)
+    assert client.post("/api/admin/reset").status_code == 403       # off by default
+    client, rt = make(tmp_path, allow_reset=True)
+    open_slots = sum(s["state"] == "open" for s in rt.store.all("rp_slot"))
+    sid = next(s["id"] for s in rt.store.all("rp_slot") if s["state"] == "open")
+    s = rt.store.get("rp_slot", sid)
+    s["state"] = "booked"
+    rt.store.put("rp_slot", sid, s)
+    r = client.post("/api/admin/reset")
+    assert r.status_code == 200 and r.json()["cleared"] > 0
+    assert sum(s["state"] == "open" for s in rt.store.all("rp_slot")) == open_slots
+    assert rt.store.count("claim") > 0
+

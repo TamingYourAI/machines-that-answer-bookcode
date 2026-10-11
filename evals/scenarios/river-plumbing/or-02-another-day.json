@@ -1,0 +1,32 @@
+{
+  "id": "or-02",
+  "title": "Wednesday turned down, Thursday booked",
+  "line": "river plumbing",
+  "source": {"kind": "procedure", "ref": "Chapter 5, the visit flow's refusals"},
+  "layer": "orchestration",
+  "flow": "booking",
+  "language": "first",
+  "caller": {
+    "goal": "book Thursday after turning Wednesday down",
+    "persona": "says no to the first opening and names another day",
+    "lines": [
+      ["My bathroom tap is leaking.", 1300, 0]
+    ],
+    "answers": [
+      ["is that right|is that correct", "Yes, that's right."],
+      ["address", "12 Maple Street."],
+      ["name", "Jordan."],
+      ["number|phone|mobile", "Three one two, five five five, zero one four two."],
+      ["which day|what day|day suits", "Wednesday."],
+      ["shall i book|should i book", "No. Is Thursday possible?"],
+      ["shall i book|should i book", "Yes, Thursday is fine."],
+      ["anything else", "No, that's all. Thanks."]
+    ]
+  },
+  "conditions": {"noise": "quiet", "surface": "web"},
+  "before": {},
+  "faults": [],
+  "expect": {"booked": "Thursday", "bookings": 1, "fee_before_yes": true, "confirmed_after_commit": true, "turns_max": 10, "same_turn_max": 1},
+  "runs": {"n": 20, "pass": "all"},
+  "runners": ["text", "audio"]
+}

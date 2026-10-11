@@ -216,6 +216,11 @@ class Store:
         return [json.loads(r["json"]) for r in
                 self._all("SELECT json FROM records WHERE kind=? ORDER BY id", (kind,))]
 
+    def clear_records(self) -> int:
+        """Delete every business record: the calendar, the claims. Calls, operations, and messages
+        stay, so a reset never hides what happened."""
+        return self._x("DELETE FROM records").rowcount
+
     def count(self, kind: str) -> int:
         return self._all("SELECT COUNT(*) AS n FROM records WHERE kind=?", (kind,))[0]["n"]
 

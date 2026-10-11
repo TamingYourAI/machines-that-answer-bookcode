@@ -1,0 +1,31 @@
+{
+  "id": "or-01",
+  "title": "Interlude A's call: a blocked drain, booked for Wednesday",
+  "line": "river plumbing",
+  "source": {"kind": "procedure", "ref": "Interlude A, the reference call"},
+  "layer": "orchestration",
+  "flow": "booking",
+  "language": "first",
+  "caller": {
+    "goal": "book a visit for a blocked kitchen drain on Wednesday",
+    "persona": "answers each question once, plainly",
+    "lines": [
+      ["My kitchen drain is blocked.", 1400, 0]
+    ],
+    "answers": [
+      ["is that right|is that correct", "Yes, that's right."],
+      ["address", "12 Maple Street."],
+      ["name", "Jordan."],
+      ["number|phone|mobile", "Three one two, five five five, zero one four two."],
+      ["which day|what day|day suits", "Wednesday."],
+      ["shall i book|should i book", "Yes."],
+      ["anything else", "No, that's all. Thanks."]
+    ]
+  },
+  "conditions": {"noise": "quiet", "surface": "web"},
+  "before": {},
+  "faults": [],
+  "expect": {"booked": "Wednesday", "bookings": 1, "fee_before_yes": true, "confirmed_after_commit": true, "texted": true, "turns_max": 8, "same_turn_max": 1, "gap_p95_ms_max": 800, "talk_over_max": 0},
+  "runs": {"n": 20, "pass": "all"},
+  "runners": ["text", "audio"]
+}

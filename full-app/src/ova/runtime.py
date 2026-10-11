@@ -168,6 +168,14 @@ class Runtime:
         self.policies[pack.id] = Policy(never_say=list(pack.brief.never_say))
         pack.seed(self.store, self.clock)
 
+    def reset_records(self) -> int:
+        """Back to each pack's seeded records, for a test run that must start from the same state
+        (the ``before`` of builders' Appendix M). Calls and operations are kept."""
+        n = self.store.clear_records()
+        for pack in self.packs.values():
+            pack.seed(self.store, self.clock)
+        return n
+
     def new_call(self, pack_id: str, channel: str, caller: str = "",
                  identity: dict | None = None, call_id: str | None = None) -> "Agent":
         from .agent import Agent

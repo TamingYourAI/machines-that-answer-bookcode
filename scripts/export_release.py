@@ -7,18 +7,20 @@ ROOT = Path(__file__).resolve().parents[1]
 APP_FILES = {"README.md", "LICENSE", "PLAN.md", "REQUIREMENTS.md", "pyproject.toml",
              "requirements.lock", "Dockerfile", "compose.yaml", ".env.example",
              ".gitignore", ".dockerignore"}
-OMIT = {"__pycache__", ".pytest_cache", ".DS_Store", ".venv", "node_modules"}
+OMIT = {"__pycache__", ".pytest_cache", ".DS_Store", ".venv", "node_modules", "eval-results"}
 
 
 def release_files():
     for name in ("README.md", "LICENSE", ".gitignore"):
         yield ROOT / name
-    for folder in ("chapters", "docs", "scripts", ".github", "full-app"):
+    for folder in ("chapters", "docs", "evals", "scripts", ".github", "full-app"):
         for path in sorted((ROOT / folder).rglob("*")):
             rel = path.relative_to(ROOT)
             if not path.is_file() or path.is_symlink() or OMIT.intersection(rel.parts):
                 continue
             if path.suffix in {".pyc", ".pyo", ".sqlite3"}:
+                continue
+            if rel.parts[:2] == ("docs", "specs"):       # internal design notes stay private
                 continue
             if path.name.startswith(".env") and path.name != ".env.example":
                 continue
@@ -34,7 +36,7 @@ def release_files():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path,
-                        default=ROOT / "dist/open-voice-agents-0.3.1.zip")
+                        default=ROOT / "dist/open-voice-agents-0.3.2.zip")
     args = parser.parse_args()
     files = list(release_files())
     required = ROOT / "full-app/src/ova_apps/claims/data/policies.json"

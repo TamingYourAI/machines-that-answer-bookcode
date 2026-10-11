@@ -1,0 +1,58 @@
+name: Run request
+description: Ask the author to run the voice-agent test suite on a system you are entitled to test.
+title: "Run request: "
+labels: ["run request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This issue is public. Do not put credentials, private endpoints, phone numbers that are
+        not public, or customer data in it. Those are arranged privately after a reply.
+
+        The author decides which requests to take. Results go to you first, and are published
+        only with your agreement, with the conditions and evidence class of every number.
+  - type: input
+    id: system
+    attributes:
+      label: System and version
+      description: The product, and the version or release you want tested.
+    validations:
+      required: true
+  - type: input
+    id: provider
+    attributes:
+      label: Company or team
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: How the suite can reach it
+      options:
+        - The suite's text protocol (WebSocket)
+        - The suite's audio protocol (WebSocket)
+        - A phone number
+        - Not sure yet
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: What you want tested
+      description: The scenarios, lines, languages, or conditions you care about.
+  - type: input
+    id: contact
+    attributes:
+      label: Who to contact
+      description: A name and a role. The author will reply in this issue to arrange the rest.
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Before you send
+      options:
+        - label: I am entitled to request testing of this system.
+          required: true
+        - label: I understand results come to me first and are published only with my agreement.
+          required: true

@@ -1,5 +1,23 @@
 # Validation record
 
+## Release 0.3.2, 11 October 2026
+
+**VERIFIABLE, high confidence**, on macOS arm64 with Python 3.12.7. No result here is field
+evidence.
+
+| Check | Result | Evidence boundary |
+| --- | --- | --- |
+| Application suite | 91 pass, including loop detection (`test_the_same_turn_three_times_running_offers_a_person`) and the test server's reset to the seeds | Unit and integration tests, synthetic records |
+| The test suite's own tests | 14 pass, including a text run that books a visit on the app over a real WebSocket | Fixed clock, synthetic records |
+| Scenarios | All eight pass builders' Appendix M validator | The format, not behavior |
+| Text runner on the app | Seven scenarios, 20 runs each, with the records reset before every run: every run passed both families | Simulated: the caller's words arrive as text |
+| Audio runner on the app | Eight scenarios, 3 runs each, real-time 16 kHz audio, local Whisper and Kokoro: the task family passed every run. The response gap's median per scenario was 1.5 to 2.7 s and its p95 up to 4.3 s, against the book's 800 ms wall. `tt-01` was cut off in every run, by the fixed 600 ms end-of-turn wait | Live laboratory, synthetic caller, one machine; three runs per scenario are not a rate |
+| Not rerun for 0.3.2 | The container, the wheel smoke test, and the browser checks below; 0.3.2 changes the agent's turn loop, the console API, and adds `evals/` | Rerun before the next container release |
+
+The suite's reports, with every run's checks, are in `evals/results/2026-10-11-open-voice-agents-0.3.2/`.
+
+## Release 0.3.1, 4 October 2026
+
 4 October 2026, release 0.3.1. **VERIFIABLE, high confidence:** the local checks below
 completed on macOS arm64. The [machine-readable summary](evidence/release-validation.json)
 and linked evidence state exactly what was exercised. No result here is field evidence.

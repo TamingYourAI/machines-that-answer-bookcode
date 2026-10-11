@@ -1,8 +1,10 @@
 # Releasing the companion
 
-This folder is the proposed GitHub repository root. It has not been pushed to GitHub and
-has no nested `.git` directory. Copy or export this folder independently of the authoring
-repository when creating the public repository.
+The public repository is https://github.com/TamingYourAI/machines-that-answer-bookcode. Its
+first commit is release 0.3.1, tagged `v0.3.1`: the release the book's Appendix O describes, so a
+reader can check out exactly what the book names. Release 0.3.2, tagged `v0.3.2`, adds the
+voice-agent test suite and loop detection. Each release is a source export of this folder, made
+by the script below, and committed as one commit.
 
 ## Source-only export
 
@@ -17,10 +19,9 @@ synthetic validation records, license and CI. It excludes environments, download
 runtime data, credentials, test audio, generated build artifacts and the manuscript. Its
 explicit file selection preserves the synthetic policy fixture needed by the app.
 
-Extract it and use `open-voice-agents/` as the repository root. The public repository is
-https://github.com/TamingYourAI/machines-that-answer-bookcode, created empty on 4 October
-2026; the book prints that address. Apache-2.0 is the already approved code license.
-Review third-party model terms separately; no weights are included.
+Extract it and use `open-voice-agents/` as the repository root; the book prints the public
+repository's address. Apache-2.0 is the already approved code license. Review third-party model
+terms separately; no weights are included. Design notes in `docs/specs/` stay out of the export.
 
 ## Provenance and divergence
 

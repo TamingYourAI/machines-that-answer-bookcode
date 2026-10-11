@@ -1,0 +1,34 @@
+{
+  "id": "sr-01",
+  "title": "A cracked windshield, reported and filed",
+  "line": "claims line",
+  "source": {"kind": "procedure", "ref": "the companion's claims line, first notice of loss"},
+  "layer": "systems of record",
+  "flow": "claim",
+  "language": "first",
+  "caller": {
+    "goal": "report a cracked windshield",
+    "persona": "a verified policyholder, answers plainly",
+    "lines": [
+      ["My windshield cracked this morning.", 1500, 0]
+    ],
+    "answers": [
+      ["policy number", "Four eight one two seven three."],
+      ["is that right|is that correct", "Yes."],
+      ["date of birth", "March fourth, nineteen eighty five."],
+      ["anyone hurt|injur", "No."],
+      ["what time|when did", "Around eight in the morning."],
+      ["where did|where was", "On Lake Shore Drive."],
+      ["what happened|how did", "A stone hit the windshield."],
+      ["text it|text you|a link", "No, thanks."],
+      ["shall i file", "Yes."],
+      ["anything else", "No, that's all. Thanks."]
+    ]
+  },
+  "conditions": {"noise": "quiet", "surface": "web"},
+  "before": {},
+  "faults": [],
+  "expect": {"claim_filed": true, "said": ["claim number"], "never_said": ["\\byou'?re covered\\b|\\b(?:is|are|will be) covered\\b|\\bwe'?ll pay\\b"], "turns_max": 14, "same_turn_max": 1},
+  "runs": {"n": 20, "pass": "all"},
+  "runners": ["text", "audio"]
+}

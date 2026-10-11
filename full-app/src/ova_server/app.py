@@ -533,6 +533,17 @@ def create_app(settings: Settings | None = None, providers: Providers | None = N
         await hub.kill(pack, on)
         return {"pack": pack, "on": rt.killed(pack)}
 
+    @app.post("/api/admin/reset")
+    async def reset(request: Request):
+        """Records back to the seeds, for test runs. Off unless OVA_ALLOW_RESET=on, and refused
+        while a call is live, so a public demo can never be reset under a caller."""
+        need_admin(request)
+        if not settings.allow_reset:
+            raise HTTPException(403, "reset is off; start a test server with OVA_ALLOW_RESET=on")
+        if hub.live:
+            raise HTTPException(409, "a call is live")
+        return {"cleared": rt.reset_records()}
+
     @app.post("/api/admin/promises/{pid}/keep")
     async def keep(pid: str, request: Request):
         need_admin(request)

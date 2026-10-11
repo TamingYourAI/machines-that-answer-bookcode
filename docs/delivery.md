@@ -1,4 +1,4 @@
-# Delivery contract: 0.3.1
+# Delivery contract: 0.3.2
 
 **VERIFIABLE, high confidence:** the source and tests implement the delivered rows below.
 Untested deployment behavior remains unknown.
@@ -8,6 +8,8 @@ Untested deployment behavior remains unknown.
 | River Plumbing, the Knowledge Line (default) | Appointment and fee confirmation, booking, knowledge, the gas safety script, transfer/callback paths, as the book's Appointment Line | Local calendar, no external scheduling vendor |
 | Claims, second showcase | Policy questions, synthetic verification, first notice of loss, photos, status, document outbox, transfer/callback records | Local systems of record; no insurer integration |
 | Kill switch | Per line or every line, from the console; new calls, and calls in progress at their next turn, hear one fixed line and go to the line's person: River Plumbing's owner at any hour. A confirmed write the switch finds not yet started is refused, as in the book's emergency stop | Switch state in the local store; carrier-level forwarding untested |
+| Loop detection | When the agent's whole turn is the same three times running, it says so and offers a person (builders' Chapter 18) | Exact repeats only; a loop that varies its words is not caught |
+| Test suite (`evals/`) | Appendix M scenarios run against any system on the text or audio protocol: noise, the phone codec and lost packets on the caller's audio; outcomes read from the system's records; task and experience families apart, with Wilson intervals | Records read through the companion's console API; no phone runner yet; synthetic caller, never field evidence |
 | Per-turn stage timings | Server voice records the wait for end of turn, hearing, thinking, first audio and voice to voice for each turn, the stages Chapter 1's lab times | Server-side estimate, not the caller's handset; browser voice is not timed this way |
 | Web/mobile UI | Responsive PWA, typing, browser and server voice, uploads, status, admin timeline | Chromium exercised; no physical-phone or screen-reader audit |
 | Local speech | Actual Whisper/Kokoro inference and a WebRTC audio exchange | Synthetic caller; physical listening unverified; segment STT |

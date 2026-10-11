@@ -1,5 +1,22 @@
 # Changes
 
+## 0.3.2, 11 October 2026
+
+1. **A test suite for any voice agent** (`evals/`). It runs builders' Appendix M scenarios
+   against the companion app, or any system that speaks the same protocols, in text or in
+   real-time audio. The caller's audio goes through noise, the phone codec, and lost packets.
+   The suite reads the outcome from the system's own records, and reports the task and experience
+   families apart as rates with Wilson intervals. Eight scenarios ship with it; see
+   `evals/README.md`. Providers can ask for a run through the Run request form.
+2. **Loop detection.** The suite's first runs found a loop the repair catalog could not see. A
+   caller who repeated a request heard the same offer, or the same read-back, ten times and more,
+   because every reply was understood and nothing counted as a failure. When the agent's whole
+   turn is the same three times running, it now says so and offers a person (builders' Chapter
+   18). A regression test, and scenario `or-03`, keep it fixed (90 application tests).
+3. **What the suite found and 0.3.2 leaves open.** With local speech on one laptop's processor,
+   the response gap is well over the book's 800 ms wall. The fixed 600 ms end-of-turn wait ends a
+   caller's turn inside a 700 ms pause (`tt-01`). Both are in the suite's first report.
+
 ## 0.3.1, 4 October 2026
 
 1. **The container matches the package.** The Dockerfile starts from Python 3.12, which the

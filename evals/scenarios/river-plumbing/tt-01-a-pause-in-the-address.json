@@ -1,0 +1,24 @@
+{
+  "id": "tt-01",
+  "title": "A pause in the middle of the address",
+  "line": "river plumbing",
+  "source": {"kind": "listening", "ref": "Chapter 11, the end-of-turn wait"},
+  "layer": "turn-taking",
+  "flow": "booking",
+  "language": "first",
+  "caller": {
+    "goal": "give the address in two parts",
+    "persona": "stops to read the house number",
+    "lines": [
+      ["My kitchen drain is blocked.", 1400, 0],
+      ["Twelve", 500, 700],
+      ["Maple Street.", 900, 0]
+    ]
+  },
+  "conditions": {"noise": "quiet", "surface": "web"},
+  "before": {},
+  "faults": [],
+  "expect": {"cut_off": false, "talk_over_max": 0},
+  "runs": {"n": 20, "pass": "all"},
+  "runners": ["audio"]
+}

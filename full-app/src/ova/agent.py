@@ -62,6 +62,8 @@ class CallState:
     last_line: str | None = None
     ended: bool = False
     outcome: str = ""
+    last_turn_said: list = field(default_factory=list)   # the agent's lines last turn
+    same_turns: int = 0                                    # turns in a row with those lines
 
 
 @dataclass
@@ -173,6 +175,7 @@ class Agent:
                                                 "source": u.source,
                                                 "slots": sorted(u.slots)})
             await self.route(u)
+            await self._loop_guard()
             self._state_event()
             self.rt.store.save_state(s.call_id, dataclasses.asdict(s))
             return self._flush()
@@ -727,6 +730,20 @@ class Agent:
         lid = self.say(dataclasses.replace(rec.line))
         if p and self.lines.get(p.get("line", "")) is rec:
             p["line"] = lid              # the question was said again: bind to the new line
+
+    async def _loop_guard(self) -> None:
+        """Loop detection (builders' Chapter 18). A caller who hears the same turn three times
+        running is in a loop the repair catalog cannot see, because each reply was understood:
+        the same number given again, the same day asked for again. Stop, and offer a person."""
+        s = self.state
+        said = [e["text"] for e in self.events if e["type"] == "say"]
+        s.same_turns = s.same_turns + 1 if said and said == s.last_turn_said else int(bool(said))
+        s.last_turn_said = said
+        if s.same_turns >= 3 and not s.ended:
+            s.same_turns, s.last_turn_said = 0, []
+            self.ctx.say("We seem to be going round in circles, so let me get you to someone "
+                         "who can help.")
+            await self.person(Understanding("person"), failover=True)
 
     # ------------------------------------------------------------ repair, silence, person
     async def repair(self, kind: str) -> None:

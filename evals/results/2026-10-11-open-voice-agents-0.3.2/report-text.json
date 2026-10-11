@@ -1,0 +1,293 @@
+{
+ "suite": "voice_eval 0.1.0",
+ "date": "2026-10-11 12:39",
+ "system": {
+  "name": "Open Voice Agents",
+  "version": "0.3.2",
+  "url": "http://127.0.0.1:8091"
+ },
+ "runner": "text",
+ "evidence_class": "simulated",
+ "scenarios": [
+  {
+   "scenario": "sr-01",
+   "title": "A cracked windshield, reported and filed",
+   "line": "claims line",
+   "conditions": {
+    "noise": "quiet",
+    "surface": "web"
+   },
+   "runs": 20,
+   "rule": "all",
+   "met_rule": true,
+   "required_runs": 20,
+   "families": {
+    "task": {
+     "passed": 20,
+     "runs": 20,
+     "rate": 1.0,
+     "interval": [
+      0.839,
+      1.0
+     ],
+     "all_passed": true,
+     "not_checked": 0
+    },
+    "experience": {
+     "passed": 20,
+     "runs": 20,
+     "rate": 1.0,
+     "interval": [
+      0.839,
+      1.0
+     ],
+     "all_passed": true,
+     "not_checked": 0
+    }
+   },
+   "gap_ms": null,
+   "errors": [],
+   "failures": []
+  },
+  {
+   "scenario": "or-01",
+   "title": "Interlude A's call: a blocked drain, booked for Wednesday",
+   "line": "river plumbing",
+   "conditions": {
+    "noise": "quiet",
+    "surface": "web"
+   },
+   "runs": 20,
+   "rule": "all",
+   "met_rule": true,
+   "required_runs": 20,
+   "families": {
+    "task": {
+     "passed": 20,
+     "runs": 20,
+     "rate": 1.0,
+     "interval": [
+      0.839,
+      1.0
+     ],
+     "all_passed": true,
+     "not_checked": 0
+    },
+    "experience": {
+     "passed": 20,
+     "runs": 20,
+     "rate": 1.0,
+     "interval": [
+      0.839,
+      1.0
+     ],
+     "all_passed": true,
+     "not_checked": 0
+    }
+   },
+   "gap_ms": null,
+   "errors": [],
+   "failures": []
+  },
+  {
+   "scenario": "or-02",
+   "title": "Wednesday turned down, Thursday booked",
+   "line": "river plumbing",
+   "conditions": {
+    "noise": "quiet",
+    "surface": "web"
+   },
+   "runs": 20,
+   "rule": "all",
+   "met_rule": true,
+   "required_runs": 20,
+   "families": {
+    "task": {
+     "passed": 20,
+     "runs": 20,
+     "rate": 1.0,
+     "interval": [
+      0.839,
+      1.0
+     ],
+     "all_passed": true,
+     "not_checked": 0
+    },
+    "experience": {
+     "passed": 20,
+     "runs": 20,
+     "rate": 1.0,
+     "interval": [
+      0.839,
+      1.0
+     ],
+     "all_passed": true,
+     "not_checked": 0
+    }
+   },
+   "gap_ms": null,
+   "errors": [],
+   "failures": []
+  },
+  {
+   "scenario": "or-03",
+   "title": "A caller who keeps asking for a day the agent keeps offering",
+   "line": "river plumbing",
+   "conditions": {
+    "noise": "quiet",
+    "surface": "web"
+   },
+   "runs": 20,
+   "rule": "all",
+   "met_rule": true,
+   "required_runs": 20,
+   "families": {
+    "task": {
+     "passed": 20,
+     "runs": 20,
+     "rate": 1.0,
+     "interval": [
+      0.839,
+      1.0
+     ],
+     "all_passed": true,
+     "not_checked": 0
+    },
+    "experience": {
+     "passed": 20,
+     "runs": 20,
+     "rate": 1.0,
+     "interval": [
+      0.839,
+      1.0
+     ],
+     "all_passed": true,
+     "not_checked": 0
+    }
+   },
+   "gap_ms": null,
+   "errors": [],
+   "failures": []
+  },
+  {
+   "scenario": "th-01",
+   "title": "A gas smell: the safety script, and nothing booked",
+   "line": "river plumbing",
+   "conditions": {
+    "noise": "quiet",
+    "surface": "web"
+   },
+   "runs": 20,
+   "rule": "all",
+   "met_rule": true,
+   "required_runs": 20,
+   "families": {
+    "task": {
+     "passed": 20,
+     "runs": 20,
+     "rate": 1.0,
+     "interval": [
+      0.839,
+      1.0
+     ],
+     "all_passed": true,
+     "not_checked": 0
+    },
+    "experience": {
+     "passed": 20,
+     "runs": 20,
+     "rate": 1.0,
+     "interval": [
+      0.839,
+      1.0
+     ],
+     "all_passed": true,
+     "not_checked": 0
+    }
+   },
+   "gap_ms": null,
+   "errors": [],
+   "failures": []
+  },
+  {
+   "scenario": "th-02",
+   "title": "The call-out price, answered from the desk's facts",
+   "line": "river plumbing",
+   "conditions": {
+    "noise": "quiet",
+    "surface": "web"
+   },
+   "runs": 20,
+   "rule": "all",
+   "met_rule": true,
+   "required_runs": 20,
+   "families": {
+    "task": {
+     "passed": 20,
+     "runs": 20,
+     "rate": 1.0,
+     "interval": [
+      0.839,
+      1.0
+     ],
+     "all_passed": true,
+     "not_checked": 0
+    },
+    "experience": {
+     "passed": 20,
+     "runs": 20,
+     "rate": 1.0,
+     "interval": [
+      0.839,
+      1.0
+     ],
+     "all_passed": true,
+     "not_checked": 0
+    }
+   },
+   "gap_ms": null,
+   "errors": [],
+   "failures": []
+  },
+  {
+   "scenario": "th-03",
+   "title": "Saturday visits, answered from the desk's facts",
+   "line": "river plumbing",
+   "conditions": {
+    "noise": "quiet",
+    "surface": "web"
+   },
+   "runs": 20,
+   "rule": "all",
+   "met_rule": true,
+   "required_runs": 20,
+   "families": {
+    "task": {
+     "passed": 20,
+     "runs": 20,
+     "rate": 1.0,
+     "interval": [
+      0.839,
+      1.0
+     ],
+     "all_passed": true,
+     "not_checked": 0
+    },
+    "experience": {
+     "passed": 20,
+     "runs": 20,
+     "rate": 1.0,
+     "interval": [
+      0.839,
+      1.0
+     ],
+     "all_passed": true,
+     "not_checked": 0
+    }
+   },
+   "gap_ms": null,
+   "errors": [],
+   "failures": []
+  }
+ ]
+}

@@ -25,6 +25,7 @@ class Settings:
     smtp_user: str = ""
     smtp_password: str = ""
     smtp_from: str = ""
+    allow_reset: bool = False             # a test server may reset its records to the seeds
     max_photo_bytes: int = 10 * 1024 * 1024
     max_photos: int = 12
     transfer_numbers: dict = field(default_factory=dict)
@@ -46,6 +47,7 @@ class Settings:
             public_url=e.get("OVA_PUBLIC_URL", "http://localhost:8080").rstrip("/"),
             data_dir=data_dir, secret=secret, admin_token=e.get("OVA_ADMIN_TOKEN", ""),
             demo_signin=e.get("OVA_DEMO_SIGNIN", "on") != "off",
+            allow_reset=e.get("OVA_ALLOW_RESET", "off") == "on",
             twilio_sid=e.get("TWILIO_ACCOUNT_SID", ""),
             twilio_token=e.get("TWILIO_AUTH_TOKEN", ""),
             twilio_from=e.get("TWILIO_FROM_NUMBER", ""),

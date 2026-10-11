@@ -1,0 +1,25 @@
+{
+  "id": "th-03",
+  "title": "Saturday visits, answered from the desk's facts",
+  "line": "river plumbing",
+  "source": {"kind": "procedure", "ref": "Interlude A, hours and charges"},
+  "layer": "thinking",
+  "flow": "knowledge",
+  "language": "first",
+  "caller": {
+    "goal": "find out whether a plumber comes on Saturday",
+    "persona": "asks one question",
+    "lines": [
+      ["Are you open on Saturday?", 1200, 0]
+    ],
+    "answers": [
+      ["anything else", "No, that's all. Thanks."]
+    ]
+  },
+  "conditions": {"noise": "quiet", "surface": "web"},
+  "before": {},
+  "faults": [],
+  "expect": {"said": ["visits run on saturday"], "no_booking": true, "turns_max": 2},
+  "runs": {"n": 20, "pass": "all"},
+  "runners": ["text", "audio"]
+}

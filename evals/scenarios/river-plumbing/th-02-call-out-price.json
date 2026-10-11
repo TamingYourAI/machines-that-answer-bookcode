@@ -1,0 +1,25 @@
+{
+  "id": "th-02",
+  "title": "The call-out price, answered from the desk's facts",
+  "line": "river plumbing",
+  "source": {"kind": "procedure", "ref": "Interlude A, hours and charges"},
+  "layer": "thinking",
+  "flow": "knowledge",
+  "language": "first",
+  "caller": {
+    "goal": "find out what a call-out costs",
+    "persona": "asks one question",
+    "lines": [
+      ["How much is a call-out?", 1200, 0]
+    ],
+    "answers": [
+      ["anything else", "No, that's all. Thanks."]
+    ]
+  },
+  "conditions": {"noise": "quiet", "surface": "web"},
+  "before": {},
+  "faults": [],
+  "expect": {"said": ["sixty dollars|\\$60"], "no_booking": true, "turns_max": 2},
+  "runs": {"n": 20, "pass": "all"},
+  "runners": ["text", "audio"]
+}
