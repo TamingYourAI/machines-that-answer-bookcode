@@ -1,4 +1,4 @@
-scenario lab, mode=fixture; evidence class: none (a format)
+scenario lab, mode=mock; evidence class: none (a format)
 
 1. the format: 14 fields, every one required
    id          str   the layer's prefix and a number: tt-17
@@ -16,7 +16,7 @@ scenario lab, mode=fixture; evidence class: none (a format)
    runs        dict  how many runs, and how many must pass
    runners     list  text, audio, phone: every one that runs it
 
-2. the starter catalogue: 21 scenarios, and the 4 of Appendix Q
+2. the starter catalogue: 21 scenarios, and the 4 of Appendix M
    business           tr  he  tt  th  sr  sp  or  total
    river plumbing      0   1   0   5   0   0   0      6
    service line        2   2   4   3   2   1   1     15

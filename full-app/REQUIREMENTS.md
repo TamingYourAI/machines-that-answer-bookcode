@@ -884,7 +884,7 @@ Purpose: prove the book and the repo in one click. It is not a separate agent.
 - Audio gallery: the book "hears" (good call, fluent-wrong, cut-off, barge-in, two voices). Hosted files, transcripts beside them.
 - Docs: getting started, swap guide, telephony, RAG, security.
 - Chapter lab index (can start as links into the repo).
-- Dated facts / errata hook for Appendix I later.
+- Dated facts / errata hook for Appendix H later.
 
 ### 15.2 Technical split
 

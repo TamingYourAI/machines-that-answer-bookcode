@@ -1,4 +1,4 @@
-"""Tests for the Appendices M and Q lab. Run:
+"""Tests for the Appendices K and M lab. Run:
 python3 -m unittest test_scenario_lab.py
 
 One claim from the appendices per test. Two tests read the Chapter 26 and

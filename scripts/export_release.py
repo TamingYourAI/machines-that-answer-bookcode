@@ -36,7 +36,7 @@ def release_files():
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path,
-                        default=ROOT / "dist/open-voice-agents-0.3.2.zip")
+                        default=ROOT / "dist/open-voice-agents-0.3.3.zip")
     args = parser.parse_args()
     files = list(release_files())
     required = ROOT / "full-app/src/ova_apps/claims/data/policies.json"

@@ -27,7 +27,7 @@ Modes (select with APPT_LAB_MODE or run(mode=...)):
   mock     the calls, calendar, and documents are built in this file (default)
   fixture  they are loaded from fixtures/ (committed; same schema)
   live     not in this lab. The companion's Knowledge Line app runs the same calls with a
-           browser microphone or a phone number (Appendix O).
+           browser microphone or a phone number (docs/delivery.md).
 
   python3 appointment_line.py                  run and print the report
   python3 appointment_line.py --write-fixture  regenerate fixtures/ from the data here

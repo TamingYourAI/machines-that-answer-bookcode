@@ -1,9 +1,9 @@
-"""Builders' Appendices M and Q lab: the scenario format, checked.
+"""Builders' Appendices K and M lab: the scenario format, checked.
 
 A scenario is one test conversation, written once and run by every runner
 (Chapter 25). This lab holds the format, a validator, a starter catalogue
 for the three businesses, and the four cross-chapter acceptance scenarios
-(Appendix Q):
+(Appendix M):
 
   1. the format                 the fields every scenario has, in order
   2. the starter catalogue      the scenarios, by business and by layer
@@ -292,7 +292,7 @@ CATALOGUE = [
        language="each of ten", faults=["the partner's agent never answers"]),
 ]
 
-ACCEPTANCE = [  # Appendix Q: the four every release candidate passes
+ACCEPTANCE = [  # Appendix M: the four every release candidate passes
     sc("aq-1", "An interrupted confirmation", SL,
        ("limit", "Interlude B; Chapters 17 and 19"), "orchestration",
        "visit", ("book Tuesday at nine",
@@ -386,7 +386,7 @@ def report(mode: str) -> str:
         put(f"   {name:<12}{kind.__name__:<6}{what}")
     put("")
     put(f"2. the starter catalogue: {len(data['catalogue'])} scenarios, and "
-        f"the {len(data['acceptance'])} of Appendix Q")
+        f"the {len(data['acceptance'])} of Appendix M")
     heads = ["tr", "he", "tt", "th", "sr", "sp", "or"]
     put(f"   {'business':<17}" + "".join(f"{h:>4}" for h in heads)
         + "  total")

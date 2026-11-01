@@ -19,7 +19,7 @@ each as a small stand-in with the same contract as its chapter's lab:
 
 Runs:
   1. one call     account 5108 through the whole slice
-  2. acceptance   the four cross-chapter scenarios (Appendix Q), each run
+  2. acceptance   the four cross-chapter scenarios (Appendix M), each run
                   with the slice and with the piece that guards it removed
   3. one id per yes
                   five cases where an operation's identity matters, with an
@@ -395,7 +395,7 @@ def one_call(data: dict) -> list[tuple]:
 # ------------------------------------------------ the scenarios
 
 def scenarios(data: dict, remove: str | None = None) -> dict:
-    """The four cross-chapter acceptance scenarios (Appendix Q), with the
+    """The four cross-chapter acceptance scenarios (Appendix M), with the
     slice whole or with one guarding piece removed."""
     res = {}
     # 1. an interrupted confirmation: the caller cuts in during the fee
@@ -572,7 +572,7 @@ def report(mode: str) -> str:
     for t, layer, text in one_call(data):
         block(put, f"   {clock(t)}  {layer:<12}", text)
     put("")
-    put("2. acceptance: the four cross-chapter scenarios (Appendix Q)")
+    put("2. acceptance: the four cross-chapter scenarios (Appendix M)")
     put(f"   {'scenario':<30}{'slice':<8}{'guarded by':<23}without it")
     whole = scenarios(data)
     for name, piece in GUARDS.items():

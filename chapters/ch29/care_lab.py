@@ -63,7 +63,7 @@ CALENDAR = [  # task, cadence, owner, days since last done
     ["fairness audit by language and age band", "quarterly",
      "product owner", 95],
     ["security review", "quarterly", "compliance lead", 80],
-    ["re-read the voice brief", "quarterly", "head of customer operations",
+    ["voice brief review", "quarterly", "head of customer operations",
      30],
     ["architecture review: is the first fork still right?", "yearly",
      "engineering lead", 200],

@@ -170,7 +170,7 @@ class Runtime:
 
     def reset_records(self) -> int:
         """Back to each pack's seeded records, for a test run that must start from the same state
-        (the ``before`` of builders' Appendix M). Calls and operations are kept."""
+        (the ``before`` of builders' Appendix K). Calls and operations are kept."""
         n = self.store.clear_records()
         for pack in self.packs.values():
             pack.seed(self.store, self.clock)

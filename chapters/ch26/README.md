@@ -1,4 +1,4 @@
-# 26. Observability, and the week you improve: traces, the failure taxonomy, and the review
+# 26. Observability, and the week the agent improves: traces, the failure taxonomy, and the review
 
 One bad call from its trace to a permanent scenario: the taxonomy names the layer, the call becomes a scenario, the suite catches it, and the week's review
 

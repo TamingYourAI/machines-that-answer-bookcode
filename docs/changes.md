@@ -1,5 +1,25 @@
 # Changes
 
+## 0.3.3, 31 October 2026
+
+1. **Three of the book's appendices live here now.** *Machines That Answer* no longer prints
+   them, so they change with the code (Jay's decision of 30 October). The traced capability
+   framework, the book's Appendix L before, is
+   [capability-framework-traced.md](capability-framework-traced.md). The delivery matrix, Appendix
+   O before, merges into the [delivery contract](delivery.md), which gains its four-way marking,
+   its evidence column, its rows the contract lacked, its install section, the provider adapters,
+   and the builds left to the deploying team. The evidence manifest, Appendix P before, is
+   [evidence-manifest.md](evidence-manifest.md).
+2. **The book's appendices are re-lettered A to M.** The scenario format, Appendix M before, is
+   now Appendix K, and the acceptance scenarios, Appendix Q before, are now Appendix M. The
+   scenario lab's folder is [`chapters/appendix-k`](../chapters/appendix-k/README.md). The README,
+   the delivery contract, and `evals/README.md` use the new letters; the entries below, the
+   validation record, and the release notes keep the letters of their day.
+3. **The labs follow the book's final text.** The Chapter 25 and 26 labs' READMEs carry their
+   chapters' new titles, and the Chapter 29 lab's care calendar calls its quarterly task "voice
+   brief review", as the book's Table L.1 does. Lab outputs change only where they name an
+   appendix. The application's behavior is unchanged.
+
 ## 0.3.2, 11 October 2026
 
 1. **A test suite for any voice agent** (`evals/`). It runs builders' Appendix M scenarios

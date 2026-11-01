@@ -5,8 +5,8 @@ Answer* and *Every Call Answered*. The application is the book's **Knowledge Lin
 opens on River Plumbing's Appointment Line, the simple example the book walks through, and
 carries an insurance-claims line as a second showcase on the same framework.
 
-**Release 0.3.2, 11 October 2026.** Every builders' lab is included: Chapters 1 to 29,
-Interludes A and B, and Appendix M, checked on Python 3.12, 3.13 and 3.14. The
+**Release 0.3.3, 31 October 2026.** Every builders' lab is included: Chapters 1 to 29,
+Interludes A and B, and Appendix K, checked on Python 3.12, 3.13 and 3.14. The
 [delivery table](docs/delivery.md) says what the application implements, what the labs
 only simulate, and what neither does. Apache-2.0 covers the code. Manuscripts and model
 weights are not bundled.
@@ -92,10 +92,12 @@ and reports the task and experience families apart as rates with intervals. Star
 
 | Location | Contents |
 | --- | --- |
-| [chapters/](chapters/README.md) | 32 independent labs: builders' Chapters 1 to 29, Interludes A and B, and Appendix M |
+| [chapters/](chapters/README.md) | 32 independent labs: builders' Chapters 1 to 29, Interludes A and B, and Appendix K |
 | [evals/](evals/README.md) | The voice-agent test suite: scenarios, text and audio runners, checks, reports, and the companion app's first results |
 | [full-app/](full-app/README.md) | The Knowledge Line: runtime, River Plumbing and claims packs, browser UI, persistence, uploads, console with kill switch, voice transports |
 | [docs/delivery.md](docs/delivery.md) | Implemented, simulated and planned capabilities |
+| [docs/capability-framework-traced.md](docs/capability-framework-traced.md) | The 86 checkpoints traced to the book's chapters and the lab tests |
+| [docs/evidence-manifest.md](docs/evidence-manifest.md) | The record that travels with every number |
 | [docs/validation.md](docs/validation.md) | Checks and their evidence boundaries |
 | [docs/release.md](docs/release.md) | GitHub preparation, provenance and dependency notes |
 | [docs/changes.md](docs/changes.md) | Fixes beyond the source snapshot |

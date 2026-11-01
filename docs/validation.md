@@ -1,5 +1,20 @@
 # Validation record
 
+## Release 0.3.3, 31 October 2026
+
+**VERIFIABLE, high confidence**, on macOS arm64. No result here is field evidence. Release 0.3.3
+changes documents, the book's appendix letters, and one lab's task name; the application's
+behavior is unchanged.
+
+| Check | Result | Evidence boundary |
+| --- | --- | --- |
+| 32 chapter labs | 515 tests pass on Python 3.12.14, 3.13.15 and 3.14.7; mock and fixture outputs match their saved outputs | Simulated mechanisms and synthetic fixtures |
+| Application suite | 91 pass on Python 3.12.7 | Unit and integration tests, synthetic records |
+| The test suite's own tests | 14 pass, including a text run that books a visit on the app over a real WebSocket | Fixed clock, synthetic records |
+| Source drift | Every exported lab matches the authoring tree at the sync commit | Read-only hash comparison against `docs/source-snapshot.json` |
+| Source export | `scripts/export_release.py` writes 337 files to `dist/open-voice-agents-0.3.3.zip` | The archive's file selection |
+| Not rerun for 0.3.3 | The scenario runs on the app, the container, the wheel smoke test, the browser checks, and local speech; 0.3.3 changes no application behavior | Rerun before the next container release |
+
 ## Release 0.3.2, 11 October 2026
 
 **VERIFIABLE, high confidence**, on macOS arm64 with Python 3.12.7. No result here is field

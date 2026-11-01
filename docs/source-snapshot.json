@@ -1116,12 +1116,12 @@
     {
       "source": "code-labs/builders/ch29/care_lab.py",
       "destination": "chapters/ch29/care_lab.py",
-      "sha256": "c980da02ddcc6344da19c6a30912df262e7905957169c700e8d21b3bf3d9471c"
+      "sha256": "fb9ef5c496129532f206b02a9f23662be83bec181853c369ceb25cf52a0bac96"
     },
     {
       "source": "code-labs/builders/ch29/fixtures/care.json",
       "destination": "chapters/ch29/fixtures/care.json",
-      "sha256": "d7e0c18e443ea43d25da1e9a01dd63d81851312929bf54e695640445c7c9ea5f"
+      "sha256": "6e0556a7ce176084617910ed46b5588d13e3b2f4d60cb1a8cfd89c6729ef6a5b"
     },
     {
       "source": "code-labs/builders/ch29/outputs/care_lab.fixture.out.txt",
@@ -1141,7 +1141,7 @@
     {
       "source": "code-labs/builders/interlude-a/appointment_line.py",
       "destination": "chapters/interlude-a/appointment_line.py",
-      "sha256": "2eabcee27448296af376409122df32f983bd227ded65ae02a176ab70f4c767f0"
+      "sha256": "3cdcacaeeafb01969f9c0cda9cde9af801f0b547e51863b04d9205fa9f3e7735"
     },
     {
       "source": "code-labs/builders/interlude-a/fixtures/calendar.json",
@@ -1181,17 +1181,17 @@
     {
       "source": "code-labs/builders/interlude-b/outputs/service_slice.fixture.out.txt",
       "destination": "chapters/interlude-b/outputs/service_slice.fixture.out.txt",
-      "sha256": "3036a03e21537c0aa93d8549c82c484639aca18008ac97216c1f9c53c3d808ff"
+      "sha256": "8e8b4a853ac72bb3de5b7fd0bbeb7ef74e5226c4f2fb1aa653293fbed1b00a76"
     },
     {
       "source": "code-labs/builders/interlude-b/outputs/service_slice.mock.out.txt",
       "destination": "chapters/interlude-b/outputs/service_slice.mock.out.txt",
-      "sha256": "44f3336795e06a5bf44f8027f6eff854ae0e941a534ee0cea68f036078f1aba7"
+      "sha256": "f16c996e432476075d6cd57c8d9cae8ce72aba3b803e41ac0f6db454327dc725"
     },
     {
       "source": "code-labs/builders/interlude-b/service_slice.py",
       "destination": "chapters/interlude-b/service_slice.py",
-      "sha256": "b298be5f384a50b462f854f0b1f9891af461472de24e3a1e04d2a4c8c3cb4caf"
+      "sha256": "f1df7fd5ba4534c5893f6195445adc6c4f0e83f42ff98377f253f5c68360aa24"
     },
     {
       "source": "code-labs/builders/interlude-b/test_service_slice.py",
@@ -1199,39 +1199,39 @@
       "sha256": "6806db1950d021eb187e1260057f4c41771422ca842f46c83f24e037deee8ffe"
     },
     {
-      "source": "code-labs/builders/appendix-m/fixtures/catalogue.json",
-      "destination": "chapters/appendix-m/fixtures/catalogue.json",
+      "source": "code-labs/builders/appendix-k/fixtures/catalogue.json",
+      "destination": "chapters/appendix-k/fixtures/catalogue.json",
       "sha256": "80aed55a633c96bedbf881b666afa7dabdd6c5629ec15bfc07186ee60c6eeac6"
     },
     {
-      "source": "code-labs/builders/appendix-m/fixtures/tt-17.json",
-      "destination": "chapters/appendix-m/fixtures/tt-17.json",
+      "source": "code-labs/builders/appendix-k/fixtures/tt-17.json",
+      "destination": "chapters/appendix-k/fixtures/tt-17.json",
       "sha256": "3d0349794de7953921d79af43d048c2de5d32e0bf68b7092c8fe5ca98e9d9b6e"
     },
     {
-      "source": "code-labs/builders/appendix-m/outputs/scenario_lab.fixture.out.txt",
-      "destination": "chapters/appendix-m/outputs/scenario_lab.fixture.out.txt",
-      "sha256": "094a2d0be826b75ba4653e710340ce96467516c3f916044f610b2d9c8a5d2008"
+      "source": "code-labs/builders/appendix-k/outputs/scenario_lab.fixture.out.txt",
+      "destination": "chapters/appendix-k/outputs/scenario_lab.fixture.out.txt",
+      "sha256": "d6d54308e21b3588dee84ff4c1888e171650fbc665a3f31f871ff7a9c35a1f57"
     },
     {
-      "source": "code-labs/builders/appendix-m/outputs/scenario_lab.mock.out.txt",
-      "destination": "chapters/appendix-m/outputs/scenario_lab.mock.out.txt",
-      "sha256": "1016aa9d7ba85a86f8ab18b1bb5331b76d4b643a1d6d3972f72405ad1411e5c0"
+      "source": "code-labs/builders/appendix-k/outputs/scenario_lab.mock.out.txt",
+      "destination": "chapters/appendix-k/outputs/scenario_lab.mock.out.txt",
+      "sha256": "c7db7c0d8ca36398b849812bb67fb44360638e0df8e6917adaf0a90e6c1fb540"
     },
     {
-      "source": "code-labs/builders/appendix-m/scenario_lab.py",
-      "destination": "chapters/appendix-m/scenario_lab.py",
-      "sha256": "5cb1c84976b10646de3ebe7b64bf2f1ec076b1817ba3700461313ef9f0fc41ff"
+      "source": "code-labs/builders/appendix-k/scenario_lab.py",
+      "destination": "chapters/appendix-k/scenario_lab.py",
+      "sha256": "de72f5f849e531108fa6bcd5ed5c7ee7e053e6cd3eac2589c48404fea8c3b2f4"
     },
     {
-      "source": "code-labs/builders/appendix-m/test_scenario_lab.py",
-      "destination": "chapters/appendix-m/test_scenario_lab.py",
-      "sha256": "d29931f29b01e71bfc2358104f3e6d02515bfa5c4ba11d6b23b7d0be21afa399"
+      "source": "code-labs/builders/appendix-k/test_scenario_lab.py",
+      "destination": "chapters/appendix-k/test_scenario_lab.py",
+      "sha256": "049b0c20e3c878ea021d04b2e52201b718610cf29f6e4451eff63ec907aa1c2d"
     }
   ],
   "labs": {
-    "date": "2026-10-03",
-    "source_commit": "eff857c9f2bab397b56fe86c7d44bee1b0d07358",
+    "date": "2026-10-31",
+    "source_commit": "e124f2a6a2d2b34ace4acaaa3cbd299743d6d689",
     "labs": 32
   }
 }

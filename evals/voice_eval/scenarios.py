@@ -1,4 +1,4 @@
-"""Scenarios in builders' Appendix M format, checked by the book's own validator.
+"""Scenarios in builders' Appendix K format, checked by the book's own validator.
 
 The suite adds two things to the format, both optional, neither required by the book's runners:
 
@@ -18,7 +18,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-LAB = ROOT / "chapters" / "appendix-m" / "scenario_lab.py"
+LAB = ROOT / "chapters" / "appendix-k" / "scenario_lab.py"
 EXTRA_LINES = {"claims line"}            # lines the companion adds to the book's three
 PACKS = {"river plumbing": "river", "claims line": "claims"}
 

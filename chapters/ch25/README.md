@@ -1,4 +1,4 @@
-# 25. Testing voice agents: the pyramid, simulated callers, and rates you can trust
+# 25. Testing voice agents: the pyramid, simulated callers, and rates that hold up
 
 Unit tests on the policy layer; one booking asserted on state and tool calls; polite and realistic simulated callers; what twenty runs can prove; what runs when, and what it costs
 

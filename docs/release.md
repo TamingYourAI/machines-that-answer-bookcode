@@ -1,10 +1,10 @@
 # Releasing the companion
 
 The public repository is https://github.com/TamingYourAI/machines-that-answer-bookcode. Its
-first commit is release 0.3.1, tagged `v0.3.1`: the release the book's Appendix O describes, so a
-reader can check out exactly what the book names. Release 0.3.2, tagged `v0.3.2`, adds the
-voice-agent test suite and loop detection. Each release is a source export of this folder, made
-by the script below, and committed as one commit.
+first commit is release 0.3.1, tagged `v0.3.1`. Release 0.3.2, tagged `v0.3.2`, adds the
+voice-agent test suite and loop detection. Release 0.3.3, tagged `v0.3.3`, takes in three of the
+book's appendices and follows its re-lettering. Each release is a source export of this folder,
+made by the script below, and committed as one commit.
 
 ## Source-only export
 

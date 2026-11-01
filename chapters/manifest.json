@@ -279,7 +279,7 @@
   },
   {
     "id": "ch25",
-    "title": "25. Testing voice agents: the pyramid, simulated callers, and rates you can trust",
+    "title": "25. Testing voice agents: the pyramid, simulated callers, and rates that hold up",
     "entrypoint": "testing_lab.py",
     "mode_env": "TESTING_LAB_MODE",
     "source": "manuscript/builders/ch25-testing-voice-agents.md",
@@ -288,7 +288,7 @@
   },
   {
     "id": "ch26",
-    "title": "26. Observability, and the week you improve: traces, the failure taxonomy, and the review",
+    "title": "26. Observability, and the week the agent improves: traces, the failure taxonomy, and the review",
     "entrypoint": "observe_lab.py",
     "mode_env": "OBSERVE_LAB_MODE",
     "source": "manuscript/builders/ch26-observability-and-the-week-you-improve.md",
@@ -350,11 +350,11 @@
     "evidence_class": "simulated"
   },
   {
-    "id": "appendix-m",
-    "title": "Appendix M. The scenario format, and a starter catalogue",
+    "id": "appendix-k",
+    "title": "Appendix K. The scenario format, and a starter catalogue",
     "entrypoint": "scenario_lab.py",
     "mode_env": "SCENARIO_LAB_MODE",
-    "source": "manuscript/builders/appendix-m-scenario-format.md",
+    "source": "manuscript/builders/appendix-k-scenario-format.md",
     "integrated_files": [],
     "evidence_class": "simulated"
   }

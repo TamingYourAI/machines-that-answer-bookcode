@@ -29,14 +29,14 @@ Mock and fixture inputs are synthetic. Neither mode is a live provider benchmark
 | [22. Agents on the line: machine callers, delegation, and agent protocols](ch22/README.md) | `agents_lab.py` |
 | [23. Trust on the live call: disclosure, card numbers, and threats](ch23/README.md) | `trust_lab.py` |
 | [24. Metrics the business will accept: two families, one record, and numbers that last](ch24/README.md) | `metrics_lab.py` |
-| [25. Testing voice agents: the pyramid, simulated callers, and rates you can trust](ch25/README.md) | `testing_lab.py` |
-| [26. Observability, and the week you improve: traces, the failure taxonomy, and the review](ch26/README.md) | `observe_lab.py` |
+| [25. Testing voice agents: the pyramid, simulated callers, and rates that hold up](ch25/README.md) | `testing_lab.py` |
+| [26. Observability, and the week the agent improves: traces, the failure taxonomy, and the review](ch26/README.md) | `observe_lab.py` |
 | [27. Deploy it: environments, the control plane, and release](ch27/README.md) | `deploy_lab.py` |
 | [28. Keep it up: capacity, failure, and recovery](ch28/README.md) | `resilience_lab.py` |
 | [29. Keeping it good: maintenance over the years](ch29/README.md) | `care_lab.py` |
 | [Interlude A. Run it first: the Appointment Line](interlude-a/README.md) | `appointment_line.py` |
 | [Interlude B. Assemble the Service Line slice](interlude-b/README.md) | `service_slice.py` |
-| [Appendix M. The scenario format, and a starter catalogue](appendix-m/README.md) | `scenario_lab.py` |
+| [Appendix K. The scenario format, and a starter catalogue](appendix-k/README.md) | `scenario_lab.py` |
 
 Run `python scripts/run_labs.py ch17` from the companion root, or follow a chapter README.
 `python scripts/run_labs.py --check` checks mock and fixture output and runs all tests.

@@ -15,7 +15,7 @@ service slice, mode=fixture; evidence class: simulated
                          whisper of 12 words; the desk accepts the PIN (3 min
                          old)
 
-2. acceptance: the four cross-chapter scenarios (Appendix Q)
+2. acceptance: the four cross-chapter scenarios (Appendix M)
    scenario                      slice   guarded by             without it
    interrupted confirmation      passes  heard state            fails
    unknown transaction outcome   passes  reconciliation         fails

@@ -2,7 +2,7 @@
 
 Run beside the authoring project (the book's repository holds this folder); a published
 clone has no labs to copy from. Each lab keeps its book folder name, so labs that read a
-sibling (Appendix M reads Chapter 26 and Interlude B) still find it.
+sibling (Appendix K reads Chapter 26 and Interlude B) still find it.
 """
 from __future__ import annotations
 
@@ -22,9 +22,9 @@ OMIT = {"__pycache__", ".pytest_cache", ".DS_Store"}
 SOURCES = {  # lab folder -> the manuscript file it serves
     "interlude-a": "interlude-a-run-it-first.md",
     "interlude-b": "interlude-b-assemble-the-service-line-slice.md",
-    "appendix-m": "appendix-m-scenario-format.md",
+    "appendix-k": "appendix-k-scenario-format.md",
 }
-ORDER = [f"ch{n:02d}" for n in range(1, 30)] + ["interlude-a", "interlude-b", "appendix-m"]
+ORDER = [f"ch{n:02d}" for n in range(1, 30)] + ["interlude-a", "interlude-b", "appendix-k"]
 
 # What each lab shows, in one line; kept from 0.2.0 for the labs it already had.
 NEW_SUMMARIES = {
@@ -49,9 +49,9 @@ NEW_SUMMARIES = {
     "interlude-b": "The Service Line slice from Parts III to V: identity, one operation per "
                    "yes, heard state, payment, transfer, and the four cross-chapter "
                    "scenarios accepted",
-    "appendix-m": "The scenario format, a validator and five broken scenarios, the starter "
+    "appendix-k": "The scenario format, a validator and five broken scenarios, the starter "
                   "catalogue for the three businesses, and the four acceptance scenarios of "
-                  "Appendix Q with the piece that guards each",
+                  "Appendix M with the piece that guards each",
 }
 NEW_INTEGRATED = {  # application files that carry part of a new lab's mechanism
     "ch23": ["ova/agent.py"],

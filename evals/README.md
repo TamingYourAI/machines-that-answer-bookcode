@@ -5,8 +5,8 @@ voice, or a speech-to-speech model. It meets the agent the way a caller does, th
 happened in the agent's own records. It is the scenario runners of *Machines That Answer*,
 Chapter 25, built.
 
-- **The book's own format.** Every scenario is in builders' Appendix M's format and passes the
-  book's validator (`chapters/appendix-m`).
+- **The book's own format.** Every scenario is in builders' Appendix K's format and passes the
+  book's validator (`chapters/appendix-k`).
 - **Two families, never one score.** Every report shows the task family (was the work done, and
   done honestly) and the experience family (how the call went) side by side (Chapter 24). A
   system strong on one and weak on the other looks exactly like that.
@@ -61,7 +61,7 @@ judged".
 | `tt-01` | River Plumbing | A 700 ms pause in the middle of the address: no cut-off | audio |
 | `sr-01` | Claims line | A cracked windshield, reported and filed; never "you're covered" | text, audio |
 
-The suite adds one optional field to Appendix M's format: `caller.answers`, a list of
+The suite adds one optional field to Appendix K's format: `caller.answers`, a list of
 `[pattern, words]`. After each agent turn, the caller answers with the first unused answer whose
 pattern is found in the agent's last line. An answer is used again only when the question is
 asked again. Without answers, or when none matches, the caller says the next of `caller.lines` in
